@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario World</title>
+    <title>Mis Juegos Retro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +12,26 @@
             text-align: center;
             padding: 20px;
         }
+        #menu-juegos {
+            margin: 20px auto;
+        }
+        .boton-juego {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+        .boton-juego:hover {
+            background-color: #ff6b81;
+            transform: scale(1.05);
+        }
         #contenedor-juego {
             width: 640px;
             height: 480px;
@@ -19,6 +39,7 @@
             margin: 20px auto;
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            display: none; /* Oculto hasta que elijas juego */
         }
         #game {
             width: 100%;
@@ -28,28 +49,39 @@
 </head>
 <body>
 
-    <h1>Super Mario World</h1>
-    <p>Cargando emulador nativo...</p>
+    <h1>Mi Sitio de Juegos Simple</h1>
+    <p id="instrucciones">Selecciona un juego de la lista para empezar a jugar:</p>
+
+    <!-- Aquí puedes añadir más botones fácilmente cuando subas más juegos -->
+    <div id="menu-juegos">
+        <button class="boton-juego" onclick="arrancarJuego('Mario.sfc', 'snes')">🕹️ Super Mario World</button>
+    </div>
 
     <div id="contenedor-juego">
         <div id="game"></div>
     </div>
 
     <script type="text/javascript">
-        EJS_player = '#game';
-        EJS_biosUrl = ''; 
-        EJS_gameUrl = 'Mario.sfc'; 
-        EJS_core = 'snes'; 
-        EJS_language = 'en-US'; // Evita los fallos de traducción que salían en tu consola
-        
-        // Forzamos el uso de la versión estable v3.2.0 para evitar el bug del Gamepad
-        var parte1 = "https://cdn.";
-        var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@3.2.0/data/";
-        EJS_pathtodata = parte1 + parte2;
+        function arrancarJuego(archivoRom, consola) {
+            // Mostramos el contenedor del emulador y ocultamos el menú
+            document.getElementById('contenedor-juego').style.display = 'block';
+            document.getElementById('menu-juegos').style.display = 'none';
+            document.getElementById('instrucciones').innerText = "Cargando juego... Espera unos segundos.";
 
-        var scriptElement = document.createElement('script');
-        scriptElement.src = EJS_pathtodata + 'loader.js';
-        document.body.appendChild(scriptElement);
+            EJS_player = '#game';
+            EJS_biosUrl = ''; 
+            EJS_gameUrl = archivoRom; 
+            EJS_core = consola; 
+            EJS_language = 'en-US'; 
+            
+            var parte1 = "https://cdn.";
+            var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@3.2.0/data/";
+            EJS_pathtodata = parte1 + parte2;
+
+            var scriptElement = document.createElement('script');
+            scriptElement.src = EJS_pathtodata + 'loader.js';
+            document.body.appendChild(scriptElement);
+        }
     </script>
 
 </body>
