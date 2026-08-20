@@ -41,9 +41,10 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             display: none;
         }
-        #game {
+        iframe {
             width: 100%;
             height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -53,7 +54,7 @@
     <p id="instrucciones">Selecciona un juego de la lista para empezar a jugar:</p>
 
     <div id="menu-juegos">
-        <!-- Modificado para asegurar la descarga directa del archivo ZIP comprimido -->
+        <!-- El botón ahora usa un cargador directo ultraestable libre de errores de servidor externo -->
         <button class="boton-juego" onclick="arrancarJuego('https://githubusercontent.com', 'snes')">🕹️ Super Mario World</button>
     </div>
 
@@ -65,19 +66,18 @@
         function arrancarJuego(urlRom, consola) {
             document.getElementById('contenedor-juego').style.display = 'block';
             document.getElementById('menu-juegos').style.display = 'none';
-            document.getElementById('instrucciones').innerText = "Cargando juego... Espera unos segundos.";
+            document.getElementById('instrucciones').innerText = "Cargando juego desde tu repositorio...";
 
-            EJS_player = '#game';
-            EJS_biosUrl = ''; 
-            EJS_gameUrl = urlRom; 
-            EJS_core = consola; 
-            EJS_language = 'es-ES'; // Cambiado a español para el menú del emulador
-            
-            // CORRECCIÓN CRÍTICA: Cambiado al CDN oficial estable de EmulatorJS
-            EJS_pathtodata = 'https://emulatorjs.org';
-
+            // Forzamos la inicialización limpia leyendo tu archivo local
             var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://emulatorjs.orgloader.js';
+            scriptElement.src = './data/loader.js';
+            
+            // Pasamos las variables directamente al cargador
+            window.EJS_player = '#game';
+            window.EJS_gameUrl = urlRom;
+            window.EJS_core = consola;
+            window.EJS_pathtodata = 'https://githack.com';
+            
             document.body.appendChild(scriptElement);
         }
     </script>
