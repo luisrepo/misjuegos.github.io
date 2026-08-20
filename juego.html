@@ -40,12 +40,17 @@
         EJS_biosUrl = ''; 
         EJS_gameUrl = 'Mario.sfc'; 
         EJS_core = 'snes'; 
-        // Usamos una ruta directa que GitHub no altera al guardar
-        EJS_pathtodata = 'https://github.io';
+        
+        // Escondemos la ruta en trozos de texto separados para que GitHub no la altere
+        var parte1 = "https://cdn.";
+        var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/";
+        EJS_pathtodata = parte1 + parte2;
+
+        // Inyectamos el motor de forma invisible para saltarnos el formateador automático
+        var scriptElement = document.createElement('script');
+        scriptElement.src = EJS_pathtodata + 'loader.js';
+        document.body.appendChild(scriptElement);
     </script>
-    
-    <!-- Este enlace corto evita el error automático de escritura de GitHub -->
-    <script src="https://github.ioloader.js"></script>
 
 </body>
 </html>
