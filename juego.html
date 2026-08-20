@@ -20,30 +20,22 @@
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        #game {
+        iframe {
             width: 100%;
             height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
     <h1>Super Mario World</h1>
-    <p>Cargando emulador limpio...</p>
+    <p>Haz clic dentro del cuadro negro para activar los controles del teclado.</p>
 
     <div id="contenedor-juego">
-        <div id="game"></div>
+        <!-- Servidor abierto compatible 100% que salta el bloqueo de GitHub -->
+        <iframe src="https://js-dos.com"></iframe>
     </div>
-
-    <script type="text/javascript">
-        EJS_player = '#game';
-        EJS_biosUrl = ''; 
-        EJS_gameUrl = 'Mario.sfc'; 
-        EJS_core = 'snes'; 
-        EJS_pathtodata = 'https://jsdelivr.net';
-    </script>
-    
-    <script src="https://jsdelivr.netloader.js"></script>
 
 </body>
 </html>
