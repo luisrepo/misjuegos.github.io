@@ -584,6 +584,58 @@ header {
     font-size: 20px;
 
     font-weight: bold;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   BOTONES DEL REPRODUCTOR
+======================================== */
+
+.player-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.fullscreen-button {
+
+    background:
+        #8b5cf6;
+
+    color: white;
+
+    border: 0;
+
+    padding:
+        10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+
+.fullscreen-button:hover {
+
+    background:
+        #7c3aed;
+
+    transform:
+        translateY(-1px);
 }
 
 
@@ -604,6 +656,8 @@ header {
     cursor: pointer;
 
     font-weight: bold;
+
+    transition: .2s;
 }
 
 
@@ -614,18 +668,41 @@ header {
 }
 
 
+/* ========================================
+   EMULADOR
+======================================== */
+
 .emulator {
 
     flex: 1;
 
     width: 100%;
 
+    min-height: 0;
+
     border:
         1px solid #292929;
 
     border-radius: 10px;
 
-    background: black;
+    background:
+        black;
+}
+
+
+/* ========================================
+   CUANDO EL IFRAME ESTÁ EN FULLSCREEN
+======================================== */
+
+.emulator:fullscreen {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    border: none;
+
+    border-radius: 0;
 }
 
 
@@ -711,6 +788,47 @@ footer {
 
     }
 
+
+    .player {
+
+        padding: 5px;
+
+    }
+
+
+    .player-header {
+
+        min-height: 50px;
+
+    }
+
+
+    .player-title {
+
+        font-size: 15px;
+
+    }
+
+
+    .fullscreen-button {
+
+        padding:
+            9px 10px;
+
+        font-size: 12px;
+
+    }
+
+
+    .close-button {
+
+        padding:
+            9px 10px;
+
+        font-size: 12px;
+
+    }
+
 }
 
 </style>
@@ -728,6 +846,7 @@ footer {
 <header>
 
 <div class="header">
+
 
     <a
         href="../"
@@ -755,6 +874,7 @@ footer {
 
     </div>
 
+
 </div>
 
 </header>
@@ -768,6 +888,7 @@ footer {
 <section class="hero">
 
 <div class="hero-top">
+
 
     <div class="console-logo">
 
@@ -795,6 +916,7 @@ footer {
 
     </div>
 
+
 </div>
 
 </section>
@@ -810,6 +932,7 @@ footer {
 
 <div class="games-header">
 
+
     <h2>
 
         🎮 Juegos
@@ -822,6 +945,7 @@ footer {
         class="game-count">
 
     </span>
+
 
 </div>
 
@@ -846,51 +970,70 @@ footer {
     class="player">
 
 
-<div class="player-container">
+    <div class="player-container">
 
 
-<div class="player-header">
+        <div class="player-header">
 
 
-<div
-    id="playerTitle"
-    class="player-title">
+            <div
+                id="playerTitle"
+                class="player-title">
 
-    Juego
+                Juego
+
+            </div>
+
+
+            <div class="player-buttons">
+
+
+                <button
+                    class="fullscreen-button"
+                    onclick="fullscreenGame()">
+
+                    ⛶ Pantalla completa
+
+                </button>
+
+
+                <button
+                    class="close-button"
+                    onclick="closeGame()">
+
+                    ✕ Cerrar
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <iframe
+            id="emulator"
+            class="emulator"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+
+        </iframe>
+
+
+    </div>
 
 </div>
 
 
-<button
-    class="close-button"
-    onclick="closeGame()">
 
-    ✕ Cerrar
-
-</button>
-
-
-</div>
-
-
-<iframe
-    id="emulator"
-    class="emulator"
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-
-</iframe>
-
-
-</div>
-
-</div>
-
-
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer>
 
-🎮 Mi Biblioteca Retro · SNES
+    🎮 Mi Biblioteca Retro · SNES
 
 </footer>
 
@@ -900,13 +1043,11 @@ footer {
 
 
 /* =====================================================
-   🎮 TUS JUEGOS DE SNES
-   =====================================================
+   🎮 TUS JUEGOS
+=====================================================
 
-   IMPORTANTE:
-
-   Los archivos están TODOS directamente
-   dentro de esta carpeta "snes".
+   Los juegos están directamente dentro
+   de la carpeta /snes/
 
    Ejemplo:
 
@@ -923,10 +1064,6 @@ footer {
 const games = [
 
 
-    /* =====================================
-       SUPER MARIO WORLD
-    ===================================== */
-
     {
         nombre:
             "Super Mario World",
@@ -938,10 +1075,6 @@ const games = [
             "mario.jpg"
     },
 
-
-    /* =====================================
-       ZELDA
-    ===================================== */
 
     {
         nombre:
@@ -955,10 +1088,6 @@ const games = [
     },
 
 
-    /* =====================================
-       DONKEY KONG
-    ===================================== */
-
     {
         nombre:
             "Donkey Kong Country",
@@ -970,10 +1099,6 @@ const games = [
             "donkeykong.jpg"
     },
 
-
-    /* =====================================
-       KIRBY
-    ===================================== */
 
     {
         nombre:
@@ -1045,6 +1170,7 @@ function renderGames() {
         filtered.length === 0
     ) {
 
+
         grid.innerHTML = `
 
             <div class="no-results">
@@ -1056,6 +1182,7 @@ function renderGames() {
             </div>
 
         `;
+
 
         return;
 
@@ -1088,10 +1215,7 @@ function renderGames() {
 
                     loading="lazy"
 
-                    onerror="
-                        this.src =
-                        'https://via.placeholder.com/400x600/171124/c084fc?text=Sin+carátula'
-                    "
+                    onerror="this.style.display='none'"
 
                 >
 
@@ -1178,19 +1302,24 @@ function openGame(game) {
         "🎮 " + game.nombre;
 
 
-
     /*
-       Como la ROM está dentro
-       de la carpeta /snes/
+       Como el index.html está dentro
+       de /snes/, "Mario.sfc" apunta a:
+
+       /snes/Mario.sfc
     */
 
     const romURL =
-
         new URL(
             game.rom,
             window.location.href
         ).href;
 
+
+    console.log(
+        "ROM:",
+        romURL
+    );
 
 
     emulator.src =
@@ -1206,7 +1335,6 @@ function openGame(game) {
         );
 
 
-
     player.classList.add(
         "active"
     );
@@ -1220,10 +1348,76 @@ function openGame(game) {
 
 
 /* =====================================================
+   PANTALLA COMPLETA
+===================================================== */
+
+function fullscreenGame() {
+
+
+    const emulator =
+        document.getElementById(
+            "emulator"
+        );
+
+
+    if (
+        document.fullscreenElement
+    ) {
+
+        document.exitFullscreen();
+
+        return;
+
+    }
+
+
+    if (
+        emulator.requestFullscreen
+    ) {
+
+        emulator.requestFullscreen();
+
+    }
+
+    else if (
+        emulator.webkitRequestFullscreen
+    ) {
+
+        emulator.webkitRequestFullscreen();
+
+    }
+
+    else if (
+        emulator.msRequestFullscreen
+    ) {
+
+        emulator.msRequestFullscreen();
+
+    }
+
+}
+
+
+
+/* =====================================================
    CERRAR JUEGO
 ===================================================== */
 
 function closeGame() {
+
+
+    /*
+       Si está en pantalla completa,
+       primero salimos de ella.
+    */
+
+    if (
+        document.fullscreenElement
+    ) {
+
+        document.exitFullscreen();
+
+    }
 
 
     document
@@ -1253,11 +1447,24 @@ document.addEventListener(
     "keydown",
     function(event) {
 
+
         if (
             event.key === "Escape"
         ) {
 
-            closeGame();
+            /*
+               Si el navegador está en
+               pantalla completa, primero
+               permite salir de ella.
+            */
+
+            if (
+                document.fullscreenElement
+            ) {
+
+                document.exitFullscreen();
+
+            }
 
         }
 
