@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario World - Retro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        #contenedor-juego {
+            width: 640px;
+            height: 480px;
+            max-width: 100%;
+            margin: 20px auto;
+            background-color: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Super Mario World</h1>
+    <p>El juego se cargará automáticamente a continuación.</p>
+
+    <div id="contenedor-juego">
+        <div id="game"></div>
+    </div>
+
+    <script type="text/javascript">
+        EJS_player = '#game';
+        EJS_biosUrl = ''; 
+        // Nombre exacto de tu archivo subido a GitHub
+        EJS_gameUrl = 'Super Mario World (USA).zip'; 
+        // Núcleo de emulación para Super Nintendo
+        EJS_core = 'snes'; 
+        EJS_pathtodata = 'https://jsdelivr.net';
+    </script>
+    
+    <script src="https://jsdelivr.netloader.js"></script>
+
+</body>
+</html>
