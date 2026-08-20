@@ -40,13 +40,13 @@
         EJS_biosUrl = ''; 
         EJS_gameUrl = 'Mario.sfc'; 
         EJS_core = 'snes'; 
+        EJS_language = 'en-US'; // Evita los fallos de traducción que salían en tu consola
         
-        // Escondemos la ruta en trozos de texto separados para que GitHub no la altere
+        // Forzamos el uso de la versión estable v3.2.0 para evitar el bug del Gamepad
         var parte1 = "https://cdn.";
-        var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/";
+        var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@3.2.0/data/";
         EJS_pathtodata = parte1 + parte2;
 
-        // Inyectamos el motor de forma invisible para saltarnos el formateador automático
         var scriptElement = document.createElement('script');
         scriptElement.src = EJS_pathtodata + 'loader.js';
         document.body.appendChild(scriptElement);
