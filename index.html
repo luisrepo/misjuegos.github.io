@@ -20,22 +20,31 @@
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        iframe {
+        #nostalgia-player {
             width: 100%;
             height: 100%;
-            border: none;
         }
     </style>
+    <!-- Cargamos la librería del emulador directamente de forma segura -->
+    <script src="https://unpkg.com"></script>
 </head>
 <body>
 
     <h1>Super Mario World</h1>
-    <p>Usa las flechas del teclado y las teclas X, Z, C, V, Enter y Shift para jugar.</p>
+    <p>Las teclas por defecto son las flechas para moverte y Z, X, C, V para los botones.</p>
 
     <div id="contenedor-juego">
-        <!-- Cargamos un emulador externo súper estable pasándole directamente tu juego de GitHub -->
-        <iframe src="https://github.io"></iframe>
+        <div id="nostalgia-player"></div>
     </div>
+
+    <script>
+        // Arrancamos el emulador apuntando a tu juego propio de GitHub
+        const player = new Nostalgia({
+            element: '#nostalgia-player',
+            core: 'snes',
+            romUrl: 'https://github.io'
+        });
+    </script>
 
 </body>
 </html>
