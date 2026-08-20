@@ -20,22 +20,33 @@
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        iframe {
+        /* Asegura que el emulador ocupe todo el espacio negro */
+        #game {
             width: 100%;
             height: 100%;
-            border: none;
         }
     </style>
 </head>
 <body>
 
     <h1>Super Mario World</h1>
-    <p>El juego comenzará a cargar automáticamente en el reproductor seguro.</p>
+    <p>Cargando los archivos del juego desde tu repositorio...</p>
 
     <div id="contenedor-juego">
-        <!-- Servidor emulador libre de restricciones externas optimizado para GitHub Pages -->
-        <iframe src="https://github.io"></iframe>
+        <div id="game"></div>
     </div>
+
+    <script type="text/javascript">
+        EJS_player = '#game';
+        EJS_biosUrl = ''; 
+        EJS_gameUrl = 'Mario.sfc'; // Tu juego en GitHub
+        EJS_core = 'snes'; 
+        // Usamos las rutas oficiales de EmulatorJS sin romper los enlaces
+        EJS_pathtodata = 'https://jsdelivr.net';
+    </script>
+    
+    <!-- Cargamos el script con el enlace oficial e indestructible -->
+    <script src="https://jsdelivr.netloader.js"></script>
 
 </body>
 </html>
