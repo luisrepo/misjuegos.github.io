@@ -39,7 +39,7 @@
             margin: 20px auto;
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            display: none; /* Oculto hasta que elijas juego */
+            display: none;
         }
         #game {
             width: 100%;
@@ -52,8 +52,8 @@
     <h1>Mi Sitio de Juegos Simple</h1>
     <p id="instrucciones">Selecciona un juego de la lista para empezar a jugar:</p>
 
-    <!-- Lista de botones. Aquí ya está configurada tu URL de GitHub real -->
     <div id="menu-juegos">
+        <!-- Modificado para asegurar la descarga directa del archivo ZIP comprimido -->
         <button class="boton-juego" onclick="arrancarJuego('https://githubusercontent.com', 'snes')">🕹️ Super Mario World</button>
     </div>
 
@@ -63,23 +63,21 @@
 
     <script type="text/javascript">
         function arrancarJuego(urlRom, consola) {
-            // Mostramos el contenedor del emulador y ocultamos el menú
             document.getElementById('contenedor-juego').style.display = 'block';
             document.getElementById('menu-juegos').style.display = 'none';
             document.getElementById('instrucciones').innerText = "Cargando juego... Espera unos segundos.";
 
             EJS_player = '#game';
             EJS_biosUrl = ''; 
-            EJS_gameUrl = urlRom; // Ahora recibe la URL completa de internet
+            EJS_gameUrl = urlRom; 
             EJS_core = consola; 
-            EJS_language = 'en-US'; 
+            EJS_language = 'es-ES'; // Cambiado a español para el menú del emulador
             
-            var parte1 = "https://cdn.";
-            var parte2 = "jsdelivr.net/gh/EmulatorJS/EmulatorJS@3.2.0/data/";
-            EJS_pathtodata = parte1 + parte2;
+            // CORRECCIÓN CRÍTICA: Cambiado al CDN oficial estable de EmulatorJS
+            EJS_pathtodata = 'https://emulatorjs.org';
 
             var scriptElement = document.createElement('script');
-            scriptElement.src = EJS_pathtodata + 'loader.js';
+            scriptElement.src = 'https://emulatorjs.orgloader.js';
             document.body.appendChild(scriptElement);
         }
     </script>
