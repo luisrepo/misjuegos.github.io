@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SNES — Mi Biblioteca Retro</title>
+
+<style>
+
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #35146b 0%,
+            #0d0a18 40%,
+            #05070b 100%
+        );
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    padding: 18px 5%;
+
+    background:
+        rgba(5,7,15,.94);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid #29213d;
+}
+
+.header {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.logo span {
+
+    color: #c084fc;
+}
+
+
+/* ========================================
+   BOTÓN VOLVER
+======================================== */
+
+.back-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: #171124;
+
+    border: 1px solid #392b50;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+
+.back-button:hover {
+
+    color: white;
+
+    border-color:
+        #c084fc;
+
+    background:
+        #211735;
+}
+
+
+/* ========================================
+   BUSCADOR
+======================================== */
+
+.search {
+
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+.search input {
+
+    width: 100%;
+
+    padding: 13px 18px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #392b50;
+
+    background:
+        #130f20;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+.search input:focus {
+
+    border-color:
+        #c084fc;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(192,132,252,.1);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        60px 5% 40px;
+}
+
+
+.hero-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.console-logo {
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #c084fc
+        );
+
+    font-size: 40px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(168,85,247,.25);
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            65px
+        );
+
+    line-height: 1;
+
+    margin-bottom: 12px;
+}
+
+
+.hero h1 span {
+
+    color: #c084fc;
+}
+
+
+.hero p {
+
+    color: #a1a1aa;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   JUEGOS
+======================================== */
+
+.games-section {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        10px 5% 70px;
+}
+
+
+.games-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.games-header h2 {
+
+    font-size: 27px;
+}
+
+
+.game-count {
+
+    color: #71717a;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.games-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(190px, 1fr)
+        );
+
+    gap: 22px;
+}
+
+
+/* ========================================
+   TARJETA
+======================================== */
+
+.game-card {
+
+    background:
+        #120e1d;
+
+    border:
+        1px solid #2d2440;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+}
+
+
+.game-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        #c084fc;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.45);
+}
+
+
+/* ========================================
+   CARÁTULA
+======================================== */
+
+.cover {
+
+    position: relative;
+
+    aspect-ratio: 2 / 3;
+
+    background:
+        #1e172b;
+
+    overflow: hidden;
+}
+
+
+.cover img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .35s;
+}
+
+
+.game-card:hover
+.cover img {
+
+    transform:
+        scale(1.06);
+}
+
+
+/* ========================================
+   PLAY
+======================================== */
+
+.play-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,.48);
+
+    opacity: 0;
+
+    transition: .25s;
+}
+
+
+.game-card:hover
+.play-overlay {
+
+    opacity: 1;
+}
+
+
+.play-button {
+
+    width: 62px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #c084fc;
+
+    color:
+        #180b27;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 30px
+        rgba(192,132,252,.4);
+}
+
+
+/* ========================================
+   INFO
+======================================== */
+
+.game-info {
+
+    padding: 14px;
+}
+
+
+.game-info h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.game-info p {
+
+    color: #71717a;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   SIN RESULTADOS
+======================================== */
+
+.no-results {
+
+    grid-column:
+        1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #71717a;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   EMULADOR
+======================================== */
+
+.player {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    display: none;
+
+    padding: 15px;
+
+    background:
+        rgba(0,0,0,.97);
+}
+
+
+.player.active {
+
+    display: block;
+}
+
+
+.player-container {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.player-header {
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.player-title {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   BOTONES DEL REPRODUCTOR
+======================================== */
+
+.player-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.fullscreen-button {
+
+    background:
+        #8b5cf6;
+
+    color: white;
+
+    border: 0;
+
+    padding:
+        10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+
+.fullscreen-button:hover {
+
+    background:
+        #7c3aed;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.close-button {
+
+    background:
+        #ef4444;
+
+    color: white;
+
+    border: 0;
+
+    padding:
+        10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+
+.close-button:hover {
+
+    background:
+        #dc2626;
+}
+
+
+/* ========================================
+   EMULADOR
+======================================== */
+
+.emulator {
+
+    flex: 1;
+
+    width: 100%;
+
+    min-height: 0;
+
+    border:
+        1px solid #292929;
+
+    border-radius: 10px;
+
+    background:
+        black;
+}
+
+
+/* ========================================
+   CUANDO EL IFRAME ESTÁ EN FULLSCREEN
+======================================== */
+
+.emulator:fullscreen {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    border: none;
+
+    border-radius: 0;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    border-top:
+        1px solid #1e293b;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #52525b;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MÓVIL
+======================================== */
+
+@media(max-width:700px) {
+
+    .header {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .logo {
+
+        text-align: center;
+
+    }
+
+
+    .hero-top {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .console-logo {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 30px;
+
+    }
+
+
+    .games-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 12px;
+
+    }
+
+
+    .game-info {
+
+        padding: 10px;
+
+    }
+
+
+    .game-info h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .player {
+
+        padding: 5px;
+
+    }
+
+
+    .player-header {
+
+        min-height: 50px;
+
+    }
+
+
+    .player-title {
+
+        font-size: 15px;
+
+    }
+
+
+    .fullscreen-button {
+
+        padding:
+            9px 10px;
+
+        font-size: 12px;
+
+    }
+
+
+    .close-button {
+
+        padding:
+            9px 10px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header>
+
+<div class="header">
+
+
+    <a
+        href="../"
+        class="back-button">
+
+        ← Consolas
+
+    </a>
+
+
+    <div class="logo">
+
+        🎮 <span>SNES</span>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="🔎 Buscar juego..."
+            oninput="renderGames()">
+
+    </div>
+
+
+</div>
+
+</header>
+
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="hero">
+
+<div class="hero-top">
+
+
+    <div class="console-logo">
+
+        🎮
+
+    </div>
+
+
+    <div>
+
+        <h1>
+
+            Super
+            <span>Nintendo</span>
+
+        </h1>
+
+
+        <p>
+
+            Juegos de Super Nintendo
+            Entertainment System.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+     JUEGOS
+======================================== -->
+
+<section class="games-section">
+
+
+<div class="games-header">
+
+
+    <h2>
+
+        🎮 Juegos
+
+    </h2>
+
+
+    <span
+        id="gameCount"
+        class="game-count">
+
+    </span>
+
+
+</div>
+
+
+<div
+    id="gamesGrid"
+    class="games-grid">
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================================
+     REPRODUCTOR
+======================================== -->
+
+<div
+    id="player"
+    class="player">
+
+
+    <div class="player-container">
+
+
+        <div class="player-header">
+
+
+            <div
+                id="playerTitle"
+                class="player-title">
+
+                Juego
+
+            </div>
+
+
+            <div class="player-buttons">
+
+
+                <button
+                    class="fullscreen-button"
+                    onclick="fullscreenGame()">
+
+                    ⛶ Pantalla completa
+
+                </button>
+
+
+                <button
+                    class="close-button"
+                    onclick="closeGame()">
+
+                    ✕ Cerrar
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <iframe
+            id="emulator"
+            class="emulator"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+
+        </iframe>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+
+    🎮 Mi Biblioteca Retro · SNES
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   🎮 TUS JUEGOS
+=====================================================
+
+   Los juegos están directamente dentro
+   de la carpeta /snes/
+
+   Ejemplo:
+
+   snes/
+   ├── index.html
+   ├── Mario.sfc
+   ├── mario.jpg
+   ├── Zelda.sfc
+   └── zelda.jpg
+
+===================================================== */
+
+
+const games = [
+
+
+    {
+        nombre:
+            "Super Mario World",
+
+        rom:
+            "Mario.sfc",
+
+        portada:
+            "mario.jpg"
+    },
+
+
+    {
+        nombre:
+            "The Legend of Zelda",
+
+        rom:
+            "Zelda.sfc",
+
+        portada:
+            "zelda.jpg"
+    },
+
+
+    {
+        nombre:
+            "Donkey Kong Country",
+
+        rom:
+            "DonkeyKong.sfc",
+
+        portada:
+            "donkeykong.jpg"
+    },
+
+
+    {
+        nombre:
+            "Kirby Super Star",
+
+        rom:
+            "Kirby.sfc",
+
+        portada:
+            "kirby.jpg"
+    }
+
+];
+
+
+
+/* =====================================================
+   MOSTRAR JUEGOS
+===================================================== */
+
+function renderGames() {
+
+
+    const grid =
+        document.getElementById(
+            "gamesGrid"
+        );
+
+
+    const count =
+        document.getElementById(
+            "gameCount"
+        );
+
+
+    const search =
+        document
+            .getElementById("search")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const filtered =
+        games.filter(game =>
+
+            game.nombre
+                .toLowerCase()
+                .includes(search)
+
+        );
+
+
+    grid.innerHTML = "";
+
+
+    count.textContent =
+
+        filtered.length +
+
+        (
+            filtered.length === 1
+                ? " juego"
+                : " juegos"
+        );
+
+
+    if (
+        filtered.length === 0
+    ) {
+
+
+        grid.innerHTML = `
+
+            <div class="no-results">
+
+                😔<br><br>
+
+                No se encontró ningún juego.
+
+            </div>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    filtered.forEach(game => {
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "game-card";
+
+
+        card.innerHTML = `
+
+            <div class="cover">
+
+
+                <img
+
+                    src="${game.portada}"
+
+                    alt="${game.nombre}"
+
+                    loading="lazy"
+
+                    onerror="this.style.display='none'"
+
+                >
+
+
+                <div class="play-overlay">
+
+
+                    <div class="play-button">
+
+                        ▶
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="game-info">
+
+
+                <h3>
+
+                    ${game.nombre}
+
+                </h3>
+
+
+                <p>
+
+                    Super Nintendo
+
+                </p>
+
+
+            </div>
+
+        `;
+
+
+        card.onclick = () => {
+
+            openGame(game);
+
+        };
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   ABRIR JUEGO
+===================================================== */
+
+function openGame(game) {
+
+
+    const player =
+        document.getElementById(
+            "player"
+        );
+
+
+    const emulator =
+        document.getElementById(
+            "emulator"
+        );
+
+
+    const title =
+        document.getElementById(
+            "playerTitle"
+        );
+
+
+    title.textContent =
+        "🎮 " + game.nombre;
+
+
+    /*
+       Como el index.html está dentro
+       de /snes/, "Mario.sfc" apunta a:
+
+       /snes/Mario.sfc
+    */
+
+    const romURL =
+        new URL(
+            game.rom,
+            window.location.href
+        ).href;
+
+
+    console.log(
+        "ROM:",
+        romURL
+    );
+
+
+    emulator.src =
+
+        "https://binbashbanana.github.io/webretro/" +
+
+        "?core=snes9x" +
+
+        "&rom=" +
+
+        encodeURIComponent(
+            romURL
+        );
+
+
+    player.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+/* =====================================================
+   PANTALLA COMPLETA
+===================================================== */
+
+function fullscreenGame() {
+
+
+    const emulator =
+        document.getElementById(
+            "emulator"
+        );
+
+
+    if (
+        document.fullscreenElement
+    ) {
+
+        document.exitFullscreen();
+
+        return;
+
+    }
+
+
+    if (
+        emulator.requestFullscreen
+    ) {
+
+        emulator.requestFullscreen();
+
+    }
+
+    else if (
+        emulator.webkitRequestFullscreen
+    ) {
+
+        emulator.webkitRequestFullscreen();
+
+    }
+
+    else if (
+        emulator.msRequestFullscreen
+    ) {
+
+        emulator.msRequestFullscreen();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CERRAR JUEGO
+===================================================== */
+
+function closeGame() {
+
+
+    /*
+       Si está en pantalla completa,
+       primero salimos de ella.
+    */
+
+    if (
+        document.fullscreenElement
+    ) {
+
+        document.exitFullscreen();
+
+    }
+
+
+    document
+        .getElementById("player")
+        .classList.remove(
+            "active"
+        );
+
+
+    document.getElementById(
+        "emulator"
+    ).src = "";
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+
+/* =====================================================
+   ESC PARA CERRAR
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            /*
+               Si el navegador está en
+               pantalla completa, primero
+               permite salir de ella.
+            */
+
+            if (
+                document.fullscreenElement
+            ) {
+
+                document.exitFullscreen();
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+
+
+renderGames();
+
+const params = new URLSearchParams(window.location.search);
+const rom = params.get("game");
+
+if (rom) {
+    const game = games.find(g => g.rom === rom);
+    if (game) {
+        setTimeout(() => openGame(game), 300);
+    }
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
