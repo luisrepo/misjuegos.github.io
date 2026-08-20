@@ -52,9 +52,9 @@
     <h1>Mi Sitio de Juegos Simple</h1>
     <p id="instrucciones">Selecciona un juego de la lista para empezar a jugar:</p>
 
-    <!-- Aquí puedes añadir más botones fácilmente cuando subas más juegos -->
+    <!-- Lista de botones. Aquí ya está configurada tu URL de GitHub real -->
     <div id="menu-juegos">
-        <button class="boton-juego" onclick="arrancarJuego('Mario.zip', 'snes')">🕹️ Super Mario World</button>
+        <button class="boton-juego" onclick="arrancarJuego('https://githubusercontent.com', 'snes')">🕹️ Super Mario World</button>
     </div>
 
     <div id="contenedor-juego">
@@ -62,7 +62,7 @@
     </div>
 
     <script type="text/javascript">
-        function arrancarJuego(archivoRom, consola) {
+        function arrancarJuego(urlRom, consola) {
             // Mostramos el contenedor del emulador y ocultamos el menú
             document.getElementById('contenedor-juego').style.display = 'block';
             document.getElementById('menu-juegos').style.display = 'none';
@@ -70,7 +70,7 @@
 
             EJS_player = '#game';
             EJS_biosUrl = ''; 
-            EJS_gameUrl = archivoRom; 
+            EJS_gameUrl = urlRom; // Ahora recibe la URL completa de internet
             EJS_core = consola; 
             EJS_language = 'en-US'; 
             
