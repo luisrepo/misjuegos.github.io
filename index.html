@@ -3,633 +3,496 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Mi Biblioteca de Juegos</title>
+<title>Mi Biblioteca Retro</title>
 
-    <meta name="description"
-          content="Mi colección de juegos retro">
+<meta name="description"
+content="Mi colección de videojuegos retro">
 
-    <style>
 
-        /* ================================
-           GENERAL
-        ================================= */
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* ========================================
+   GENERAL
+======================================== */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background:
-                radial-gradient(
-                    circle at top,
-                    #172554 0%,
-                    #080b12 45%,
-                    #05070b 100%
-                );
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            color: white;
-            min-height: 100vh;
-        }
+body {
 
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-        /* ================================
-           CABECERA
-        ================================= */
+    color: white;
 
-        header {
-            position: sticky;
-            top: 0;
+    min-height: 100vh;
 
-            z-index: 100;
+    background:
 
-            background: rgba(7, 10, 18, 0.92);
+        radial-gradient(
+            circle at 50% -20%,
+            #1e3a8a 0%,
+            #0b1120 35%,
+            #05070d 75%
+        );
 
-            backdrop-filter: blur(12px);
+}
 
-            border-bottom: 1px solid #263044;
 
-            padding: 18px 5%;
-        }
+/* ========================================
+   HEADER
+======================================== */
 
-        .header-content {
+header {
 
-            max-width: 1400px;
+    position: sticky;
 
-            margin: auto;
+    top: 0;
 
-            display: flex;
+    z-index: 100;
 
-            align-items: center;
+    padding: 18px 5%;
 
-            justify-content: space-between;
+    background:
+        rgba(5, 8, 18, .92);
 
-            gap: 25px;
-        }
+    backdrop-filter:
+        blur(15px);
 
+    border-bottom:
+        1px solid #1e293b;
+}
 
-        .logo {
 
-            font-size: 25px;
+.header {
 
-            font-weight: 800;
+    max-width: 1400px;
 
-            white-space: nowrap;
-        }
+    margin: auto;
 
-        .logo .game {
-            color: #22d3ee;
-        }
+    display: flex;
 
+    align-items: center;
 
-        /* ================================
-           BUSCADOR
-        ================================= */
+    justify-content: space-between;
 
-        .search {
+    gap: 25px;
+}
 
-            width: 100%;
 
-            max-width: 450px;
-        }
+.logo {
 
-        .search input {
+    font-size: 25px;
 
-            width: 100%;
+    font-weight: 800;
 
-            padding: 13px 18px;
+    white-space: nowrap;
+}
 
-            border-radius: 12px;
 
-            border: 1px solid #334155;
+.logo span {
 
-            background: #111827;
+    color: #22d3ee;
+}
 
-            color: white;
 
-            outline: none;
+/* ========================================
+   BUSCADOR
+======================================== */
 
-            font-size: 15px;
+.search {
 
-            transition: .2s;
-        }
+    width: 100%;
 
-        .search input:focus {
+    max-width: 430px;
+}
 
-            border-color: #22d3ee;
 
-            box-shadow:
-                0 0 0 3px rgba(34,211,238,.1);
-        }
+.search input {
 
+    width: 100%;
 
-        /* ================================
-           HERO
-        ================================= */
+    padding: 13px 18px;
 
-        .hero {
+    border-radius: 12px;
 
-            max-width: 1400px;
+    border:
+        1px solid #334155;
 
-            margin: auto;
+    background:
+        #111827;
 
-            padding: 65px 5% 40px;
-        }
+    color: white;
 
-        .hero h1 {
+    font-size: 15px;
 
-            font-size:
-                clamp(38px, 6vw, 70px);
+    outline: none;
+}
 
-            line-height: 1.05;
 
-            margin-bottom: 20px;
-        }
+.search input:focus {
 
-        .hero h1 span {
+    border-color:
+        #22d3ee;
 
-            color: #22d3ee;
-        }
+    box-shadow:
+        0 0 0 3px
+        rgba(34,211,238,.1);
+}
 
-        .hero p {
 
-            color: #94a3b8;
+/* ========================================
+   HERO
+======================================== */
 
-            font-size: 18px;
+.hero {
 
-            max-width: 650px;
+    max-width: 1400px;
 
-            line-height: 1.6;
-        }
+    margin: auto;
 
+    padding:
+        75px 5% 55px;
+}
 
-        /* ================================
-           CATEGORÍAS
-        ================================= */
 
-        .categories {
+.hero h1 {
 
-            max-width: 1400px;
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            75px
+        );
 
-            margin: auto;
+    line-height: 1;
 
-            padding: 0 5% 35px;
-        }
+    margin-bottom: 22px;
+}
 
-        .categories h2 {
 
-            margin-bottom: 15px;
+.hero h1 span {
 
-            font-size: 20px;
-        }
+    color: #22d3ee;
+}
 
-        .category-buttons {
 
-            display: flex;
+.hero p {
 
-            flex-wrap: wrap;
+    max-width: 650px;
 
-            gap: 10px;
-        }
+    color: #94a3b8;
 
-        .category-btn {
+    font-size: 18px;
 
-            border: 1px solid #334155;
+    line-height: 1.6;
+}
 
-            background: #111827;
 
-            color: #cbd5e1;
+/* ========================================
+   CONSOLAS
+======================================== */
 
-            padding: 10px 17px;
+.consoles {
 
-            border-radius: 9px;
+    max-width: 1400px;
 
-            cursor: pointer;
+    margin: auto;
 
-            transition: .2s;
-        }
+    padding:
+        0 5% 80px;
+}
 
-        .category-btn:hover {
 
-            transform: translateY(-2px);
+.consoles-header {
 
-            border-color: #22d3ee;
+    display: flex;
 
-            color: #22d3ee;
-        }
+    justify-content:
+        space-between;
 
-        .category-btn.active {
+    align-items: center;
 
-            background: #22d3ee;
+    margin-bottom: 25px;
+}
 
-            color: #061018;
 
-            border-color: #22d3ee;
+.consoles-header h2 {
 
-            font-weight: bold;
-        }
+    font-size: 28px;
+}
 
 
-        /* ================================
-           LISTADO
-        ================================= */
+.console-grid {
 
-        .games-section {
+    display: grid;
 
-            max-width: 1400px;
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(230px, 1fr)
+        );
 
-            margin: auto;
+    gap: 22px;
+}
 
-            padding: 0 5% 70px;
-        }
 
-        .games-title {
+/* ========================================
+   TARJETAS DE CONSOLA
+======================================== */
 
-            display: flex;
+.console-card {
 
-            align-items: center;
+    position: relative;
 
-            justify-content: space-between;
+    min-height: 180px;
 
-            margin-bottom: 22px;
-        }
+    padding: 25px;
 
-        .games-title h2 {
+    display: flex;
 
-            font-size: 25px;
-        }
+    flex-direction: column;
 
-        .game-count {
+    justify-content: flex-end;
 
-            color: #64748b;
+    overflow: hidden;
 
-            font-size: 14px;
-        }
+    cursor: pointer;
 
+    border-radius: 18px;
 
-        /* ================================
-           TARJETAS
-        ================================= */
+    border:
+        1px solid #293548;
 
-        .games-grid {
+    background:
+        linear-gradient(
+            145deg,
+            #172033,
+            #0b101b
+        );
 
-            display: grid;
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+}
 
-            grid-template-columns:
-                repeat(
-                    auto-fill,
-                    minmax(190px, 1fr)
-                );
 
-            gap: 22px;
-        }
+.console-card:hover {
 
+    transform:
+        translateY(-8px);
 
-        .game-card {
+    border-color:
+        #22d3ee;
 
-            background: #0f172a;
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.45);
+}
 
-            border: 1px solid #253047;
 
-            border-radius: 15px;
+/* brillo */
 
-            overflow: hidden;
+.console-card::before {
 
-            cursor: pointer;
+    content: "";
 
-            transition:
-                transform .25s,
-                border-color .25s,
-                box-shadow .25s;
+    position: absolute;
 
-            position: relative;
-        }
+    width: 180px;
 
-        .game-card:hover {
+    height: 180px;
 
-            transform:
-                translateY(-7px);
+    right: -60px;
 
-            border-color: #22d3ee;
+    top: -70px;
 
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,.4);
-        }
+    border-radius: 50%;
 
+    background:
+        rgba(34,211,238,.12);
 
-        /* ================================
-           PORTADA
-        ================================= */
+    filter:
+        blur(10px);
+}
 
-        .cover {
 
-            position: relative;
+.console-icon {
 
-            aspect-ratio: 2 / 3;
+    position: absolute;
 
-            overflow: hidden;
+    top: 22px;
 
-            background: #1e293b;
-        }
+    right: 25px;
 
-        .cover img {
+    font-size: 55px;
 
-            width: 100%;
+    opacity: .9;
 
-            height: 100%;
+    transition:
+        transform .3s;
+}
 
-            object-fit: cover;
 
-            display: block;
+.console-card:hover
+.console-icon {
 
-            transition: transform .35s;
-        }
+    transform:
+        scale(1.15)
+        rotate(5deg);
+}
 
-        .game-card:hover
-        .cover img {
 
-            transform: scale(1.06);
-        }
+.console-card h3 {
 
+    position: relative;
 
-        .play-overlay {
+    z-index: 2;
 
-            position: absolute;
+    font-size: 25px;
 
-            inset: 0;
+    margin-bottom: 7px;
+}
 
-            display: flex;
 
-            align-items: center;
+.console-card p {
 
-            justify-content: center;
+    position: relative;
 
-            background:
-                rgba(0,0,0,.45);
+    z-index: 2;
 
-            opacity: 0;
+    color: #94a3b8;
 
-            transition: .25s;
-        }
+    font-size: 14px;
+}
 
-        .game-card:hover
-        .play-overlay {
 
-            opacity: 1;
-        }
+/* ========================================
+   COLORES
+======================================== */
 
+.snes:hover {
 
-        .play-button {
+    border-color:
+        #a855f7;
+}
 
-            width: 60px;
+.nes:hover {
 
-            height: 60px;
+    border-color:
+        #ef4444;
+}
 
-            border-radius: 50%;
+.gb:hover {
 
-            background: #22d3ee;
+    border-color:
+        #22c55e;
+}
 
-            color: #061018;
+.gba:hover {
 
-            display: flex;
+    border-color:
+        #6366f1;
+}
 
-            align-items: center;
+.megadrive:hover {
 
-            justify-content: center;
+    border-color:
+        #f59e0b;
+}
 
-            font-size: 25px;
 
-            font-weight: bold;
+/* ========================================
+   FOOTER
+======================================== */
 
-            box-shadow:
-                0 8px 30px
-                rgba(34,211,238,.35);
-        }
+footer {
 
+    border-top:
+        1px solid #1e293b;
 
-        /* ================================
-           INFORMACIÓN
-        ================================= */
+    text-align: center;
 
-        .game-info {
+    padding: 35px;
 
-            padding: 14px;
-        }
+    color: #475569;
 
-        .game-info h3 {
+    font-size: 14px;
+}
 
-            font-size: 16px;
 
-            margin-bottom: 7px;
+/* ========================================
+   MÓVIL
+======================================== */
 
-            white-space: nowrap;
+@media(max-width:700px) {
 
-            overflow: hidden;
+    .header {
 
-            text-overflow: ellipsis;
-        }
+        flex-direction:
+            column;
+    }
 
-        .game-category {
 
-            color: #64748b;
+    .logo {
 
-            font-size: 13px;
-        }
+        text-align: center;
+    }
 
 
-        /* ================================
-           MODAL EMULADOR
-        ================================= */
+    .hero {
 
-        .player {
+        padding-top:
+            45px;
+    }
 
-            position: fixed;
 
-            inset: 0;
+    .console-grid {
 
-            background:
-                rgba(0,0,0,.96);
+        grid-template-columns:
+            repeat(2, 1fr);
 
-            z-index: 999;
+        gap: 12px;
+    }
 
-            display: none;
 
-            padding: 15px;
-        }
+    .console-card {
 
-        .player.active {
+        min-height: 150px;
 
-            display: block;
-        }
+        padding: 17px;
+    }
 
-        .player-container {
 
-            width: 100%;
+    .console-card h3 {
 
-            height: 100%;
+        font-size: 19px;
+    }
 
-            max-width: 1400px;
 
-            margin: auto;
+    .console-icon {
 
-            display: flex;
+        font-size: 40px;
 
-            flex-direction: column;
-        }
+        top: 15px;
 
-        .player-header {
+        right: 15px;
+    }
 
-            min-height: 55px;
+}
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 15px;
-        }
-
-        .player-title {
-
-            font-size: 20px;
-
-            font-weight: bold;
-        }
-
-        .close-button {
-
-            border: 0;
-
-            background: #ef4444;
-
-            color: white;
-
-            padding: 10px 17px;
-
-            border-radius: 8px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-        }
-
-        .close-button:hover {
-
-            background: #dc2626;
-        }
-
-        .emulator {
-
-            flex: 1;
-
-            width: 100%;
-
-            border: 1px solid #263044;
-
-            border-radius: 10px;
-
-            background: black;
-        }
-
-
-        /* ================================
-           SIN RESULTADOS
-        ================================= */
-
-        .no-results {
-
-            grid-column: 1 / -1;
-
-            text-align: center;
-
-            padding: 60px 20px;
-
-            color: #64748b;
-
-            font-size: 18px;
-        }
-
-
-        /* ================================
-           FOOTER
-        ================================= */
-
-        footer {
-
-            border-top: 1px solid #1e293b;
-
-            text-align: center;
-
-            padding: 30px;
-
-            color: #475569;
-
-            font-size: 14px;
-        }
-
-
-        /* ================================
-           MÓVIL
-        ================================= */
-
-        @media (max-width: 700px) {
-
-            .header-content {
-
-                flex-direction: column;
-
-                align-items: stretch;
-            }
-
-            .logo {
-
-                text-align: center;
-            }
-
-            .hero {
-
-                padding-top: 40px;
-            }
-
-            .games-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 12px;
-            }
-
-            .game-info {
-
-                padding: 10px;
-            }
-
-            .game-info h3 {
-
-                font-size: 14px;
-            }
-
-            .player {
-
-                padding: 5px;
-            }
-
-            .player-header {
-
-                min-height: 50px;
-            }
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -637,152 +500,88 @@
 <body>
 
 
-<!-- =====================================
-     CABECERA
-===================================== -->
+<!-- ========================================
+     HEADER
+======================================== -->
 
 <header>
 
-    <div class="header-content">
+<div class="header">
 
-        <div class="logo">
+    <div class="logo">
 
-            🎮 <span class="game">MI</span> BIBLIOTECA
-
-        </div>
-
-
-        <div class="search">
-
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="🔎 Buscar juego..."
-                oninput="searchGames()"
-            >
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<!-- =====================================
-     HERO
-===================================== -->
-
-<section class="hero">
-
-    <h1>
-
-        Tu colección
-        <span>retro</span>
-
-    </h1>
-
-    <p>
-
-        Todos tus juegos favoritos
-        en un solo lugar. Selecciona un juego
-        para empezar a jugar.
-
-    </p>
-
-</section>
-
-
-
-<!-- =====================================
-     CATEGORÍAS
-===================================== -->
-
-<section class="categories">
-
-    <h2>🎮 Plataformas</h2>
-
-    <div
-        class="category-buttons"
-        id="categories">
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     JUEGOS
-===================================== -->
-
-<section class="games-section">
-
-    <div class="games-title">
-
-        <h2>Todos los juegos</h2>
-
-        <span
-            class="game-count"
-            id="gameCount">
-        </span>
+        🎮 <span>MI</span> BIBLIOTECA
 
     </div>
 
 
-    <div
-        class="games-grid"
-        id="gamesGrid">
-    </div>
+    <div class="search">
 
-</section>
-
-
-
-<!-- =====================================
-     EMULADOR
-===================================== -->
-
-<div
-    class="player"
-    id="player">
-
-    <div class="player-container">
-
-        <div class="player-header">
-
-            <div
-                class="player-title"
-                id="playerTitle">
-                Juego
-            </div>
-
-            <button
-                class="close-button"
-                onclick="closeGame()">
-
-                ✕ Cerrar
-
-            </button>
-
-        </div>
-
-
-        <iframe
-            id="emulator"
-            class="emulator"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-        </iframe>
+        <input
+            id="search"
+            type="text"
+            placeholder="🔎 Buscar consola..."
+            oninput="searchConsoles()"
+        >
 
     </div>
 
 </div>
 
+</header>
+
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="hero">
+
+<h1>
+
+    Tu colección
+    <span>retro</span>
+
+</h1>
+
+
+<p>
+
+    Elige una consola y descubre
+    todos los juegos de tu colección.
+
+</p>
+
+</section>
+
+
+
+<!-- ========================================
+     CONSOLAS
+======================================== -->
+
+<section class="consoles">
+
+<div class="consoles-header">
+
+    <h2>🎮 Consolas</h2>
+
+</div>
+
+
+<div
+    id="consoleGrid"
+    class="console-grid">
+</div>
+
+</section>
+
 
 
 <footer>
 
-    🎮 Mi Biblioteca de Juegos
+    🎮 Mi Biblioteca Retro
 
 </footer>
 
@@ -791,240 +590,144 @@
 <script>
 
 
-/* =====================================================
-   🎮 AÑADE AQUÍ TUS JUEGOS
-   =====================================================
+/* ========================================
+   CONSOLAS
+========================================
 
-   Para añadir otro juego copia uno de estos bloques:
+   Para añadir una nueva consola copia
+   uno de estos bloques.
 
-   {
-       nombre: "Nombre del juego",
-       rom: "roms/Nombre.sfc",
-       portada: "covers/nombre.jpg",
-       categoria: "SNES"
-   }
-
-   IMPORTANTE:
-
-   La ruta debe coincidir exactamente con
-   el nombre del archivo que tengas en GitHub.
-
-===================================================== */
+======================================== */
 
 
-const games = [
+const consoles = [
 
     {
-        nombre: "Super Mario World",
-        rom: "roms/Mario.sfc",
-        portada: "covers/mario.jpg",
-        categoria: "SNES"
+        nombre: "Super Nintendo",
+        carpeta: "snes",
+        icono: "🟣",
+        descripcion: "Juegos de SNES",
+        clase: "snes"
     },
 
-    {
-        nombre: "The Legend of Zelda",
-        rom: "roms/Zelda.sfc",
-        portada: "covers/zelda.jpg",
-        categoria: "SNES"
-    },
 
     {
-        nombre: "Donkey Kong Country",
-        rom: "roms/DonkeyKong.sfc",
-        portada: "covers/donkeykong.jpg",
-        categoria: "SNES"
+        nombre: "Nintendo",
+        carpeta: "nes",
+        icono: "🔴",
+        descripcion: "Juegos de NES",
+        clase: "nes"
     },
 
+
     {
-        nombre: "Kirby Super Star",
-        rom: "roms/Kirby.sfc",
-        portada: "covers/kirby.jpg",
-        categoria: "SNES"
+        nombre: "Game Boy",
+        carpeta: "gameboy",
+        icono: "🟢",
+        descripcion: "Juegos de Game Boy",
+        clase: "gb"
+    },
+
+
+    {
+        nombre: "Game Boy Advance",
+        carpeta: "gba",
+        icono: "🔵",
+        descripcion: "Juegos de GBA",
+        clase: "gba"
+    },
+
+
+    {
+        nombre: "Mega Drive",
+        carpeta: "megadrive",
+        icono: "🟡",
+        descripcion: "Juegos de Mega Drive",
+        clase: "megadrive"
     }
 
 ];
 
 
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+/* ========================================
+   MOSTRAR CONSOLAS
+======================================== */
 
-let currentCategory = "Todos";
-
-
-
-/* =====================================================
-   CREAR CATEGORÍAS
-===================================================== */
-
-function createCategories() {
-
-    const container =
-        document.getElementById("categories");
-
-    const categories = [
-
-        "Todos",
-
-        ...new Set(
-            games.map(game => game.categoria)
-        )
-
-    ];
-
-
-    container.innerHTML = "";
-
-
-    categories.forEach(category => {
-
-        const button =
-            document.createElement("button");
-
-        button.className = "category-btn";
-
-
-        if (category === "Todos") {
-
-            button.classList.add("active");
-
-        }
-
-
-        button.textContent =
-            category === "Todos"
-                ? "🎮 Todos"
-                : "🕹️ " + category;
-
-
-        button.onclick = () => {
-
-            currentCategory = category;
-
-
-            document
-                .querySelectorAll(".category-btn")
-                .forEach(btn => {
-
-                    btn.classList.remove("active");
-
-                });
-
-
-            button.classList.add("active");
-
-
-            searchGames();
-
-        };
-
-
-        container.appendChild(button);
-
-    });
-
-}
-
-
-
-/* =====================================================
-   MOSTRAR JUEGOS
-===================================================== */
-
-function showGames(list) {
+function showConsoles(list) {
 
     const grid =
-        document.getElementById("gamesGrid");
-
-    const count =
-        document.getElementById("gameCount");
+        document.getElementById(
+            "consoleGrid"
+        );
 
 
     grid.innerHTML = "";
-
-
-    count.textContent =
-        list.length +
-        (list.length === 1
-            ? " juego"
-            : " juegos");
 
 
     if (list.length === 0) {
 
         grid.innerHTML = `
 
-            <div class="no-results">
+            <p style="
+                color:#64748b;
+                grid-column:1/-1;
+                padding:50px;
+                text-align:center;
+            ">
 
-                😔<br><br>
+                😔 No se encontró esa consola.
 
-                No se encontraron juegos.
-
-            </div>
+            </p>
 
         `;
 
         return;
-
     }
 
 
-    list.forEach(game => {
-
+    list.forEach(console => {
 
         const card =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        card.className = "game-card";
+
+        card.className =
+            "console-card " +
+            console.clase;
 
 
         card.innerHTML = `
 
-            <div class="cover">
+            <div class="console-icon">
 
-                <img
-                    src="${game.portada}"
-                    alt="${game.nombre}"
-                    loading="lazy"
-                    onerror="
-                        this.src='https://via.placeholder.com/400x600/111827/22d3ee?text=Sin+carátula'
-                    "
-                >
-
-                <div class="play-overlay">
-
-                    <div class="play-button">
-
-                        ▶
-
-                    </div>
-
-                </div>
+                ${console.icono}
 
             </div>
 
 
-            <div class="game-info">
+            <h3>
 
-                <h3>
-                    ${game.nombre}
-                </h3>
+                ${console.nombre}
 
-                <div class="game-category">
+            </h3>
 
-                    ${game.categoria}
 
-                </div>
+            <p>
 
-            </div>
+                ${console.descripcion}
+
+            </p>
 
         `;
 
 
         card.onclick = () => {
 
-            openGame(game);
+            window.location.href =
+                console.carpeta + "/";
 
         };
 
@@ -1037,158 +740,41 @@ function showGames(list) {
 
 
 
-/* =====================================================
+/* ========================================
    BUSCADOR
-===================================================== */
+======================================== */
 
-function searchGames() {
+function searchConsoles() {
 
     const text =
         document
-            .getElementById("searchInput")
+            .getElementById("search")
             .value
             .toLowerCase()
             .trim();
 
 
     const filtered =
-        games.filter(game => {
+        consoles.filter(console =>
+
+            console.nombre
+                .toLowerCase()
+                .includes(text)
+
+        );
 
 
-            const categoryMatch =
-
-                currentCategory === "Todos" ||
-
-                game.categoria ===
-                currentCategory;
-
-
-            const searchMatch =
-
-                game.nombre
-                    .toLowerCase()
-                    .includes(text);
-
-
-            return (
-                categoryMatch &&
-                searchMatch
-            );
-
-        });
-
-
-    showGames(filtered);
+    showConsoles(filtered);
 
 }
 
 
 
-/* =====================================================
-   ABRIR JUEGO
-===================================================== */
-
-function openGame(game) {
-
-    const player =
-        document.getElementById("player");
-
-    const title =
-        document.getElementById("playerTitle");
-
-    const emulator =
-        document.getElementById("emulator");
-
-
-    title.textContent =
-        "🎮 " + game.nombre;
-
-
-    /*
-       IMPORTANTE
-
-       Aquí se carga la ROM mediante WebRetro.
-    */
-
-    const romURL =
-        window.location.origin +
-        window.location.pathname
-            .replace(/\/[^\/]*$/, "/") +
-        game.rom;
-
-
-    emulator.src =
-
-        "https://binbashbanana.github.io/webretro/" +
-        "?core=snes9x" +
-        "&rom=" +
-        encodeURIComponent(romURL);
-
-
-    player.classList.add("active");
-
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-
-/* =====================================================
-   CERRAR JUEGO
-===================================================== */
-
-function closeGame() {
-
-    const player =
-        document.getElementById("player");
-
-    const emulator =
-        document.getElementById("emulator");
-
-
-    player.classList.remove("active");
-
-
-    emulator.src = "";
-
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-
-/* =====================================================
-   ESC PARA CERRAR
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeGame();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
+/* ========================================
    INICIAR
-===================================================== */
+======================================== */
 
-createCategories();
-
-showGames(games);
+showConsoles(consoles);
 
 
 </script>
@@ -1197,3 +783,4 @@ showGames(games);
 </body>
 
 </html>
+
