@@ -19,49 +19,29 @@
             margin: 20px auto;
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        canvas {
-            width: 100%;
-            height: 100%;
-            image-rendering: pixelated;
         }
     </style>
-    <!-- Cargamos una librería de emulación directa y segura que nunca bloquea GitHub -->
-    <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
     <h1>Super Mario World</h1>
-    <p>Cargando el emulador nativo del navegador...</p>
+    <p>Haz clic en la pantalla si no escuchas el sonido. Controles: Flechas y teclas Z, X, C, V, Enter, Shift.</p>
 
     <div id="contenedor-juego">
-        <canvas id="screen" width="256" height="240"></canvas>
+        <div id="game"></div>
     </div>
 
-    <script>
-        // Sistema de arranque directo sin webs intermediarias
-        const canvas = document.getElementById('screen');
-        const ctx = canvas.getContext('2d');
-        
-        // Descarga el archivo de tu juego directamente de tu repositorio
-        fetch('Mario.sfc')
-            .then(response => {
-                if (!response.ok) throw new Error('No se pudo encontrar el archivo Mario.sfc');
-                return response.arrayBuffer();
-            })
-            .then(buffer => {
-                console.log('Juego cargado correctamente en memoria');
-                // Aquí el emulador interno toma el control del archivo descargado
-                document.querySelector('p').innerText = "¡Juego listo! Usa el teclado para controlar a Mario.";
-            })
-            .catch(err => {
-                document.querySelector('p').innerText = "Error: Asegúrate de que el archivo 'Mario.sfc' está subido a GitHub.";
-                console.error(err);
-            });
+    <!-- Cargamos el motor de emulación directo desde una CDN libre de bloqueos de marcos -->
+    <script type="text/javascript">
+        EJS_player = '#game';
+        EJS_biosUrl = ''; 
+        EJS_gameUrl = 'Mario.sfc'; // Tu archivo verificado
+        EJS_core = 'snes'; 
+        // Usamos servidores alternativos de datos para evitar bloqueos regionales o de caché
+        EJS_pathtodata = 'https://githack.com';
     </script>
+    
+    <script src="https://githack.comloader.js"></script>
 
 </body>
 </html>
