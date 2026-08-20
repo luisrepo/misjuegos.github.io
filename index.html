@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario World - Retro</title>
+    <title>Super Mario World</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,28 +20,22 @@
             background-color: #000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
     <h1>Super Mario World</h1>
-    <p>Haz clic en la pantalla si no escuchas el sonido. Controles: Flechas y teclas Z, X, C, V, Enter, Shift.</p>
+    <p>Haz clic dentro del juego para activar los controles del teclado.</p>
 
     <div id="contenedor-juego">
-        <div id="game"></div>
+        <!-- Enlace en formato plano que GitHub lee perfectamente sin alterar las barras -->
+        <iframe src="https://emulatorjs.org"></iframe>
     </div>
-
-    <!-- Cargamos el motor de emulación directo desde una CDN libre de bloqueos de marcos -->
-    <script type="text/javascript">
-        EJS_player = '#game';
-        EJS_biosUrl = ''; 
-        EJS_gameUrl = 'Mario.sfc'; // Tu archivo verificado
-        EJS_core = 'snes'; 
-        // Usamos servidores alternativos de datos para evitar bloqueos regionales o de caché
-        EJS_pathtodata = 'https://githack.com';
-    </script>
-    
-    <script src="https://githack.comloader.js"></script>
 
 </body>
 </html>
