@@ -1,117 +1,1199 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Super Mario World</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Biblioteca de Juegos</title>
+
+    <meta name="description"
+          content="Mi colección de juegos retro">
 
     <style>
+
+        /* ================================
+           GENERAL
+        ================================= */
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            background: #090909;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at top,
+                    #172554 0%,
+                    #080b12 45%,
+                    #05070b 100%
+                );
+
             color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            min-height: 100vh;
         }
+
+
+        /* ================================
+           CABECERA
+        ================================= */
 
         header {
-            padding: 20px;
-            background: #111;
-            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            background: rgba(7, 10, 18, 0.92);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #263044;
+
+            padding: 18px 5%;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 28px;
+        .header-content {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
         }
 
-        .game {
-            width: 95%;
-            max-width: 1100px;
-            height: 75vh;
-            margin: 25px auto;
-            background: #000;
-            border: 2px solid #333;
-            border-radius: 10px;
-            overflow: hidden;
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
         }
 
-        iframe {
+        .logo .game {
+            color: #22d3ee;
+        }
+
+
+        /* ================================
+           BUSCADOR
+        ================================= */
+
+        .search {
+
             width: 100%;
-            height: 100%;
-            border: 0;
+
+            max-width: 450px;
         }
 
-        .info {
-            color: #aaa;
-            margin: 15px;
-        }
+        .search input {
 
-        .fullscreen {
-            background: #e60012;
+            width: 100%;
+
+            padding: 13px 18px;
+
+            border-radius: 12px;
+
+            border: 1px solid #334155;
+
+            background: #111827;
+
             color: white;
-            border: 0;
-            border-radius: 8px;
-            padding: 12px 20px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: .2s;
+        }
+
+        .search input:focus {
+
+            border-color: #22d3ee;
+
+            box-shadow:
+                0 0 0 3px rgba(34,211,238,.1);
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 65px 5% 40px;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(38px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+
+            color: #22d3ee;
+        }
+
+        .hero p {
+
+            color: #94a3b8;
+
+            font-size: 18px;
+
+            max-width: 650px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           CATEGORÍAS
+        ================================= */
+
+        .categories {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 0 5% 35px;
+        }
+
+        .categories h2 {
+
+            margin-bottom: 15px;
+
+            font-size: 20px;
+        }
+
+        .category-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .category-btn {
+
+            border: 1px solid #334155;
+
+            background: #111827;
+
+            color: #cbd5e1;
+
+            padding: 10px 17px;
+
+            border-radius: 9px;
+
             cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .category-btn:hover {
+
+            transform: translateY(-2px);
+
+            border-color: #22d3ee;
+
+            color: #22d3ee;
+        }
+
+        .category-btn.active {
+
+            background: #22d3ee;
+
+            color: #061018;
+
+            border-color: #22d3ee;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           LISTADO
+        ================================= */
+
+        .games-section {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 0 5% 70px;
+        }
+
+        .games-title {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+        }
+
+        .games-title h2 {
+
+            font-size: 25px;
+        }
+
+        .game-count {
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           TARJETAS
+        ================================= */
+
+        .games-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fill,
+                    minmax(190px, 1fr)
+                );
+
+            gap: 22px;
+        }
+
+
+        .game-card {
+
+            background: #0f172a;
+
+            border: 1px solid #253047;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            transition:
+                transform .25s,
+                border-color .25s,
+                box-shadow .25s;
+
+            position: relative;
+        }
+
+        .game-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color: #22d3ee;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,.4);
+        }
+
+
+        /* ================================
+           PORTADA
+        ================================= */
+
+        .cover {
+
+            position: relative;
+
+            aspect-ratio: 2 / 3;
+
+            overflow: hidden;
+
+            background: #1e293b;
+        }
+
+        .cover img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform .35s;
+        }
+
+        .game-card:hover
+        .cover img {
+
+            transform: scale(1.06);
+        }
+
+
+        .play-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(0,0,0,.45);
+
+            opacity: 0;
+
+            transition: .25s;
+        }
+
+        .game-card:hover
+        .play-overlay {
+
+            opacity: 1;
+        }
+
+
+        .play-button {
+
+            width: 60px;
+
+            height: 60px;
+
+            border-radius: 50%;
+
+            background: #22d3ee;
+
+            color: #061018;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 30px
+                rgba(34,211,238,.35);
+        }
+
+
+        /* ================================
+           INFORMACIÓN
+        ================================= */
+
+        .game-info {
+
+            padding: 14px;
+        }
+
+        .game-info h3 {
+
             font-size: 16px;
+
+            margin-bottom: 7px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
         }
 
-        .fullscreen:hover {
-            background: #ff2030;
+        .game-category {
+
+            color: #64748b;
+
+            font-size: 13px;
         }
 
-        @media (max-width: 600px) {
-            .game {
-                width: 100%;
-                height: 70vh;
-                margin: 10px auto;
-                border-radius: 0;
+
+        /* ================================
+           MODAL EMULADOR
+        ================================= */
+
+        .player {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.96);
+
+            z-index: 999;
+
+            display: none;
+
+            padding: 15px;
+        }
+
+        .player.active {
+
+            display: block;
+        }
+
+        .player-container {
+
+            width: 100%;
+
+            height: 100%;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .player-header {
+
+            min-height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .player-title {
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .close-button {
+
+            border: 0;
+
+            background: #ef4444;
+
+            color: white;
+
+            padding: 10px 17px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .close-button:hover {
+
+            background: #dc2626;
+        }
+
+        .emulator {
+
+            flex: 1;
+
+            width: 100%;
+
+            border: 1px solid #263044;
+
+            border-radius: 10px;
+
+            background: black;
+        }
+
+
+        /* ================================
+           SIN RESULTADOS
+        ================================= */
+
+        .no-results {
+
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: #64748b;
+
+            font-size: 18px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+
+            border-top: 1px solid #1e293b;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #475569;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           MÓVIL
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            .header-content {
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .logo {
+
+                text-align: center;
+            }
+
+            .hero {
+
+                padding-top: 40px;
+            }
+
+            .games-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .game-info {
+
+                padding: 10px;
+            }
+
+            .game-info h3 {
+
+                font-size: 14px;
+            }
+
+            .player {
+
+                padding: 5px;
+            }
+
+            .player-header {
+
+                min-height: 50px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================
+     CABECERA
+===================================== -->
+
 <header>
-    <h1>🎮 Super Mario World</h1>
+
+    <div class="header-content">
+
+        <div class="logo">
+
+            🎮 <span class="game">MI</span> BIBLIOTECA
+
+        </div>
+
+
+        <div class="search">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="🔎 Buscar juego..."
+                oninput="searchGames()"
+            >
+
+        </div>
+
+    </div>
+
 </header>
 
-<div class="game">
-    <iframe
-        id="emulator"
-        src="https://binbashbanana.github.io/webretro/?core=snes9x&rom=https://luisrepo.github.io/misjuegos.github.io/roms/Mario.sfc"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
-    </iframe>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+    <h1>
+
+        Tu colección
+        <span>retro</span>
+
+    </h1>
+
+    <p>
+
+        Todos tus juegos favoritos
+        en un solo lugar. Selecciona un juego
+        para empezar a jugar.
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================
+     CATEGORÍAS
+===================================== -->
+
+<section class="categories">
+
+    <h2>🎮 Plataformas</h2>
+
+    <div
+        class="category-buttons"
+        id="categories">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     JUEGOS
+===================================== -->
+
+<section class="games-section">
+
+    <div class="games-title">
+
+        <h2>Todos los juegos</h2>
+
+        <span
+            class="game-count"
+            id="gameCount">
+        </span>
+
+    </div>
+
+
+    <div
+        class="games-grid"
+        id="gamesGrid">
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     EMULADOR
+===================================== -->
+
+<div
+    class="player"
+    id="player">
+
+    <div class="player-container">
+
+        <div class="player-header">
+
+            <div
+                class="player-title"
+                id="playerTitle">
+                Juego
+            </div>
+
+            <button
+                class="close-button"
+                onclick="closeGame()">
+
+                ✕ Cerrar
+
+            </button>
+
+        </div>
+
+
+        <iframe
+            id="emulator"
+            class="emulator"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
 </div>
 
-<p class="info">
-    Usa el teclado para jugar.
-</p>
 
-<button class="fullscreen" onclick="fullscreen()">
-    ⛶ Pantalla completa
-</button>
+
+<footer>
+
+    🎮 Mi Biblioteca de Juegos
+
+</footer>
+
+
 
 <script>
-function fullscreen() {
-    const game = document.getElementById("emulator");
 
-    if (game.requestFullscreen) {
-        game.requestFullscreen();
-    } else if (game.webkitRequestFullscreen) {
-        game.webkitRequestFullscreen();
+
+/* =====================================================
+   🎮 AÑADE AQUÍ TUS JUEGOS
+   =====================================================
+
+   Para añadir otro juego copia uno de estos bloques:
+
+   {
+       nombre: "Nombre del juego",
+       rom: "roms/Nombre.sfc",
+       portada: "covers/nombre.jpg",
+       categoria: "SNES"
+   }
+
+   IMPORTANTE:
+
+   La ruta debe coincidir exactamente con
+   el nombre del archivo que tengas en GitHub.
+
+===================================================== */
+
+
+const games = [
+
+    {
+        nombre: "Super Mario World",
+        rom: "roms/Mario.sfc",
+        portada: "covers/mario.jpg",
+        categoria: "SNES"
+    },
+
+    {
+        nombre: "The Legend of Zelda",
+        rom: "roms/Zelda.sfc",
+        portada: "covers/zelda.jpg",
+        categoria: "SNES"
+    },
+
+    {
+        nombre: "Donkey Kong Country",
+        rom: "roms/DonkeyKong.sfc",
+        portada: "covers/donkeykong.jpg",
+        categoria: "SNES"
+    },
+
+    {
+        nombre: "Kirby Super Star",
+        rom: "roms/Kirby.sfc",
+        portada: "covers/kirby.jpg",
+        categoria: "SNES"
     }
+
+];
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentCategory = "Todos";
+
+
+
+/* =====================================================
+   CREAR CATEGORÍAS
+===================================================== */
+
+function createCategories() {
+
+    const container =
+        document.getElementById("categories");
+
+    const categories = [
+
+        "Todos",
+
+        ...new Set(
+            games.map(game => game.categoria)
+        )
+
+    ];
+
+
+    container.innerHTML = "";
+
+
+    categories.forEach(category => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "category-btn";
+
+
+        if (category === "Todos") {
+
+            button.classList.add("active");
+
+        }
+
+
+        button.textContent =
+            category === "Todos"
+                ? "🎮 Todos"
+                : "🕹️ " + category;
+
+
+        button.onclick = () => {
+
+            currentCategory = category;
+
+
+            document
+                .querySelectorAll(".category-btn")
+                .forEach(btn => {
+
+                    btn.classList.remove("active");
+
+                });
+
+
+            button.classList.add("active");
+
+
+            searchGames();
+
+        };
+
+
+        container.appendChild(button);
+
+    });
+
 }
+
+
+
+/* =====================================================
+   MOSTRAR JUEGOS
+===================================================== */
+
+function showGames(list) {
+
+    const grid =
+        document.getElementById("gamesGrid");
+
+    const count =
+        document.getElementById("gameCount");
+
+
+    grid.innerHTML = "";
+
+
+    count.textContent =
+        list.length +
+        (list.length === 1
+            ? " juego"
+            : " juegos");
+
+
+    if (list.length === 0) {
+
+        grid.innerHTML = `
+
+            <div class="no-results">
+
+                😔<br><br>
+
+                No se encontraron juegos.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.forEach(game => {
+
+
+        const card =
+            document.createElement("div");
+
+        card.className = "game-card";
+
+
+        card.innerHTML = `
+
+            <div class="cover">
+
+                <img
+                    src="${game.portada}"
+                    alt="${game.nombre}"
+                    loading="lazy"
+                    onerror="
+                        this.src='https://via.placeholder.com/400x600/111827/22d3ee?text=Sin+carátula'
+                    "
+                >
+
+                <div class="play-overlay">
+
+                    <div class="play-button">
+
+                        ▶
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="game-info">
+
+                <h3>
+                    ${game.nombre}
+                </h3>
+
+                <div class="game-category">
+
+                    ${game.categoria}
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        card.onclick = () => {
+
+            openGame(game);
+
+        };
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+function searchGames() {
+
+    const text =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const filtered =
+        games.filter(game => {
+
+
+            const categoryMatch =
+
+                currentCategory === "Todos" ||
+
+                game.categoria ===
+                currentCategory;
+
+
+            const searchMatch =
+
+                game.nombre
+                    .toLowerCase()
+                    .includes(text);
+
+
+            return (
+                categoryMatch &&
+                searchMatch
+            );
+
+        });
+
+
+    showGames(filtered);
+
+}
+
+
+
+/* =====================================================
+   ABRIR JUEGO
+===================================================== */
+
+function openGame(game) {
+
+    const player =
+        document.getElementById("player");
+
+    const title =
+        document.getElementById("playerTitle");
+
+    const emulator =
+        document.getElementById("emulator");
+
+
+    title.textContent =
+        "🎮 " + game.nombre;
+
+
+    /*
+       IMPORTANTE
+
+       Aquí se carga la ROM mediante WebRetro.
+    */
+
+    const romURL =
+        window.location.origin +
+        window.location.pathname
+            .replace(/\/[^\/]*$/, "/") +
+        game.rom;
+
+
+    emulator.src =
+
+        "https://binbashbanana.github.io/webretro/" +
+        "?core=snes9x" +
+        "&rom=" +
+        encodeURIComponent(romURL);
+
+
+    player.classList.add("active");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+/* =====================================================
+   CERRAR JUEGO
+===================================================== */
+
+function closeGame() {
+
+    const player =
+        document.getElementById("player");
+
+    const emulator =
+        document.getElementById("emulator");
+
+
+    player.classList.remove("active");
+
+
+    emulator.src = "";
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+
+/* =====================================================
+   ESC PARA CERRAR
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeGame();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+createCategories();
+
+showGames(games);
+
+
 </script>
 
-</body>
-</html>
 
+</body>
+
+</html>
