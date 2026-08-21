@@ -138,11 +138,7 @@
             }
 
             async function run(upload, file) {
-                const url = upload
-                    ? input.files[0]
-                        : (file.startsWith("http://") || file.startsWith("https://"))
-                            ? file
-                            : `roms/${file}`;
+                const url = upload ? input.files[0] : `roms/${file}`;
                 const parts = upload ? input.files[0].name.split(".") : file.split(".");
 
                 const core = await (async (ext) => {
