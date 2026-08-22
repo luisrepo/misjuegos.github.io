@@ -200,13 +200,8 @@
   const games = [
     {
       nombre: "Super Mario World",
-      rom: "../roms/snes/Mario.sfc",
-      portada: "../covers/Mario.jpg"
-    },
-    {
-      nombre: "The Legend of Zelda: A Link to the Past",
-      rom: "../roms/snes/zelda-alttp.sfc",
-      portada: "../covers/zelda-alttp.jpg"
+      rom: "../roms/snes/Mario.sfc", // Ajusta 'Mario.sfc' si en tu repo está en minúsculas 'mario.sfc'
+      portada: "../covers/mario.jpg"
     }
   ];
 
@@ -249,10 +244,10 @@
 
     title.textContent = "🎮 " + game.nombre;
     
-    // Ruta absoluta del archivo ROM para evitar errores de referencia
+    // Convierte la ruta relativa a una URL absoluta completa
     const absoluteRomUrl = new URL(game.rom, window.location.href).href;
     
-    // Carga la plantilla 'player.html' pasándole los datos en la URL
+    // Carga player.html pasando la URL absoluta limpia de la ROM
     emulator.src = `player.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
 
     player.classList.add("active");
@@ -265,7 +260,7 @@
     
     player.classList.remove("active");
     document.body.style.overflow = "";
-    emulator.src = ""; // Destruye la instancia para liberar recursos
+    emulator.src = "";
   }
 
   document.addEventListener("keydown", (e) => {
@@ -273,6 +268,7 @@
   });
 
   renderGames();
+
 </script>
 </body>
 </html>
