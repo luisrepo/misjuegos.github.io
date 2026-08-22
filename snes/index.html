@@ -199,12 +199,11 @@
 <script>
   // CORRECCIÓN 1: Ajustadas las rutas de los archivos según tu árbol de directorios real.
   const games = [
-  {
+{
     nombre: "Super Mario World",
-    // CORRECCIÓN: Apunta directamente a la carpeta roms desde la raíz del hosting
-    rom: "/misjuegos.github.io/roms/snes/Mario.sfc", 
+    rom: "Mario.sfc",
     portada: "../covers/snes/Mario.jpg"
-  }
+}
 ];
 
   function renderGames() {
@@ -245,9 +244,10 @@
   const title = document.getElementById("playerTitle");
 
   title.textContent = "🎮 " + game.nombre;
-  
-  // Apuntamos al index del emulador y le inyectamos la ruta de la ROM directamente
-  emulator.src = `../emulator/index.html?rom=${encodeURIComponent(game.rom)}&name=${encodeURIComponent(game.nombre)}`;
+
+  emulator.src =
+    "../emulator/play.html?rom=" +
+    encodeURIComponent("snes/" + game.rom.split("/").pop());
 
   player.classList.add("active");
   document.body.style.overflow = "hidden";
