@@ -198,11 +198,13 @@
 
 <script>
   // CORRECCIÓN 1: Ajustadas las rutas de los archivos según tu árbol de directorios real.
-  const games = [
+const BASE = "https://luisrepo.github.io/misjuegos.github.io";
+
+const games = [
 {
     nombre: "Super Mario World",
-    rom: "Mario.sfc",
-    portada: "../covers/snes/Mario.jpg"
+    rom: BASE + "/roms/snes/Mario.sfc",
+    portada: BASE + "/covers/snes/Mario.jpg"
 }
 ];
 
@@ -238,19 +240,15 @@
     });
   }
 
-  function openGame(game) {
-  const player = document.getElementById("player");
-  const emulator = document.getElementById("emulator");
-  const title = document.getElementById("playerTitle");
+  function openGame(game){
 
-  title.textContent = "🎮 " + game.nombre;
+    const emulator=document.getElementById("emulator");
 
-  emulator.src =
-    "../emulator/play.html?rom=" +
-    encodeURIComponent("snes/" + game.rom.split("/").pop());
+    emulator.src=
+        "../emulator/play.html?core=snes&rom="
+        +encodeURIComponent(game.rom);
 
-  player.classList.add("active");
-  document.body.style.overflow = "hidden";
+    document.getElementById("player").classList.add("active");
 }
 
   function closeGame() {
