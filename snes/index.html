@@ -256,19 +256,22 @@
     document.body.style.overflow = "hidden";
   }
 
-  function closeGame() {
-    const player = document.getElementById("player");
-    const emulator = document.getElementById("emulator");
-    
-    player.classList.remove("active");
-    document.body.style.overflow = "";
-    emulator.src = "";
-  }
+  function openGame(game) {
+  const player = document.getElementById("player");
+  const emulator = document.getElementById("emulator");
+  const title = document.getElementById("playerTitle");
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeGame();
-  });
+  title.textContent = "🎮 " + game.nombre;
+  
+  // CORRECCIÓN: Limpiamos el "../" sobrante para que la ruta de la ROM sea limpia desde la raíz
+  const romLimpia = game.rom.replace('../', ''); 
+  
+  // Cargamos el emulador usando el loader oficial directo pasándole la ROM corregida
+  emulator.src = `../emulator/index.html?rom=${encodeURIComponent(romLimpia)}&name=${encodeURIComponent(game.nombre)}`;
 
+  player.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
   // Arrancamos la carga automática al abrir la web
   cargarJuegos();
 </script>
