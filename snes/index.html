@@ -118,7 +118,7 @@
     .game-info h3 { font-size: 16px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .game-info p { color: #71717a; font-size: 13px; }
     
-    /* Reproductor / Modal */
+    /* Ventana del Emulador */
     .player {
       position: fixed;
       inset: 0;
@@ -155,18 +155,12 @@
       color: white;
     }
     .btn-close:hover { background: #dc2626; }
-    .emulator-wrapper {
+    .emulator-iframe {
       flex: 1;
       width: 100%;
-      min-height: 0;
       border: 1px solid #292929;
       border-radius: 10px;
       background: black;
-      position: relative;
-    }
-    #game-container {
-      width: 100%;
-      height: 100%;
     }
   </style>
 </head>
@@ -198,9 +192,7 @@
       <div id="playerTitle" class="player-title">Juego</div>
       <button class="btn-close" onclick="closeGame()">✕ Cerrar</button>
     </div>
-    <div class="emulator-wrapper">
-      <div id="game-container"></div>
-    </div>
+    <iframe id="emulator" class="emulator-iframe" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -252,36 +244,28 @@
 
   function openGame(game) {
     const player = document.getElementById("player");
+    const emulator = document.getElementById("emulator");
     const title = document.getElementById("playerTitle");
 
     title.textContent = "🎮 " + game.nombre;
+    
+    // Ruta absoluta del archivo ROM para evitar errores de referencia
+    const absoluteRomUrl = new URL(game.rom, window.location.href).href;
+    
+    // Carga la plantilla 'player.html' pasándole los datos en la URL
+    emulator.src = `player.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
+
     player.classList.add("active");
     document.body.style.overflow = "hidden";
-
-    // Variables globales requeridas por EmulatorJS
-    window.EJS_player = "#game-container";
-    window.EJS_core = "snes";
-    window.EJS_gameName = game.nombre;
-    window.EJS_color = "#8b5cf6";
-    window.EJS_startOnLoaded = true;
-    window.EJS_pathtodata = "../emulator/data/"; // Subcarpeta 'data' generada por EmulatorJS
-    window.EJS_gameUrl = new URL(game.rom, window.location.href).href;
-
-    // Carga el script de EmulatorJS local
-    const script = document.createElement("script");
-    script.id = "ejs-script";
-    script.src = "../emulator/loader.js";
-    document.body.appendChild(script);
   }
 
   function closeGame() {
-    document.getElementById("player").classList.remove("active");
+    const player = document.getElementById("player");
+    const emulator = document.getElementById("emulator");
+    
+    player.classList.remove("active");
     document.body.style.overflow = "";
-
-    // Limpia el contenedor y remueve el script cargado
-    document.getElementById("game-container").innerHTML = "";
-    const script = document.getElementById("ejs-script");
-    if (script) script.remove();
+    emulator.src = ""; // Destruye la instancia para liberar recursos
   }
 
   document.addEventListener("keydown", (e) => {
@@ -292,4 +276,3 @@
 </script>
 </body>
 </html>
-
