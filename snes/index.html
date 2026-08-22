@@ -251,7 +251,7 @@
   
   // 2. Apuntamos el iframe directo al index dentro de la carpeta docs de emulator
   // Pasamos la ROM y el nombre como parámetros URL seguros
-  emulator.src = `../emulator/docs/index.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
+  emulator.src = `../emulator/index.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
 
   player.classList.add("active");
   document.body.style.overflow = "hidden";
