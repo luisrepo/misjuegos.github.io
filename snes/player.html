@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
-    }
-    #game {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Mi Biblioteca Retro</title>
+
+<style>
+html,
+body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+}
+
+#game{
+    width:100%;
+    height:100%;
+}
+</style>
+
 </head>
+
 <body>
-  <div id="game"></div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const romUrl = params.get('rom');
-    const gameName = params.get('name') || 'Juego SNES';
+<div id="game"></div>
 
-    if (romUrl) {
-      window.EJS_player = '#game';
-      window.EJS_core = 'snes';
-      window.EJS_gameName = gameName;
-      window.EJS_color = '#8b5cf6';
-      window.EJS_startOnLoaded = true;
-      
-      // Apunta a emulator/data/ en la raíz del proyecto
-      window.EJS_pathtodata = '../emulator/data/'; 
-      window.EJS_gameUrl = romUrl;
+<script>
 
-      const script = document.createElement('script');
-      // loader.js está dentro de emulator/data/
-      script.src = '../emulator/data/loader.js';
-      
-      script.onerror = function() {
-        document.body.innerHTML = '<div style="color:red;padding:20px;font-family:sans-serif;">Error al cargar ../emulator/data/loader.js</div>';
-      };
+const params = new URLSearchParams(window.location.search);
 
-      document.body.appendChild(script);
-    }
-  </script>
+window.EJS_player = "#game";
+
+// Sistema (snes, segaMD, gba, gb, nes...)
+window.EJS_core = params.get("core") || "snes";
+
+// Ruta de la ROM
+window.EJS_gameUrl = params.get("rom");
+
+// Carpeta data
+window.EJS_pathtodata = "./data/";
+
+// Configuración
+window.EJS_startOnLoaded = true;
+window.EJS_fullscreenOnLoaded = false;
+window.EJS_color = "#7c3aed";
+window.EJS_language = "es-ES";
+window.EJS_volume = 1;
+
+// Guardado automático
+window.EJS_disableDatabases = false;
+
+</script>
+
+<script src="./data/loader.js"></script>
+
 </body>
 </html>
 
