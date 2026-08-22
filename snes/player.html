@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    #game {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+
+  <script>
+    // Lee la URL de la ROM pasada por parámetros en la barra de direcciones
+    const params = new URLSearchParams(window.location.search);
+    const romUrl = params.get('rom');
+    const gameName = params.get('name') || 'SNES Game';
+
+    if (romUrl) {
+      window.EJS_player = '#game';
+      window.EJS_core = 'snes';
+      window.EJS_gameName = gameName;
+      window.EJS_color = '#8b5cf6';
+      window.EJS_startOnLoaded = true;
+      
+      // Ajusta esta ruta si los archivos del emulador están en otra carpeta:
+      window.EJS_pathtodata = '../emulator/data/'; 
+      window.EJS_gameUrl = romUrl;
+
+      const script = document.createElement('script');
+      script.src = '../emulator/loader.js';
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
