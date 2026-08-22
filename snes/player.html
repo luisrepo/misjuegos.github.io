@@ -8,7 +8,7 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background: black;
+      background: #000;
       overflow: hidden;
     }
     #game {
@@ -21,10 +21,9 @@
   <div id="game"></div>
 
   <script>
-    // Lee la URL de la ROM pasada por parámetros en la barra de direcciones
     const params = new URLSearchParams(window.location.search);
     const romUrl = params.get('rom');
-    const gameName = params.get('name') || 'SNES Game';
+    const gameName = params.get('name') || 'Juego SNES';
 
     if (romUrl) {
       window.EJS_player = '#game';
@@ -33,14 +32,21 @@
       window.EJS_color = '#8b5cf6';
       window.EJS_startOnLoaded = true;
       
-      // Ajusta esta ruta si los archivos del emulador están en otra carpeta:
+      // Apunta a emulator/data/ en la raíz del proyecto
       window.EJS_pathtodata = '../emulator/data/'; 
       window.EJS_gameUrl = romUrl;
 
       const script = document.createElement('script');
-      script.src = '../emulator/loader.js';
+      // loader.js está dentro de emulator/data/
+      script.src = '../emulator/data/loader.js';
+      
+      script.onerror = function() {
+        document.body.innerHTML = '<div style="color:red;padding:20px;font-family:sans-serif;">Error al cargar ../emulator/data/loader.js</div>';
+      };
+
       document.body.appendChild(script);
     }
   </script>
 </body>
 </html>
+
