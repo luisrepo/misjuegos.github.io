@@ -197,13 +197,15 @@
 </div>
 
 <script>
+  // CORRECCIÓN 1: Ajustadas las rutas de los archivos según tu árbol de directorios real.
   const games = [
-    {
-      nombre: "Super Mario World",
-      rom: "../roms/snes/Mario.sfc", // Ajusta 'Mario.sfc' si en tu repo está en minúsculas 'mario.sfc'
-      portada: "../covers/mario.jpg"
-    }
-  ];
+  {
+    nombre: "Super Mario World",
+    // Ruta desde 'snes/index.html' hacia el archivo del juego
+    rom: "../roms/snes/Mario.sfc", 
+    portada: "../covers/snes/Mario.jpg"
+  }
+];
 
   function renderGames() {
     const grid = document.getElementById("gamesGrid");
@@ -238,21 +240,22 @@
   }
 
   function openGame(game) {
-    const player = document.getElementById("player");
-    const emulator = document.getElementById("emulator");
-    const title = document.getElementById("playerTitle");
+  const player = document.getElementById("player");
+  const emulator = document.getElementById("emulator");
+  const title = document.getElementById("playerTitle");
 
-    title.textContent = "🎮 " + game.nombre;
-    
-    // Convierte la ruta relativa a una URL absoluta completa
-    const absoluteRomUrl = new URL(game.rom, window.location.href).href;
-    
-    // Carga player.html pasando la URL absoluta limpia de la ROM
-    emulator.src = `player.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
+  title.textContent = "🎮 " + game.nombre;
+  
+  // 1. Convierte la ruta de la ROM a una URL absoluta limpia y completa
+  const absoluteRomUrl = new URL(game.rom, window.location.href).href;
+  
+  // 2. Apuntamos el iframe directo al index dentro de la carpeta docs de emulator
+  // Pasamos la ROM y el nombre como parámetros URL seguros
+  emulator.src = `../emulator/docs/index.html?rom=${encodeURIComponent(absoluteRomUrl)}&name=${encodeURIComponent(game.nombre)}`;
 
-    player.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
+  player.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
 
   function closeGame() {
     const player = document.getElementById("player");
@@ -268,7 +271,6 @@
   });
 
   renderGames();
-
 </script>
 </body>
 </html>
