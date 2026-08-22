@@ -197,46 +197,18 @@
 </div>
 
 <script>
-  // CORRECCIÓN 1: Ajustadas las rutas de los archivos según tu árbol de directorios real.
-const BASE = "https://luisrepo.github.io/misjuegos.github.io";
+  // Aquí empieza el código JavaScript limpio conectado al JSON externo
+  let games = [];
 
-const games = [
-{
-    nombre: "Super Mario World",
-    rom: BASE + "/roms/snes/Mario.sfc",
-    portada: BASE + "/covers/snes/Mario.jpg"
-},
-  
-{
-    nombre: "hola",
-    rom: BASE + "/roms/snes/hola.zip",
-    portada: BASE + "/covers/snes/Acrobat Mission (Japan).jpg"
-},
-
-{
-    nombre: "Acrobat Mission (Japan)",
-    rom: BASE + "/roms/snes/Acrobat Mission (Japan).smc",
-    portada: BASE + "/covers/snes/Acrobat Mission (Japan).jpg"
-},
-  
-{
-    nombre: "ActRaiser (Europe)",
-    rom: BASE + "/roms/snes/ActRaiser (Europe).smc",
-    portada: BASE + "/covers/snes/ActRaiser (Europe).jpg"
-},
-
-{
-    nombre: "Actraiser 2 (Europe)",
-    rom: BASE + "/roms/snes/Actraiser 2 (Europe).smc",
-    portada: BASE + "/covers/snes/Actraiser 2 (Europe).jpg"
-},
-
-{
-    nombre: "Legend of Zelda, The - A Link to the Past (Europe)",
-    rom: BASE + "/roms/snes/Legend of Zelda, The - A Link to the Past (Europe).smc",
-    portada: BASE + "/covers/snes/Legend of Zelda, The - A Link to the Past (Europe).jpg"
-}
-];
+  async function cargarJuegos() {
+    try {
+      const respuesta = await fetch('juegos.json'); 
+      games = await respuesta.json();
+      renderGames(); 
+    } catch (error) {
+      console.error("Error cargando el listado de juegos:", error);
+    }
+  }
 
   function renderGames() {
     const grid = document.getElementById("gamesGrid");
@@ -255,7 +227,7 @@ const games = [
       card.className = "game-card";
       card.innerHTML = `
         <div class="cover">
-          <img src="${game.portada}" alt="${game.nombre}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x225?text=Sin+Portada'">
+          <img src="${game.portada}" alt="${game.nombre}" loading="lazy" onerror="this.src='https://placeholder.com'">
           <div class="play-overlay">
             <div class="play-button">▶</div>
           </div>
@@ -270,16 +242,19 @@ const games = [
     });
   }
 
-  function openGame(game){
+  function openGame(game) {
+    const player = document.getElementById("player");
+    const emulator = document.getElementById("emulator");
+    const title = document.getElementById("playerTitle");
 
-    const emulator=document.getElementById("emulator");
+    title.textContent = "🎮 " + game.nombre;
+    
+    // Conectamos directamente con el index funcional dentro de la carpeta emulator
+    emulator.src = `../emulator/index.html?rom=${encodeURIComponent(game.rom)}&name=${encodeURIComponent(game.nombre)}`;
 
-    emulator.src=
-        "../emulator/play.html?core=snes&rom="
-        +encodeURIComponent(game.rom);
-
-    document.getElementById("player").classList.add("active");
-}
+    player.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
 
   function closeGame() {
     const player = document.getElementById("player");
@@ -294,7 +269,8 @@ const games = [
     if (e.key === "Escape") closeGame();
   });
 
-  renderGames();
+  // Arrancamos la carga automática al abrir la web
+  cargarJuegos();
 </script>
 </body>
 </html>
