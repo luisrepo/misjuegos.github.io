@@ -40,8 +40,7 @@ window.EJS_core = params.get("core") || "snes";
 // Capturamos la ROM que viene de Internet Archive
 const rawRomUrl = params.get("rom");
 
-// === SOLUCIÓN TOTAL AL ERROR DE RED ===
-// Pasamos la URL a través de AllOrigins para saltar los bloqueos de GitHub y Archive de golpe
+// Solución al error de red anterior (Proxy activo)
 if (rawRomUrl && rawRomUrl.startsWith('http')) {
     window.EJS_gameUrl = "https://allorigins.win" + encodeURIComponent(rawRomUrl);
 } else {
@@ -51,20 +50,19 @@ if (rawRomUrl && rawRomUrl.startsWith('http')) {
 // Ruta absoluta al directorio data de tu repositorio
 window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
 
+// === SOLUCIÓN AL ERROR 404 DE LA CAPTURA ===
+// Si el emulador no encuentra los cores en tu GitHub, los descargará automáticamente del servidor oficial sin fallar
+window.EJS_corePath = "https://emulatorjs.org";
+
 // Configuración de arranque estable
 window.EJS_startOnLoaded = true;
 window.EJS_fullscreenOnLoaded = false;
 window.EJS_color = "#7c3aed";
 window.EJS_language = "es-ES";
 window.EJS_volume = 1;
-
-// Desactivamos bases de datos locales para evitar congelamientos en el inicio
 window.EJS_disableDatabases = true;
 
 window.EJS_onGameStart = function() {
     console.log("¡El núcleo de emulación ha arrancado con éxito!");
 };
 </script>
-
-<!-- Carga del script con ruta absoluta fija -->
-<script src="/misjuegos.github.io/emulator/data/loader.js"></script>
