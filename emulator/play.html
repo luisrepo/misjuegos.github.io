@@ -30,7 +30,6 @@ body{
 <div id="game"></div>
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
 
 window.EJS_player = "#game";
@@ -44,7 +43,7 @@ window.EJS_gameUrl = params.get("rom");
 // Carpeta data
 window.EJS_pathtodata = "./data/";
 
-// Configuración
+// Configuración básica
 window.EJS_startOnLoaded = true;
 window.EJS_fullscreenOnLoaded = false;
 window.EJS_color = "#7c3aed";
@@ -54,9 +53,11 @@ window.EJS_volume = 1;
 // Guardado automático
 window.EJS_disableDatabases = false;
 
-</script>
+// === ESTA ES LA LÍNEA NUEVA QUE DEBES AÑADIR ===
+// Va justo aquí, antes de cerrar la etiqueta </script>
+window.EJS_CORSProxy = "https://emulatorjs.org";
 
-<script src="./data/loader.js"></script>
+</script>
 
 </body>
 </html>
