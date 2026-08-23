@@ -5331,15 +5331,19 @@ const games = [
   }
 
  function openGame(game) {
-    const player = document.getElementById("player");
-    const emulator = document.getElementById("emulator");
+  const player = document.getElementById("player");
+  const emulator = document.getElementById("emulator");
+  const title = document.getElementById("playerTitle");
 
-    // Apunta a index.html (el archivo real de tu carpeta emulator) y fuerza el núcleo 'gba'
-    emulator.src = "../emulator/index.html?core=gba&rom=" + encodeURIComponent(game.rom);
+  title.textContent = "🎮 " + game.nombre;
+  
+  // CORRECCIÓN CLAVE: Apuntamos exactamente a 'play.html' (tu archivo real)
+  // Pasamos el core y la ROM pura de Internet Archive mediante la URL
+  emulator.src = `../emulator/play.html?core=gba&rom=${encodeURIComponent(game.rom)}`;
 
-    player.classList.add("active");
-    document.body.style.overflow = "hidden"; // Bloquea el scroll del fondo mientras juegas
-  }
+  player.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
 
   function closeGame() {
     const player = document.getElementById("player");
