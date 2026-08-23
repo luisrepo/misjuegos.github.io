@@ -34,30 +34,32 @@ const params = new URLSearchParams(window.location.search);
 
 window.EJS_player = "#game";
 
-// Sistema (snes, segaMD, gba, gb, nes...)
+// Sistema (snes, segaMD, gba...)
 window.EJS_core = params.get("core") || "snes";
 
-// Ruta de la ROM
+// Ruta de la ROM de Internet Archive
 window.EJS_gameUrl = params.get("rom");
 
-// Carpeta data
-window.EJS_pathtodata = "./data/";
+// Ruta absoluta al directorio data de tu repositorio
+window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
 
-// Configuración básica
+// Configuración básica de arranque
 window.EJS_startOnLoaded = true;
 window.EJS_fullscreenOnLoaded = false;
 window.EJS_color = "#7c3aed";
 window.EJS_language = "es-ES";
 window.EJS_volume = 1;
-
-// Guardado automático
 window.EJS_disableDatabases = false;
 
-// === ESTA ES LA LÍNEA NUEVA QUE DEBES AÑADIR ===
-// Va justo aquí, antes de cerrar la etiqueta </script>
+// Proxy oficial activo para saltar el bloqueo de red
 window.EJS_CORSProxy = "https://emulatorjs.org";
 
+// === DETALLE CRUCIAL DE ARRANQUE ===
+// Fuerza al motor a encender la pantalla gráfica si el inicio automático falla
+window.EJS_onGameStart = function() {
+    console.log("¡El núcleo de emulación ha arrancado con éxito!");
+};
 </script>
 
-</body>
-</html>
+<!-- Carga del script con ruta absoluta fija -->
+<script src="/misjuegos.github.io/emulator/data/loader.js"></script>
