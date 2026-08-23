@@ -5341,19 +5341,15 @@ const games = [
     document.getElementById("player").classList.add("active");
 }
 
-  function openGame(game) {
-  const player = document.getElementById("player");
-  const emulator = document.getElementById("emulator");
-  const title = document.getElementById("playerTitle");
+ function openGame(game){
 
-  title.textContent = "🎮 " + game.nombre;
-  
-  // CORRECCIÓN CLAVE: Enviamos la URL de Internet Archive ("https://...") tal cual viene en la lista,
-  // pasándola de forma segura a través del codificador sin añadirle carpetas locales por delante.
-  emulator.src = `../emulator/index.html?rom=${encodeURIComponent(game.rom)}&name=${encodeURIComponent(game.nombre)}&core=gba`;
+    const emulator=document.getElementById("emulator");
 
-  player.classList.add("active");
-  document.body.style.overflow = "hidden";
+    emulator.src=
+        "../emulator/play.html?core=segaMD&rom="
+        +encodeURIComponent(game.rom);
+
+    document.getElementById("player").classList.add("active");
 }
 
   document.addEventListener("keydown", (e) => {
