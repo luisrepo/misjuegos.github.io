@@ -34,28 +34,32 @@ const params = new URLSearchParams(window.location.search);
 
 window.EJS_player = "#game";
 
-// Sistema (snes, segaMD, gba...)
+// Sistema dinámico (snes, segaMD, gba...)
 window.EJS_core = params.get("core") || "snes";
 
-// Ruta de la ROM de Internet Archive
+// Ruta directa de la ROM de Internet Archive
 window.EJS_gameUrl = params.get("rom");
 
-// Ruta absoluta al directorio data de tu repositorio
+// Ruta absoluta al directorio data de tu repositorio de GitHub Pages
 window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
 
-// Configuración básica de arranque
+// Configuración de arranque forzado
 window.EJS_startOnLoaded = true;
 window.EJS_fullscreenOnLoaded = false;
 window.EJS_color = "#7c3aed";
 window.EJS_language = "es-ES";
 window.EJS_volume = 1;
-window.EJS_disableDatabases = false;
 
-// Proxy oficial activo para saltar el bloqueo de red
-window.EJS_CORSProxy = "https://emulatorjs.org";
+// === CORRECCIÓN CLAVE PARA EL ERROR DE RED ===
+// 1. Forzamos el modo de descarga CORS del propio navegador para evitar intermediarios
+window.EJS_cors = true;
 
-// === DETALLE CRUCIAL DE ARRANQUE ===
-// Fuerza al motor a encender la pantalla gráfica si el inicio automático falla
+// 2. Desactivamos las bases de datos locales para que no se congele al inicializar el núcleo
+window.EJS_disableDatabases = true;
+
+// 3. ELIMINAMOS LA LÍNEA DEL PROXY ANTERIOR (cors.emulatorjs.org)
+// Borra la línea anterior de 'window.EJS_CORSProxy' para que no use el servidor saturado
+
 window.EJS_onGameStart = function() {
     console.log("¡El núcleo de emulación ha arrancado con éxito!");
 };
