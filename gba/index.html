@@ -5330,27 +5330,25 @@ const games = [
     });
   }
 
-  function openGame(game){
+ function openGame(game) {
+    const player = document.getElementById("player");
+    const emulator = document.getElementById("emulator");
 
-    const emulator=document.getElementById("emulator");
+    // Apunta a index.html (el archivo real de tu carpeta emulator) y fuerza el núcleo 'gba'
+    emulator.src = "../emulator/index.html?core=gba&rom=" + encodeURIComponent(game.rom);
 
-    emulator.src=
-        "../emulator/play.html?core=gba&rom="
-        +encodeURIComponent(game.rom);
+    player.classList.add("active");
+    document.body.style.overflow = "hidden"; // Bloquea el scroll del fondo mientras juegas
+  }
 
-    document.getElementById("player").classList.add("active");
-}
-
- function openGame(game){
-
-    const emulator=document.getElementById("emulator");
-
-    emulator.src=
-        "../emulator/play.html?core=segaMD&rom="
-        +encodeURIComponent(game.rom);
-
-    document.getElementById("player").classList.add("active");
-}
+  function closeGame() {
+    const player = document.getElementById("player");
+    const emulator = document.getElementById("emulator");
+    
+    player.classList.remove("active");
+    document.body.style.overflow = ""; // Devuelve el scroll a la normalidad
+    emulator.src = ""; // Vacía el iframe para detener el juego por completo
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeGame();
