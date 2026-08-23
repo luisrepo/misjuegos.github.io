@@ -37,28 +37,29 @@ window.EJS_player = "#game";
 // Sistema dinámico (snes, segaMD, gba...)
 window.EJS_core = params.get("core") || "snes";
 
-// Ruta directa de la ROM de Internet Archive
-window.EJS_gameUrl = params.get("rom");
+// Capturamos la ROM que viene de Internet Archive
+const rawRomUrl = params.get("rom");
 
-// Ruta absoluta al directorio data de tu repositorio de GitHub Pages
+// === SOLUCIÓN TOTAL AL ERROR DE RED ===
+// Pasamos la URL a través de AllOrigins para saltar los bloqueos de GitHub y Archive de golpe
+if (rawRomUrl && rawRomUrl.startsWith('http')) {
+    window.EJS_gameUrl = "https://allorigins.win" + encodeURIComponent(rawRomUrl);
+} else {
+    window.EJS_gameUrl = rawRomUrl;
+}
+
+// Ruta absoluta al directorio data de tu repositorio
 window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
 
-// Configuración de arranque forzado
+// Configuración de arranque estable
 window.EJS_startOnLoaded = true;
 window.EJS_fullscreenOnLoaded = false;
 window.EJS_color = "#7c3aed";
 window.EJS_language = "es-ES";
 window.EJS_volume = 1;
 
-// === CORRECCIÓN CLAVE PARA EL ERROR DE RED ===
-// 1. Forzamos el modo de descarga CORS del propio navegador para evitar intermediarios
-window.EJS_cors = true;
-
-// 2. Desactivamos las bases de datos locales para que no se congele al inicializar el núcleo
+// Desactivamos bases de datos locales para evitar congelamientos en el inicio
 window.EJS_disableDatabases = true;
-
-// 3. ELIMINAMOS LA LÍNEA DEL PROXY ANTERIOR (cors.emulatorjs.org)
-// Borra la línea anterior de 'window.EJS_CORSProxy' para que no use el servidor saturado
 
 window.EJS_onGameStart = function() {
     console.log("¡El núcleo de emulación ha arrancado con éxito!");
