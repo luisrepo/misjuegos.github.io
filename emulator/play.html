@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>Mi Biblioteca Retro</title>
-
 <style>
-html,
-body{
-    margin:0;
-    width:100%;
-    height:100%;
-    background:#000;
-    overflow:hidden;
-}
-
-#game{
-    width:100%;
-    height:100%;
-}
+html, body { margin:0; width:100%; height:100%; background:#000; overflow:hidden; }
+#game { width:100%; height:100%; }
 </style>
-
 </head>
-
 <body>
 
 <div id="game"></div>
@@ -34,25 +18,14 @@ const params = new URLSearchParams(window.location.search);
 
 window.EJS_player = "#game";
 
-// Sistema dinámico (snes, segaMD, gba...)
+// 1. Captura el sistema dinámicamente (snes, segaMD, gba...)
 window.EJS_core = params.get("core") || "snes";
 
-// Capturamos la ROM que viene de Internet Archive
-const rawRomUrl = params.get("rom");
+// 2. MANTIENE ARCHIVE.ORG: Captura la ROM externa limpia que viene de tu catálogo
+window.EJS_gameUrl = params.get("rom");
 
-// Solución al error de red anterior (Proxy activo)
-if (rawRomUrl && rawRomUrl.startsWith('http')) {
-    window.EJS_gameUrl = "https://allorigins.win" + encodeURIComponent(rawRomUrl);
-} else {
-    window.EJS_gameUrl = rawRomUrl;
-}
-
-// Ruta absoluta al directorio data de tu repositorio
+// 3. CORE DESDE TU CARPETA: Le obliga al emulador a buscar el motor en tu propio servidor
 window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
-
-// === SOLUCIÓN AL ERROR 404 DE LA CAPTURA ===
-// Si el emulador no encuentra los cores en tu GitHub, los descargará automáticamente del servidor oficial sin fallar
-window.EJS_corePath = "https://emulatorjs.org";
 
 // Configuración de arranque estable
 window.EJS_startOnLoaded = true;
@@ -63,6 +36,12 @@ window.EJS_volume = 1;
 window.EJS_disableDatabases = true;
 
 window.EJS_onGameStart = function() {
-    console.log("¡El núcleo de emulación ha arrancado con éxito!");
+    console.log("¡El juego de Archive ha arrancado usando el núcleo local!");
 };
 </script>
+
+<!-- Carga del script loader de tu servidor -->
+<script src="/misjuegos.github.io/emulator/data/loader.js"></script>
+
+</body>
+</html>
