@@ -83,8 +83,19 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
-        let rawRomUrl = params.get('rom');
+        let romUrl = params.get("rom");
 
+        if (romUrl) {
+        try {
+        romUrl = decodeURIComponent(romUrl);
+        } catch (e) {}
+     }
+
+if (romUrl.includes("archive.org")) {
+    romUrl = "https://corsproxy.io/?" + encodeURIComponent(romUrl);
+}
+
+EJS_gameUrl = romUrl;
         // Decodificamos la URL por si viene dos veces codificada desde catalogo.html
         if (rawRomUrl) {
     try { rawRomUrl = decodeURIComponent(rawRomUrl); } catch(e) {}
