@@ -83,12 +83,20 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
-        const rawRomUrl = params.get('rom');
+        let rawRomUrl = params.get('rom');
 
-        let romUrl = rawRomUrl;
-        if (rawRomUrl && rawRomUrl.includes('archive.org')) {
-        romUrl = 'https://corsproxy.io/?' + encodeURIComponent(rawRomUrl);
+        // Decodificamos la URL por si viene dos veces codificada desde catalogo.html
+        if (rawRomUrl) {
+    try { rawRomUrl = decodeURIComponent(rawRomUrl); } catch(e) {}
         }
+
+         let romUrl = rawRomUrl;
+
+         // Usamos un proxy más compatible con emuladores web y evitamos el doble encode
+         if (rawRomUrl && rawRomUrl.includes('archive.org')) {
+         romUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rawRomUrl);
+         }
+
 
 
         // Configurar el botón de cerrar para que vuelva a la consola correcta
