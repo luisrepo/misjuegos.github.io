@@ -1,1 +1,14 @@
-
+{
+  "title": "Super Nintendo",
+  "core": "snes",
+  "color": "#7c3aed",
+  "archive": "SNESCollection",
+  "games": [
+    {
+      "title": "Super Mario World",
+      "cover": "Mario.jpg",
+      "video": "Mario.mp4",
+      "rom": "https://archive.org"
+    }
+  ]
+}
