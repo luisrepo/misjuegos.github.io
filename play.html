@@ -18,18 +18,18 @@
             overflow: hidden;
         }
 
-        /* Barra superior para volver */
+        /* Barra superior para volver y controles */
         .bar-nav {
             background-color: #161b22;
             border-bottom: 1px solid #30363d;
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            gap: 12px;
         }
 
-        .btn-cerrar {
+        .btn-action {
             background-color: #21262d;
-            color: #ff7b72;
             border: 1px solid #30363d;
             padding: 6px 14px;
             border-radius: 6px;
@@ -40,9 +40,22 @@
             transition: 0.2s;
         }
 
+        .btn-cerrar {
+            color: #ff7b72;
+        }
+
         .btn-cerrar:hover {
             background-color: #30363d;
             border-color: #ff7b72;
+        }
+
+        .btn-fullscreen {
+            color: #58a6ff;
+        }
+
+        .btn-fullscreen:hover {
+            background-color: #30363d;
+            border-color: #58a6ff;
         }
 
         /* Contenedor del Emulador */
@@ -72,31 +85,48 @@
 <body>
 
     <div class="bar-nav">
-        <a id="btn-back" href="index.html" class="btn-cerrar">✕ Cerrar Juego</a>
+        <a id="btn-back" href="index.html" class="btn-action btn-cerrar">✕ Cerrar Juego</a>
+        <button id="btn-fs" class="btn-action btn-fullscreen" onclick="toggleFullScreen()">⛶ Pantalla Completa</button>
     </div>
 
-    <div class="emulator-container">
+    <div class="emulator-container" id="game-container">
         <div id="emulator"></div>
     </div>
 
     <script>
+        // Función para alternar Pantalla Completa
+        function toggleFullScreen() {
+            const container = document.getElementById('game-container');
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) { /* Safari / iOS */
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
         // 1. Leer parámetros URL enviados por catalogo.html
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
         let romUrl = params.get('rom');
 
-        // Decodificar la URL por si viene con caracteres especiales (%20, etc.)
         if (romUrl) {
             try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
         }
 
-        // Configurar botón para volver a la lista de juegos de la consola correcta
         document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
 
         if (!romUrl) {
             document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
         } else {
-            // 2. Configuración de EmulatorJS
+            // 2. Configurar EmulatorJS
             EJS_player = "#emulator";
             EJS_core = systemCore;
             EJS_gameUrl = romUrl;
@@ -105,7 +135,7 @@
             EJS_startOnLoaded = true;
             EJS_language = "es";
 
-            // 3. Cargar motor del emulador
+            // 3. Cargar el motor
             const script = document.createElement('script');
             script.src = "emulator/data/loader.js";
             document.body.appendChild(script);
@@ -113,4 +143,5 @@
     </script>
 </body>
 </html>
+
 
