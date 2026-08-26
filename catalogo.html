@@ -260,3 +260,267 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo — Mi Biblioteca Retro</title>
+    <style>
+        /* Estética Base Github Dark / Retro */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header-retro {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-volver {
+            background-color: #21262d;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 20px;
+            transition: 0.2s;
+        }
+
+        .btn-volver:hover {
+            background-color: #30363d;
+            border-color: #8b949e;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #f0f6fc;
+        }
+
+        /* Contenedor Grid Universal */
+        .grid-juegos {
+            display: grid;
+            gap: 24px;
+            padding: 10px;
+        }
+
+        /* Tarjeta Multimedia Base */
+        .juego-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .juego-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--console-color, #58a6ff);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .media-container {
+            width: 100%;
+            position: relative;
+            background-color: #0d1117;
+            overflow: hidden;
+        }
+
+        .media-container img, 
+        .media-container video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .media-container video {
+            opacity: 0;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        .juego-card:hover .media-container video { opacity: 1; }
+        .juego-card:hover .media-container img { opacity: 0; }
+
+        .juego-titulo {
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            color: #f0f6fc;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+        }
+
+        .loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 16px;
+            color: #8b949e;
+            padding: 50px;
+        }
+
+        /* ==========================================================================
+           AJUSTES DE ASPECTO INDEPENDIENTES POR CONSOLA (MODIFICA ESTO A TU GUSTO)
+           ========================================================================== */
+
+        /* --- 1. SUPER NINTENDO (Formato Horizontal Apaisado Cajas Americanas) --- */
+        .grid-snes {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ancho de la celda */
+        }
+        .grid-snes .media-container {
+            height: 180px; /* Alto de la imagen */
+        }
+        .grid-snes .media-container img {
+            object-fit: fill; /* Ajusta la imagen completa rellenando la caja horizontal */
+        }
+
+        /* --- 2. SEGA MEGA DRIVE (Cajas Verticales Tipo Libro Altas) --- */
+        .grid-megadrive {
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        }
+        .grid-megadrive .media-container {
+            height: 245px;
+        }
+        .grid-megadrive .media-container img {
+            object-fit: cover;
+        }
+
+        /* --- 3. GAME BOY ADVANCE (Cajas Cuadradas) --- */
+        .grid-gba {
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        }
+        .grid-gba .media-container {
+            height: 190px;
+        }
+        .grid-gba .media-container img {
+            object-fit: fill;
+        }
+
+        /* --- 4. SEGA MASTER SYSTEM (Cajas Verticales Estándar) --- */
+        .grid-mastersystem {
+            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+        }
+        .grid-mastersystem .media-container {
+            height: 220px;
+        }
+        .grid-mastersystem .media-container img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-retro">
+        <a href="index.html" class="btn-volver">← Consolas</a>
+        <h1 id="console-title">Cargando consola...</h1>
+    </div>
+
+    <!-- El script inyectará aquí la clase de la consola -->
+    <div class="grid-juegos" id="contenedor-juegos">
+        <div class="loading">Buscando configuración del sistema...</div>
+    </div>
+
+    <script>
+        async function loadConsoleConfig() {
+            const grid = document.getElementById("contenedor-juegos");
+            const mainTitle = document.getElementById("console-title");
+
+            // Leer qué consola cargar desde la URL (?console=snes)
+            const params = new URLSearchParams(window.location.search);
+            const consoleFolder = params.get('console');
+
+            if (!consoleFolder) {
+                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error: No se especificó consola en la URL.</div>`;
+                return;
+            }
+
+            // Ruta dinámica hacia el archivo JSON de la consola seleccionada
+            const jsonPath = `media/${consoleFolder}/config.json`;
+
+            try {
+                const response = await fetch(jsonPath);
+                if (!response.ok) throw new Error(`No se encontró el archivo config.json`);
+                
+                const consoleData = await response.json();
+
+                // Aplica la clase única (ej: grid-snes, grid-megadrive) para heredar el tamaño correcto
+                grid.className = `grid-juegos grid-${consoleFolder}`;
+
+                // Aplicar el color y título dinámico desde el JSON
+                document.documentElement.style.setProperty('--console-color', consoleData.color || '#58a6ff');
+                mainTitle.innerHTML = `🎮 ${consoleData.title}`;
+                grid.innerHTML = "";
+
+                if (!consoleData.games || consoleData.games.length === 0) {
+                    grid.innerHTML = `<div class="loading">No hay juegos listados.</div>`;
+                    return;
+                }
+
+                // Generar las tarjetas físicas de los juegos
+                consoleData.games.forEach(juego => {
+                    const coverUrl = `media/${consoleFolder}/covers/${juego.cover}`;
+                    const videoUrl = `media/${consoleFolder}/videos/${juego.video}`;
+
+                    const card = document.createElement("div");
+                    card.className = "juego-card";
+                    
+                    card.innerHTML = `
+                        <div class="media-container">
+                            <img src="${coverUrl}" alt="${juego.title}" onerror="this.src='https://placehold.co'">
+                            ${juego.video ? `<video src="${videoUrl}" loop muted playsinline></video>` : ''}
+                        </div>
+                        <div class="juego-titulo">${juego.title}</div>
+                    `;
+
+                    // Lógica para reproducir el vídeo en Hover
+                    if (juego.video) {
+                        const videoElement = card.querySelector('video');
+                        card.onmouseenter = () => { videoElement.play().catch(()=>{}); };
+                        card.onmouseleave = () => { videoElement.pause(); videoElement.currentTime = 0; };
+                    }
+
+                    // Enlace hacia tu emulador play.html
+                    card.onclick = () => {
+                        window.location.href = `play.html?core=${consoleData.core}&rom=${encodeURIComponent(juego.rom)}`;
+                    };
+
+                    grid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error al cargar la base de datos de media/${consoleFolder}/config.json.</div>`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadConsoleConfig);
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+>>>>>>> ec9334331d4a7873e1e8a50614227468cc549957
