@@ -5,10 +5,10 @@
   "archive": "SNESCollection",
   "games": [
     {
-      "title": "Super Mario World",
-      "cover": "Mario.jpg",
-      "video": "Mario.mp4",
-      "rom": "https://archive.org"
+      "title": "3 Ninjas Kick Back (USA)",
+      "cover": "3 Ninjas Kick Back (USA).jpg",
+      "video": "3 Ninjas Kick Back (USA).mp4",
+      "rom": "https://archive.org/download/snes_20260823_202608/3%20Ninjas%20Kick%20Back%20%28USA%29.zip"
     }
   ]
 }
