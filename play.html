@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Juego — Mi Biblioteca Retro</title>
+    <style>
+        /* Estética Github Dark */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d1117;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Barra superior para volver */
+        .bar-nav {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-cerrar {
+            background-color: #21262d;
+            color: #ff7b72; /* Color rojizo para indicar cerrar */
+            border: 1px solid #30363d;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-cerrar:hover {
+            background-color: #30363d;
+            border-color: #ff7b72;
+        }
+
+        /* Contenedor del Emulador ocupando todo el espacio restante */
+        .emulator-container {
+            flex-grow: 1;
+            width: 100%;
+            height: calc(100vh - 50px);
+            position: relative;
+        }
+
+        #emulator {
+            width: 100%;
+            height: 100%;
+        }
+
+        .loading-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #8b949e;
+            font-size: 18px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bar-nav">
+        <!-- El botón vuelve dinámicamente atrás manteniendo la consola seleccionada -->
+        <a id="btn-back" href="index.html" class="btn-cerrar">✕ Cerrar Juego</a>
+    </div>
+
+    <div class="emulator-container">
+        <div id="emulator"></div>
+    </div>
+
+    <script>
+        // 1. Leer los parámetros de la URL enviados por catalogo.html (?core=snes&rom=...)
+        const params = new URLSearchParams(window.location.search);
+        const systemCore = params.get('core') || 'snes';
+        const romUrl = params.get('rom');
+
+        // Configurar el botón de cerrar para que vuelva a la consola correcta
+        document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
+
+        if (!romUrl) {
+            document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
+        } else {
+            // 2. Configurar los parámetros de EmulatorJS basados en tu estructura de carpetas
+            EJS_player = "#emulator";
+            EJS_core = systemCore;
+            EJS_gameUrl = romUrl; // Enlace directo a Archive.org
+            
+            // Rutas hacia los archivos del emulador que tienes en tu carpeta /emulator/
+            EJS_pathtodata = "emulator/data/"; 
+
+            // Configuración adicional opcional
+            EJS_startOnLoaded = true;
+            EJS_language = "es";
+
+            // 3. Cargar dinámicamente el script del emulador
+            const script = document.createElement('script');
+            script.src = "emulator/data/loader.js"; // Asegúrate de que loader.js está en esta ruta
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
