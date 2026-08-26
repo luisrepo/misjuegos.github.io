@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo — Mi Biblioteca Retro</title>
     <style>
-        /* Estética Github Dark / Retro */
+        /* Estética Base Github Dark / Retro */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: #0d1117;
@@ -49,12 +49,11 @@
         /* Contenedor Grid Universal */
         .grid-juegos {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 24px;
             padding: 10px;
         }
 
-        /* Tarjeta Multimedia Avanzada */
+        /* Tarjeta Multimedia Base */
         .juego-card {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -67,19 +66,16 @@
             position: relative;
         }
 
-        /* Efecto Hover dinámico usando la variable de color del JSON */
         .juego-card:hover {
             transform: translateY(-5px);
             border-color: var(--console-color, #58a6ff);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
-        /* Contenedor del elemento multimedia */
         .media-container {
             width: 100%;
-            height: 220px;
             position: relative;
-            background-color: #000;
+            background-color: #0d1117;
             overflow: hidden;
         }
 
@@ -87,26 +83,20 @@
         .media-container video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
             transition: opacity 0.3s ease;
         }
 
-        /* Ocultar el video por defecto */
         .media-container video {
             opacity: 0;
             pointer-events: none;
+            object-fit: cover;
         }
 
-        /* Mostrar video y ocultar imagen al hacer hover */
-        .juego-card:hover .media-container video {
-            opacity: 1;
-        }
-        .juego-card:hover .media-container img {
-            opacity: 0;
-        }
+        .juego-card:hover .media-container video { opacity: 1; }
+        .juego-card:hover .media-container img { opacity: 0; }
 
         .juego-titulo {
             padding: 12px;
@@ -128,6 +118,54 @@
             color: #8b949e;
             padding: 50px;
         }
+
+        /* ==========================================================================
+           AJUSTES DE ASPECTO INDEPENDIENTES POR CONSOLA (MODIFICA ESTO A TU GUSTO)
+           ========================================================================== */
+
+        /* --- 1. SUPER NINTENDO (Formato Horizontal Apaisado Cajas Americanas) --- */
+        .grid-snes {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ancho de la celda */
+        }
+        .grid-snes .media-container {
+            height: 180px; /* Alto de la imagen */
+        }
+        .grid-snes .media-container img {
+            object-fit: fill; /* Ajusta la imagen completa rellenando la caja horizontal */
+        }
+
+        /* --- 2. SEGA MEGA DRIVE (Cajas Verticales Tipo Libro Altas) --- */
+        .grid-megadrive {
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        }
+        .grid-megadrive .media-container {
+            height: 245px;
+        }
+        .grid-megadrive .media-container img {
+            object-fit: cover;
+        }
+
+        /* --- 3. GAME BOY ADVANCE (Cajas Cuadradas) --- */
+        .grid-gba {
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        }
+        .grid-gba .media-container {
+            height: 190px;
+        }
+        .grid-gba .media-container img {
+            object-fit: fill;
+        }
+
+        /* --- 4. SEGA MASTER SYSTEM (Cajas Verticales Estándar) --- */
+        .grid-mastersystem {
+            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+        }
+        .grid-mastersystem .media-container {
+            height: 220px;
+        }
+        .grid-mastersystem .media-container img {
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +175,7 @@
         <h1 id="console-title">Cargando consola...</h1>
     </div>
 
+    <!-- El script inyectará aquí la clase de la consola -->
     <div class="grid-juegos" id="contenedor-juegos">
         <div class="loading">Buscando configuración del sistema...</div>
     </div>
@@ -146,38 +185,39 @@
             const grid = document.getElementById("contenedor-juegos");
             const mainTitle = document.getElementById("console-title");
 
-            // 1. Obtener la consola desde la URL (?console=snes)
+            // Leer qué consola cargar desde la URL (?console=snes)
             const params = new URLSearchParams(window.location.search);
             const consoleFolder = params.get('console');
 
             if (!consoleFolder) {
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error: No se especificó ninguna consola en la URL. (Ej: catalog.html?console=snes)</div>`;
+                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error: No se especificó consola en la URL.</div>`;
                 return;
             }
 
-            // 2. Ruta dinámica hacia el JSON de la consola elegida
+            // Ruta dinámica hacia el archivo JSON de la consola seleccionada
             const jsonPath = `media/${consoleFolder}/config.json`;
 
             try {
-                // 3. Petición asíncrona para leer el JSON local
                 const response = await fetch(jsonPath);
-                if (!response.ok) throw new Error(`No se encontró el archivo config.json en media/${consoleFolder}/`);
+                if (!response.ok) throw new Error(`No se encontró el archivo config.json`);
                 
                 const consoleData = await response.json();
 
-                // 4. Aplicar los estilos estéticos del JSON recibido
+                // Aplica la clase única (ej: grid-snes, grid-megadrive) para heredar el tamaño correcto
+                grid.className = `grid-juegos grid-${consoleFolder}`;
+
+                // Aplicar el color y título dinámico desde el JSON
                 document.documentElement.style.setProperty('--console-color', consoleData.color || '#58a6ff');
                 mainTitle.innerHTML = `🎮 ${consoleData.title}`;
                 grid.innerHTML = "";
 
                 if (!consoleData.games || consoleData.games.length === 0) {
-                    grid.innerHTML = `<div class="loading">No hay juegos listados en este sistema.</div>`;
+                    grid.innerHTML = `<div class="loading">No hay juegos listados.</div>`;
                     return;
                 }
 
-                // 5. Renderizar las tarjetas de juegos de forma dinámica
+                // Generar las tarjetas físicas de los juegos
                 consoleData.games.forEach(juego => {
-                    // Construcción de rutas multimedia usando la carpeta del sistema
                     const coverUrl = `media/${consoleFolder}/covers/${juego.cover}`;
                     const videoUrl = `media/${consoleFolder}/videos/${juego.video}`;
 
@@ -192,14 +232,14 @@
                         <div class="juego-titulo">${juego.title}</div>
                     `;
 
-                    // Lógica para reproducir/detener el video en hover (si existe)
+                    // Lógica para reproducir el vídeo en Hover
                     if (juego.video) {
                         const videoElement = card.querySelector('video');
                         card.onmouseenter = () => { videoElement.play().catch(()=>{}); };
                         card.onmouseleave = () => { videoElement.pause(); videoElement.currentTime = 0; };
                     }
 
-                    // Envío de datos hacia tu emulador web pasando la ROM directa de Archive.org
+                    // Enlace hacia tu emulador play.html
                     card.onclick = () => {
                         window.location.href = `play.html?core=${consoleData.core}&rom=${encodeURIComponent(juego.rom)}`;
                     };
@@ -209,11 +249,14 @@
 
             } catch (error) {
                 console.error(error);
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error al cargar la base de datos: ${error.message}</div>`;
+                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error al cargar la base de datos de media/${consoleFolder}/config.json.</div>`;
             }
         }
 
         document.addEventListener("DOMContentLoaded", loadConsoleConfig);
     </script>
+</body>
+</html>
+
 </body>
 </html>
