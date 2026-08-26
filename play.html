@@ -81,10 +81,15 @@
     </div>
 
     <script>
-        // 1. Leer los parámetros de la URL enviados por catalogo.html (?core=snes&rom=...)
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
-        const romUrl = params.get('rom');
+        const rawRomUrl = params.get('rom');
+
+        let romUrl = rawRomUrl;
+        if (rawRomUrl && rawRomUrl.includes('archive.org')) {
+        romUrl = 'https://corsproxy.io/?' + encodeURIComponent(rawRomUrl);
+        }
+
 
         // Configurar el botón de cerrar para que vuelva a la consola correcta
         document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
