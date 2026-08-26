@@ -1,263 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Biblioteca Retro — Menú Principal</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at top, #35146b 0%, #0d0a18 40%, #05070b 100%);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-    }
-    .hero-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-    h1 span { color: #c084fc; }
-    .hero-section p {
-      color: #a1a1aa;
-      font-size: 1.2rem;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Biblioteca Retro — Menú Principal</title>
+    <style>
+        /* Estética Github Dark */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    /* BARRA DE BUSCADOR GLOBAL */
-    .search-container {
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 50px;
-      position: relative;
-    }
-    .search-container input {
-      width: 100%;
-      padding: 16px 24px;
-      font-size: 1.1rem;
-      border-radius: 14px;
-      border: 1px solid #2d2440;
-      background: #120e1d;
-      color: white;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .search-container input:focus {
-      border-color: #c084fc;
-      box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
-    }
+        h1 {
+            font-size: 28px;
+            color: #f0f6fc;
+            margin-bottom: 8px;
+        }
 
-    /* CONTENEDOR DE CONSOLAS */
-    .menu-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      width: 100%;
-    }
-    /* Oculta los bloques de consolas si el usuario está buscando algo específico */
-    .menu-container.searching {
-      display: none;
-    }
-    .console-card {
-      background: #120e1d;
-      border: 1px solid #2d2440;
-      border-radius: 20px;
-      padding: 35px 20px;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-      transition: transform .25s, border-color .25s, box-shadow .25s;
-    }
-    .console-card:hover {
-      transform: translateY(-10px);
-      border-color: #c084fc;
-      box-shadow: 0 15px 40px rgba(192, 132, 252, 0.15);
-    }
-    .console-icon {
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-      display: block;
-    }
-    .console-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-    .console-card p {
-      font-size: 0.9rem;
-      color: #71717a;
-    }
+        .subtitle {
+            color: #8b949e;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
 
-    /* RESULTADOS DEL BUSCADOR */
-    .results-container {
-      width: 100%;
-      max-width: 1000px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .result-item {
-      background: #120e1d;
-      border: 1px solid #2d2440;
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: white;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .result-item:hover {
-      transform: translateY(-5px);
-      border-color: #c084fc;
-    }
-    .result-cover {
-      aspect-ratio: 1 / 1;
-      background: #000;
-      overflow: hidden;
-    }
-    .result-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .result-info {
-      padding: 12px;
-    }
-    .result-info h4 {
-      font-size: 14px;
-      margin-bottom: 4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .result-info p {
-      font-size: 12px;
-      color: #7c3aed;
-      font-weight: bold;
-    }
-  </style>
+        /* Contenedor del Menú */
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Tarjeta de Consola Interactiva */
+        .console-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            width: 220px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Efectos dinámicos en Hover */
+        .console-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Colores personalizados por consola al pasar el ratón */
+        .console-card.snes:hover { border-color: #7c3aed; }
+        .console-card.megadrive:hover { border-color: #007eed; }
+        .console-card.mastersystem:hover { border-color: #ef4444; }
+        .console-card.gba:hover { border-color: #10b981; }
+
+        .console-logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .console-card h3 {
+            margin: 10px 0 4px 0;
+            font-size: 18px;
+            color: #f0f6fc;
+        }
+
+        .console-card p {
+            margin: 0;
+            font-size: 13px;
+            color: #8b949e;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="hero-section">
-    <h1>Mi Biblioteca <span>Retro</span></h1>
-    <p>Selecciona una plataforma o busca un juego globalmente</p>
-  </div>
-
-  <!-- CAJA DEL BUSCADOR GLOBAL -->
-  <div class="search-container">
-    <input id="globalSearch" type="text" placeholder="🔎 Escribe el nombre de cualquier juego..." oninput="filtrarJuegosGlobal()">
-  </div>
-
-  <!-- SECCIÓN DE CONSOLAS (Se ve por defecto) -->
-  <div id="consolesGrid" class="menu-container">
-    <a href="menus/index_snes.html" class="console-card">
-      <span class="console-icon">📺</span>
-      <h3>Super Nintendo</h3>
-      <p>16 Bits — Nintendo</p>
-    </a>
-
-    <a href="menus/index_megadrive.html" class="console-card">
-      <span class="console-icon">🎮</span>
-      <h3>Sega Mega Drive</h3>
-      <p>16 Bits — SEGA</p>
-    </a>
-
-    <a href="menus/index_mastersystem.html" class="console-card">
-      <span class="console-icon">🎮</span>
-      <h3>Sega Master System</h3>
-      <p>8 Bits — SEGA</p>
-    </a>
-
-    <a href="menus/index_gba.html" class="console-card">
-      <span class="console-icon">🕹️</span>
-      <h3>Game Boy Advance</h3>
-      <p>32 Bits — Portátil</p>
-    </a>
-  </div>
-
-  <!-- CONTENEDOR DONDE APARECEN LOS JUEGOS ENCONTRADOS -->
-  <div id="resultsGrid" class="results-container"></div>
-
-<script>
-  // === BASE DE DATOS GLOBAL DE JUEGOS ===
-  // Para que el buscador funcione, añade aquí tus juegos organizados por consola.
-  // El buscador los leerá todos simultáneamente en tiempo real.
-  const allGamesDatabase = {
-    snes: [
-      { "nombre": "Super Mario World", "portada": "covers/snes/Mario.jpg" }
-    ],
-    megadrive: [
-      { "nombre": "Sonic the Hedgehog", "portada": "covers/megadrive/Sonic.jpg" }
-    ],
-    gba: [
-      { "nombre": "007 - Everything or Nothing", "portada": "covers/gba/007%20-%20Everything%20or%20Nothing%20(USA%2C%20Europe).jpg" },
-      { "nombre": "Zooo (Europe)", "portada": "covers/gba/Zooo%20(Europe).jpg" }
-      // === PEGA AQUÍ TUS LISTAS COMPLETAS PARA QUE EL BUSCADOR LAS DETECTE ===
-    ]
-  };
-
-  function filtrarJuegosGlobal() {
-    const query = document.getElementById("globalSearch").value.toLowerCase().trim();
-    const consolesGrid = document.getElementById("consolesGrid");
-    const resultsGrid = document.getElementById("resultsGrid");
-
-    // Si la caja de búsqueda está vacía, muestra las consolas y limpia los resultados
-    if (query === "") {
-      consolesGrid.classList.remove("searching");
-      resultsGrid.innerHTML = "";
-      return;
-    }
-
-    // Si el usuario escribe algo, oculta los bloques grandes de consolas
-    consolesGrid.classList.add("searching");
-    resultsGrid.innerHTML = "";
-
-    let encontrados = 0;
-
-    // Recorremos todas las consolas de nuestra base de datos
-    for (const consola en allGamesDatabase) {
-      const listaJuegos = allGamesDatabase[consola];
-      
-      // Filtramos los juegos que coincidan con lo escrito
-      const filtrados = listaJuegos.filter(juego => juego.nombre.toLowerCase().includes(query));
-
-      filtrados.forEach(juego => {
-        encontrados++;
-        const item = document.createElement("a");
-        item.className = "result-item";
+    <h1>Mi Biblioteca Retro</h1>
+    <p class="subtitle">Selecciona una plataforma o busca un juego globalmente</p>
+    
+    <div class="menu-container">
         
-        // Al hacer clic, redirige directamente al catálogo de la consola pasándole el filtro por la URL
-        item.href = `menus/index_${consola}.html?search=${encodeURIComponent(juego.nombre)}`;
-        
-        item.innerHTML = `
-          <div class="result-cover">
-            <img src="${juego.portada}" alt="${juego.nombre}" loading="lazy" onerror="this.src='https://placeholder.com'">
-          </div>
-          <div class="result-info">
-            <h4>${juego.nombre}</h4>
-            <p>${consola.toUpperCase()}</p>
-          </div>
-        `;
-        resultsGrid.appendChild(item);
-      });
-    }
+        <!-- Tarjeta Super Nintendo -->
+        <div class="console-card snes" onclick="location.href='catalogo.html?console=snes'">
+            <div class="console-logo">📺</div>
+            <h3>Super Nintendo</h3>
+            <p>16 Bits — Nintendo</p>
+        </div>
 
-    // Si no encuentra nada, muestra un cartel gris elegante
-    if (encontrados === 0) {
-      resultsGrid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#71717a; padding: 40px 0;">No se encontraron juegos en ninguna consola.</p>`;
-    }
-  }
-</script>
+        <!-- Tarjeta Sega Mega Drive -->
+        <div class="console-card megadrive" onclick="location.href='catalogo.html?console=megadrive'">
+            <div class="console-logo">🎮</div>
+            <h3>Sega Mega Drive</h3>
+            <p>16 Bits — SEGA</p>
+        </div>
+
+        <!-- Tarjeta Sega Master System -->
+        <div class="console-card mastersystem" onclick="location.href='catalogo.html?console=mastersystem'">
+            <div class="console-logo">🎮</div>
+            <h3>Sega Master System</h3>
+            <p>8 Bits — SEGA</p>
+        </div>
+
+        <!-- Tarjeta Game Boy Advance -->
+        <div class="console-card gba" onclick="location.href='catalogo.html?console=gba'">
+            <div class="console-logo">🕹</div>
+            <h3>Game Boy Advance</h3>
+            <p>32 Bits — Portátil</p>
+        </div>
+
+    </div>
+
 </body>
 </html>
+
 
