@@ -5,11 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo - Mi Biblioteca</title>
   <style>
-    :root {
-      /* Proporción por defecto (Ancho / Alto) */
-      --aspect-ratio: 0.75; 
-    }
-
     body {
       background-color: #0d0f12;
       color: #ffffff;
@@ -92,18 +87,10 @@
       transform: translateY(-4px);
     }
 
-    /* Contenedor adaptativo según la proporción de la caja */
-    .cover-container {
+    .game-card img {
       width: 100%;
-      aspect-ratio: var(--aspect-ratio);
-      overflow: hidden;
-      background-color: #000;
-    }
-
-    .cover-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Garantiza que la carátula no se deforme ni se recorte */
+      height: 200px;
+      object-fit: cover;
     }
 
     .game-title {
@@ -134,43 +121,25 @@
   </div>
 
   <div class="grid-container" id="gamesGrid">
-    <!-- Los juegos se cargan dinámicamente -->
+    <!-- Los juegos se cargan dinámicamente aquí -->
   </div>
 
   <script>
+    // Obtener la consola desde la URL (?console=snes)
     const urlParams = new URLSearchParams(window.location.search);
     const consoleKey = urlParams.get('console') || 'snes';
 
-    // Nombres visibles
+    // Nombres visibles de las consolas
     const consoleNames = {
       'snes': 'Super Nintendo',
       'nes': 'NES',
       'megadrive': 'Sega Mega Drive',
-      'gb': 'Game Boy',
-      'gba': 'Game Boy Advance',
-      'n64': 'Nintendo 64',
-      'psx': 'PlayStation'
+      'gba': 'Game Boy Advance'
     };
-
-    // Proporciones según las cajas originales (Ancho / Alto)
-    const aspectRatios = {
-      'snes': '1.37 / 1',    // Horizontal (USA/PAL)
-      'nes': '0.72 / 1',     // Vertical
-      'megadrive': '0.71 / 1',// Vertical
-      'gb': '1 / 1',         // Cuadrada
-      'gba': '1 / 1',        // Cuadrada
-      'n64': '1.37 / 1',    // Horizontal
-      'psx': '1 / 1'         // Cuadrada (Caja CD)
-    };
-
-    // Aplicar la proporción dinámica si existe
-    if (aspectRatios[consoleKey]) {
-      document.documentElement.style.setProperty('--aspect-ratio', aspectRatios[consoleKey]);
-    }
 
     document.getElementById('consoleTitle').textContent = `🎮 ${consoleNames[consoleKey] || consoleKey.toUpperCase()}`;
 
-    // Carga de datos
+    // Cargar los juegos desde el archivo JSON correspondiente (ej: snes.json)
     fetch(`${consoleKey}.json`)
       .then(response => response.json())
       .then(games => {
@@ -182,9 +151,7 @@
           card.className = 'game-card';
           card.innerHTML = `
             <a href="player.html?game=${encodeURIComponent(game.file)}&console=${consoleKey}" style="text-decoration: none; color: inherit;">
-              <div class="cover-container">
-                <img src="${game.cover}" alt="${game.title}" loading="lazy">
-              </div>
+              <img src="${game.cover}" alt="${game.title}" loading="lazy">
               <p class="game-title">${game.title}</p>
             </a>
           `;
@@ -195,7 +162,7 @@
         console.error('Error al cargar la lista de juegos:', err);
       });
 
-    // Buscador
+    // Función del buscador en tiempo real
     function filterGames() {
       const filter = document.getElementById('searchInput').value.toLowerCase();
       const cards = document.querySelectorAll('.game-card');
@@ -212,4 +179,5 @@
   </script>
 </body>
 </html>
+
 
