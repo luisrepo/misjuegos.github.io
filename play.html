@@ -29,7 +29,7 @@
 
         .btn-cerrar {
             background-color: #21262d;
-            color: #ff7b72; /* Color rojizo para indicar cerrar */
+            color: #ff7b72;
             border: 1px solid #30363d;
             padding: 6px 14px;
             border-radius: 6px;
@@ -45,7 +45,7 @@
             border-color: #ff7b72;
         }
 
-        /* Contenedor del Emulador ocupando todo el espacio restante */
+        /* Contenedor del Emulador */
         .emulator-container {
             flex-grow: 1;
             width: 100%;
@@ -72,7 +72,6 @@
 <body>
 
     <div class="bar-nav">
-        <!-- El botón vuelve dinámicamente atrás manteniendo la consola seleccionada -->
         <a id="btn-back" href="index.html" class="btn-cerrar">✕ Cerrar Juego</a>
     </div>
 
@@ -81,58 +80,37 @@
     </div>
 
     <script>
+        // 1. Leer parámetros URL enviados por catalogo.html
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
-        let romUrl = params.get("rom");
+        let romUrl = params.get('rom');
 
+        // Decodificar la URL por si viene con caracteres especiales (%20, etc.)
         if (romUrl) {
-        try {
-        romUrl = decodeURIComponent(romUrl);
-        } catch (e) {}
-     }
-
-if (romUrl.includes("archive.org")) {
-    romUrl = "https://corsproxy.io/?" + encodeURIComponent(romUrl);
-}
-
-EJS_gameUrl = romUrl;
-        // Decodificamos la URL por si viene dos veces codificada desde catalogo.html
-        if (rawRomUrl) {
-    try { rawRomUrl = decodeURIComponent(rawRomUrl); } catch(e) {}
+            try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
         }
 
-         let romUrl = rawRomUrl;
-
-         // Usamos un proxy más compatible con emuladores web y evitamos el doble encode
-         if (rawRomUrl && rawRomUrl.includes('archive.org')) {
-         romUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rawRomUrl);
-         }
-
-
-
-        // Configurar el botón de cerrar para que vuelva a la consola correcta
+        // Configurar botón para volver a la lista de juegos de la consola correcta
         document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
 
         if (!romUrl) {
             document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
         } else {
-            // 2. Configurar los parámetros de EmulatorJS basados en tu estructura de carpetas
+            // 2. Configuración de EmulatorJS
             EJS_player = "#emulator";
             EJS_core = systemCore;
-            EJS_gameUrl = romUrl; // Enlace directo a Archive.org
+            EJS_gameUrl = romUrl;
             
-            // Rutas hacia los archivos del emulador que tienes en tu carpeta /emulator/
             EJS_pathtodata = "emulator/data/"; 
-
-            // Configuración adicional opcional
             EJS_startOnLoaded = true;
             EJS_language = "es";
 
-            // 3. Cargar dinámicamente el script del emulador
+            // 3. Cargar motor del emulador
             const script = document.createElement('script');
-            script.src = "emulator/data/loader.js"; // Asegúrate de que loader.js está en esta ruta
+            script.src = "emulator/data/loader.js";
             document.body.appendChild(script);
         }
     </script>
 </body>
 </html>
+
