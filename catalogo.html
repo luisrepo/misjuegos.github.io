@@ -632,11 +632,7 @@ const BASE = `media/${system}`;
 
 const CONFIG_URL = `${BASE}/config.json`;
 
-const COVER_PATH = `${BASE}/covers/`;
-
-const VIDEO_PATH = `${BASE}/videos/`;
-
-const ROM_PATH = `${BASE}/juegos/`;
+let ARCHIVE_URL = "";
 
 
 //----------------------------------------------------------
@@ -688,6 +684,8 @@ async function loadCatalog(){
         }
 
        CONFIG = await response.json();
+
+ARCHIVE_URL = `https://archive.org/download/${CONFIG.archive}/`;
 
 document.title = CONFIG.title;
 
@@ -753,31 +751,31 @@ function initializeCatalog(){
 
 function coverUrl(game){
 
-    return COVER_PATH + game.cover;
+    if(game.cover.startsWith("http://") || game.cover.startsWith("https://")){
+        return game.cover;
+    }
+
+    return ARCHIVE_URL + encodeURIComponent(game.cover);
 
 }
 
 function videoUrl(game){
 
-    return VIDEO_PATH + game.video;
+    if(game.video.startsWith("http://") || game.video.startsWith("https://")){
+        return game.video;
+    }
+
+    return ARCHIVE_URL + encodeURIComponent(game.video);
 
 }
 
 function romUrl(game){
 
-    if(game.rom.startsWith("http://")){
-
+    if(game.rom.startsWith("http://") || game.rom.startsWith("https://")){
         return game.rom;
-
     }
 
-    if(game.rom.startsWith("https://")){
-
-        return game.rom;
-
-    }
-
-    return ROM_PATH + game.rom;
+    return ARCHIVE_URL + encodeURIComponent(game.rom);
 
 }
 

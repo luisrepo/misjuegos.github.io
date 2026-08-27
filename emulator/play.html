@@ -94,6 +94,7 @@
     </div>
 
     <script>
+	alert("PLAY.HTML CARGADO");
         // Función para alternar Pantalla Completa
         function toggleFullScreen() {
             const container = document.getElementById('game-container');
@@ -117,16 +118,23 @@
         const systemCore = params.get('core') || 'snes';
         let romUrl = params.get('rom');
 
-        if (romUrl) {
-            try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
-        }
+if (romUrl) {
+    try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
+}
+
+if (romUrl && romUrl.includes("archive.org")) {
+    romUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(romUrl);
+}
 
         document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
-
+        alert(romUrl);
         if (!romUrl) {
             document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
         } else {
             // 2. Configurar EmulatorJS
+            console.log("ROM FINAL:", romUrl);
+            console.log(romUrl);
+
             EJS_player = "#emulator";
             EJS_core = systemCore;
             EJS_gameUrl = romUrl;

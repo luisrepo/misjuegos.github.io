@@ -115,11 +115,17 @@
         // 1. Leer parámetros URL enviados por catalogo.html
         const params = new URLSearchParams(window.location.search);
         const systemCore = params.get('core') || 'snes';
-        let romUrl = params.get('rom');
+        let rawRomUrl = params.get('rom');
 
-        if (romUrl) {
-            try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
-        }
+if (rawRomUrl) {
+    try {
+        rawRomUrl = decodeURIComponent(rawRomUrl);
+    } catch(e) {}
+}
+
+const romUrl =
+    "https://late-fire-364e.lvalriv.workers.dev/?url=" +
+    encodeURIComponent(rawRomUrl);
 
         document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
 
@@ -133,7 +139,7 @@
             
             EJS_pathtodata = "emulator/data/"; 
             EJS_startOnLoaded = true;
-            EJS_language = "es";
+            EJS_language = "es-ES";
 
             // 3. Cargar el motor
             const script = document.createElement('script');

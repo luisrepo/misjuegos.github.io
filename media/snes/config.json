@@ -1,9 +1,11 @@
 ﻿{
-    "title":"Super Nintendo",
-    "manufacturer":"Nintendo",
-    "year":1990,
-    "generation":"16 bits",
-    "core":"snes",
+    "title": "Super Nintendo",
+    "manufacturer": "Nintendo",
+    "year": 1990,
+    "generation": "16 bits",
+    "core": "snes",
+
+    "archive": "snes_20260823_202608",
     "games":  [
                   {
                       "title":  "3 Ninjas Kick Back (USA)",
