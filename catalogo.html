@@ -1,526 +1,1648 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo — Mi Biblioteca Retro</title>
-    <style>
-        /* Estética Base Github Dark / Retro */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 20px;
-        }
 
-        .header-retro {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #21262d;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
+<meta charset="UTF-8">
 
-        .btn-volver {
-            background-color: #21262d;
-            color: #58a6ff;
-            border: 1px solid #30363d;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            margin-right: 20px;
-            transition: 0.2s;
-        }
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
 
-        .btn-volver:hover {
-            background-color: #30363d;
-            border-color: #8b949e;
-        }
+<meta name="theme-color"
+      content="#7c3aed">
 
-        h1 {
-            font-size: 24px;
-            margin: 0;
-            color: #f0f6fc;
-        }
+<title>Catálogo Retro</title>
 
-        /* Contenedor Grid Universal */
-        .grid-juegos {
-            display: grid;
-            gap: 24px;
-            padding: 10px;
-        }
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-        /* Tarjeta Multimedia Base */
-        .juego-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-        .juego-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--console-color, #58a6ff);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-        .media-container {
-            width: 100%;
-            position: relative;
-            background-color: #0d1117;
-            overflow: hidden;
-        }
+<style>
 
-        .media-container img, 
-        .media-container video {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 0.3s ease;
-        }
+:root{
 
-        .media-container video {
-            opacity: 0;
-            pointer-events: none;
-            object-fit: cover;
-        }
+    --accent:#7c3aed;
 
-        .juego-card:hover .media-container video { opacity: 1; }
-        .juego-card:hover .media-container img { opacity: 0; }
+    --bg:#0b0b0f;
 
-        .juego-titulo {
-            padding: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            color: #f0f6fc;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            background-color: #161b22;
-            border-top: 1px solid #30363d;
-        }
+    --surface:#18181c;
 
-        .loading {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-size: 16px;
-            color: #8b949e;
-            padding: 50px;
-        }
+    --surface2:#222229;
 
-        /* ==========================================================================
-           AJUSTES DE ASPECTO INDEPENDIENTES POR CONSOLA (MODIFICA ESTO A TU GUSTO)
-           ========================================================================== */
+    --border:#30303a;
 
-        /* --- 1. SUPER NINTENDO (Formato Horizontal Apaisado Cajas Americanas) --- */
-        .grid-snes {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ancho de la celda */
-        }
-        .grid-snes .media-container {
-            height: 180px; /* Alto de la imagen */
-        }
-        .grid-snes .media-container img {
-            object-fit: fill; /* Ajusta la imagen completa rellenando la caja horizontal */
-        }
+    --text:#ffffff;
 
-        /* --- 2. SEGA MEGA DRIVE (Cajas Verticales Tipo Libro Altas) --- */
-        .grid-megadrive {
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-        }
-        .grid-megadrive .media-container {
-            height: 245px;
-        }
-        .grid-megadrive .media-container img {
-            object-fit: cover;
-        }
+    --muted:#9ca3af;
 
-        /* --- 3. GAME BOY ADVANCE (Cajas Cuadradas) --- */
-        .grid-gba {
-            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-        }
-        .grid-gba .media-container {
-            height: 190px;
-        }
-        .grid-gba .media-container img {
-            object-fit: fill;
-        }
+    --radius:18px;
 
-        /* --- 4. SEGA MASTER SYSTEM (Cajas Verticales Estándar) --- */
-        .grid-mastersystem {
-            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
-        }
-        .grid-mastersystem .media-container {
-            height: 220px;
-        }
-        .grid-mastersystem .media-container img {
-            object-fit: cover;
-        }
-    </style>
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+video{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+button,input{
+
+    font-family:inherit;
+
+}
+
+/* ===================================== */
+
+#topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 28px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(10,10,12,.85);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+#systemIcon{
+
+    font-size:34px;
+
+}
+
+.searchBox{
+
+    width:420px;
+
+    max-width:100%;
+
+}
+
+#search{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    background:#141418;
+
+    color:white;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+#search:focus{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 0 4px rgba(124,58,237,.15);
+
+}
+
+/* ===================================== */
+
+main{
+
+    max-width:1800px;
+
+    margin:auto;
+
+    padding:28px;
+
+}
+
+.games{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+
+    gap:24px;
+
+}
+
+/* ===================================== */
+
+.card{
+
+    position:relative;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .22s,
+
+        border-color .22s,
+
+        box-shadow .22s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.40);
+
+}
+
+.cover{
+
+    position:relative;
+
+    aspect-ratio:4/3;
+
+    overflow:hidden;
+
+    background:#000;
+
+}
+
+.cover img{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:1;
+
+    transition:
+
+        opacity .25s,
+
+        transform .25s;
+
+}
+
+.cover video{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity .25s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.shadow{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            transparent 55%,
+
+            rgba(0,0,0,.65)
+
+        );
+
+    pointer-events:none;
+
+}
+
+.playButton{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+
+        translate(-50%,-50%) scale(.82);
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(124,58,237,.95);
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    transition:.25s;
+
+}
+
+.card:hover .playButton{
+
+    opacity:1;
+
+    transform:
+
+        translate(-50%,-50%) scale(1);
+
+}
+
+/* ===================================== */
+
+.info{
+
+    padding:16px;
+
+}
+
+.info h3{
+
+    font-size:17px;
+
+    margin-bottom:6px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.info p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+/* ===================================== */
+
+.empty{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:80px;
+
+    color:var(--muted);
+
+    font-size:22px;
+
+}
+
+/* ===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#444;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--accent);
+
+}
+
+/* ===================================== */
+
+@media (max-width:900px){
+
+#topbar{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.searchBox{
+
+    width:100%;
+
+}
+
+main{
+
+    padding:16px;
+
+}
+
+.games{
+
+    grid-template-columns:
+
+        repeat(auto-fill,minmax(170px,1fr));
+
+    gap:16px;
+
+}
+
+.playButton{
+
+    width:56px;
+
+    height:56px;
+
+    font-size:22px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <div class="header-retro">
-        <a href="index.html" class="btn-volver">← Consolas</a>
-        <h1 id="console-title">Cargando consola...</h1>
+<header id="topbar">
+
+    <div class="logo">
+
+        <span id="systemIcon">🎮</span>
+
+        <span id="systemTitle">
+
+            Catálogo Retro
+
+        </span>
+
     </div>
 
-    <!-- El script inyectará aquí la clase de la consola -->
-    <div class="grid-juegos" id="contenedor-juegos">
-        <div class="loading">Buscando configuración del sistema...</div>
+    <div class="searchBox">
+
+        <input
+            id="search"
+            type="search"
+            placeholder="Buscar juego..."
+            autocomplete="off">
+
     </div>
 
-    <script>
-        async function loadConsoleConfig() {
-            const grid = document.getElementById("contenedor-juegos");
-            const mainTitle = document.getElementById("console-title");
+</header>
 
-            // Leer qué consola cargar desde la URL (?console=snes)
-            const params = new URLSearchParams(window.location.search);
-            const consoleFolder = params.get('console');
 
-            if (!consoleFolder) {
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error: No se especificó consola en la URL.</div>`;
-                return;
-            }
+<main>
 
-            // Ruta dinámica hacia el archivo JSON de la consola seleccionada
-            const jsonPath = `media/${consoleFolder}/config.json`;
+    <section
+        id="games"
+        class="games">
 
-            try {
-                const response = await fetch(jsonPath);
-                if (!response.ok) throw new Error(`No se encontró el archivo config.json`);
-                
-                const consoleData = await response.json();
+    </section>
 
-                // Aplica la clase única (ej: grid-snes, grid-megadrive) para heredar el tamaño correcto
-                grid.className = `grid-juegos grid-${consoleFolder}`;
+</main>
 
-                // Aplicar el color y título dinámico desde el JSON
-                document.documentElement.style.setProperty('--console-color', consoleData.color || '#58a6ff');
-                mainTitle.innerHTML = `🎮 ${consoleData.title}`;
-                grid.innerHTML = "";
 
-                if (!consoleData.games || consoleData.games.length === 0) {
-                    grid.innerHTML = `<div class="loading">No hay juegos listados.</div>`;
-                    return;
-                }
+<template id="cardTemplate">
 
-                // Generar las tarjetas físicas de los juegos
-                consoleData.games.forEach(juego => {
-                    const coverUrl = `media/${consoleFolder}/covers/${juego.cover}`;
-                    const videoUrl = `media/${consoleFolder}/videos/${juego.video}`;
+<article class="card">
 
-                    const card = document.createElement("div");
-                    card.className = "juego-card";
-                    
-                    card.innerHTML = `
-                        <div class="media-container">
-                            <img src="${coverUrl}" alt="${juego.title}" onerror="this.src='https://placehold.co'">
-                            ${juego.video ? `<video src="${videoUrl}" loop muted playsinline></video>` : ''}
-                        </div>
-                        <div class="juego-titulo">${juego.title}</div>
-                    `;
+    <div class="cover">
 
-                    // Lógica para reproducir el vídeo en Hover
-                    if (juego.video) {
-                        const videoElement = card.querySelector('video');
-                        card.onmouseenter = () => { videoElement.play().catch(()=>{}); };
-                        card.onmouseleave = () => { videoElement.pause(); videoElement.currentTime = 0; };
-                    }
+        <img
+            loading="lazy"
+            draggable="false"
+            alt="">
 
-                    // Enlace hacia tu emulador play.html
-                    card.onclick = () => {
-                        window.location.href = `play.html?core=${consoleData.core}&rom=${encodeURIComponent(juego.rom)}`;
-                    };
+        <video
 
-                    grid.appendChild(card);
-                });
+            muted
+            loop
+            playsinline
+            preload="none">
 
-            } catch (error) {
-                console.error(error);
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error al cargar la base de datos de media/${consoleFolder}/config.json.</div>`;
-            }
-        }
+        </video>
 
-        document.addEventListener("DOMContentLoaded", loadConsoleConfig);
-    </script>
-</body>
-</html>
+        <div class="shadow"></div>
 
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo — Mi Biblioteca Retro</title>
-    <style>
-        /* Estética Base Github Dark / Retro */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 20px;
-        }
+        <div class="playButton">
 
-        .header-retro {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #21262d;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
+            ▶
 
-        .btn-volver {
-            background-color: #21262d;
-            color: #58a6ff;
-            border: 1px solid #30363d;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            margin-right: 20px;
-            transition: 0.2s;
-        }
+        </div>
 
-        .btn-volver:hover {
-            background-color: #30363d;
-            border-color: #8b949e;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin: 0;
-            color: #f0f6fc;
-        }
-
-        /* Contenedor Grid Universal */
-        .grid-juegos {
-            display: grid;
-            gap: 24px;
-            padding: 10px;
-        }
-
-        /* Tarjeta Multimedia Base */
-        .juego-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .juego-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--console-color, #58a6ff);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .media-container {
-            width: 100%;
-            position: relative;
-            background-color: #0d1117;
-            overflow: hidden;
-        }
-
-        .media-container img, 
-        .media-container video {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .media-container video {
-            opacity: 0;
-            pointer-events: none;
-            object-fit: cover;
-        }
-
-        .juego-card:hover .media-container video { opacity: 1; }
-        .juego-card:hover .media-container img { opacity: 0; }
-
-        .juego-titulo {
-            padding: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            color: #f0f6fc;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            background-color: #161b22;
-            border-top: 1px solid #30363d;
-        }
-
-        .loading {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-size: 16px;
-            color: #8b949e;
-            padding: 50px;
-        }
-
-        /* ==========================================================================
-           AJUSTES DE ASPECTO INDEPENDIENTES POR CONSOLA (MODIFICA ESTO A TU GUSTO)
-           ========================================================================== */
-
-        /* --- 1. SUPER NINTENDO (Formato Horizontal Apaisado Cajas Americanas) --- */
-        .grid-snes {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ancho de la celda */
-        }
-        .grid-snes .media-container {
-            height: 180px; /* Alto de la imagen */
-        }
-        .grid-snes .media-container img {
-            object-fit: fill; /* Ajusta la imagen completa rellenando la caja horizontal */
-        }
-
-        /* --- 2. SEGA MEGA DRIVE (Cajas Verticales Tipo Libro Altas) --- */
-        .grid-megadrive {
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-        }
-        .grid-megadrive .media-container {
-            height: 245px;
-        }
-        .grid-megadrive .media-container img {
-            object-fit: cover;
-        }
-
-        /* --- 3. GAME BOY ADVANCE (Cajas Cuadradas) --- */
-        .grid-gba {
-            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-        }
-        .grid-gba .media-container {
-            height: 190px;
-        }
-        .grid-gba .media-container img {
-            object-fit: fill;
-        }
-
-        /* --- 4. SEGA MASTER SYSTEM (Cajas Verticales Estándar) --- */
-        .grid-mastersystem {
-            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
-        }
-        .grid-mastersystem .media-container {
-            height: 220px;
-        }
-        .grid-mastersystem .media-container img {
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header-retro">
-        <a href="index.html" class="btn-volver">← Consolas</a>
-        <h1 id="console-title">Cargando consola...</h1>
     </div>
 
-    <!-- El script inyectará aquí la clase de la consola -->
-    <div class="grid-juegos" id="contenedor-juegos">
-        <div class="loading">Buscando configuración del sistema...</div>
+    <div class="info">
+
+        <h3></h3>
+
+        <p></p>
+
     </div>
 
-    <script>
-        async function loadConsoleConfig() {
-            const grid = document.getElementById("contenedor-juegos");
-            const mainTitle = document.getElementById("console-title");
+</article>
 
-            // Leer qué consola cargar desde la URL (?console=snes)
-            const params = new URLSearchParams(window.location.search);
-            const consoleFolder = params.get('console');
+</template>
 
-            if (!consoleFolder) {
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error: No se especificó consola en la URL.</div>`;
-                return;
-            }
 
-            // Ruta dinámica hacia el archivo JSON de la consola seleccionada
-            const jsonPath = `media/${consoleFolder}/config.json`;
+<script>
 
-            try {
-                const response = await fetch(jsonPath);
-                if (!response.ok) throw new Error(`No se encontró el archivo config.json`);
-                
-                const consoleData = await response.json();
+"use strict";
 
-                // Aplica la clase única (ej: grid-snes, grid-megadrive) para heredar el tamaño correcto
-                grid.className = `grid-juegos grid-${consoleFolder}`;
+/* ==========================================================
+   RETRO CATALOG V3
+   MOTOR PRINCIPAL
+========================================================== */
 
-                // Aplicar el color y título dinámico desde el JSON
-                document.documentElement.style.setProperty('--console-color', consoleData.color || '#58a6ff');
-                mainTitle.innerHTML = `🎮 ${consoleData.title}`;
-                grid.innerHTML = "";
+//----------------------------------------------------------
+// PARÁMETROS
+//----------------------------------------------------------
 
-                if (!consoleData.games || consoleData.games.length === 0) {
-                    grid.innerHTML = `<div class="loading">No hay juegos listados.</div>`;
-                    return;
-                }
+const params = new URLSearchParams(location.search);
 
-                // Generar las tarjetas físicas de los juegos
-                consoleData.games.forEach(juego => {
-                    const coverUrl = `media/${consoleFolder}/covers/${juego.cover}`;
-                    const videoUrl = `media/${consoleFolder}/videos/${juego.video}`;
+const SYSTEM = (params.get("system") || "snes").toLowerCase();
 
-                    const card = document.createElement("div");
-                    card.className = "juego-card";
-                    
-                    card.innerHTML = `
-                        <div class="media-container">
-                            <img src="${coverUrl}" alt="${juego.title}" onerror="this.src='https://placehold.co'">
-                            ${juego.video ? `<video src="${videoUrl}" loop muted playsinline></video>` : ''}
-                        </div>
-                        <div class="juego-titulo">${juego.title}</div>
-                    `;
 
-                    // Lógica para reproducir el vídeo en Hover
-                    if (juego.video) {
-                        const videoElement = card.querySelector('video');
-                        card.onmouseenter = () => { videoElement.play().catch(()=>{}); };
-                        card.onmouseleave = () => { videoElement.pause(); videoElement.currentTime = 0; };
-                    }
+//----------------------------------------------------------
+// RUTAS
+//----------------------------------------------------------
 
-                    // Enlace hacia tu emulador play.html
-                    card.onclick = () => {
-                        window.location.href = `play.html?core=${consoleData.core}&rom=${encodeURIComponent(juego.rom)}`;
-                    };
+const BASE = `media/${SYSTEM}/`;
 
-                    grid.appendChild(card);
-                });
+const CONFIG_URL = BASE + "config.json";
 
-            } catch (error) {
-                console.error(error);
-                grid.innerHTML = `<div class="loading" style="color: #ff7b72;">Error al cargar la base de datos de media/${consoleFolder}/config.json.</div>`;
-            }
+const COVER_PATH = BASE + "covers/";
+
+const VIDEO_PATH = BASE + "videos/";
+
+const ROM_PATH = BASE + "juegos/";
+
+
+//----------------------------------------------------------
+// ELEMENTOS
+//----------------------------------------------------------
+
+const gamesContainer = document.getElementById("games");
+
+const searchInput = document.getElementById("search");
+
+const template = document.getElementById("cardTemplate");
+
+const systemTitle = document.getElementById("systemTitle");
+
+const systemIcon = document.getElementById("systemIcon");
+
+
+//----------------------------------------------------------
+// VARIABLES
+//----------------------------------------------------------
+
+let CONFIG = {};
+
+let GAMES = [];
+
+let FILTERED = [];
+
+
+//----------------------------------------------------------
+// CARGAR JSON
+//----------------------------------------------------------
+
+async function loadCatalog(){
+
+    try{
+
+        const response = await fetch(CONFIG_URL,{
+            cache:"no-cache"
+        });
+
+        if(!response.ok){
+
+            throw new Error(CONFIG_URL);
+
         }
 
-        document.addEventListener("DOMContentLoaded", loadConsoleConfig);
-    </script>
-</body>
-</html>
+        CONFIG = await response.json();
+
+        GAMES = CONFIG.games || [];
+
+        FILTERED = [...GAMES];
+
+        initializeCatalog();
+
+    }
+
+    catch(error){
+
+        showError(error);
+
+    }
+
+}
+
+
+//----------------------------------------------------------
+// INICIALIZAR
+//----------------------------------------------------------
+
+function initializeCatalog(){
+
+    document.title = CONFIG.title || "Retro Catalog";
+
+    systemTitle.textContent =
+        CONFIG.title || SYSTEM.toUpperCase();
+
+    if(CONFIG.icon){
+
+        systemIcon.textContent = CONFIG.icon;
+
+    }
+
+    if(CONFIG.color){
+
+        document.documentElement
+            .style
+            .setProperty("--accent",CONFIG.color);
+
+    }
+
+    renderCatalog(FILTERED);
+
+}
+
+
+//----------------------------------------------------------
+// UTILIDADES
+//----------------------------------------------------------
+
+function coverUrl(game){
+
+    return COVER_PATH + game.cover;
+
+}
+
+function videoUrl(game){
+
+    return VIDEO_PATH + game.video;
+
+}
+
+function romUrl(game){
+
+    if(game.rom.startsWith("http://")){
+
+        return game.rom;
+
+    }
+
+    if(game.rom.startsWith("https://")){
+
+        return game.rom;
+
+    }
+
+    return ROM_PATH + game.rom;
+
+}
+
+
+//----------------------------------------------------------
+// ERROR
+//----------------------------------------------------------
+
+function showError(error){
+
+    console.error(error);
+
+    gamesContainer.innerHTML=`
+
+        <div class="empty">
+
+            No se pudo cargar
+
+            <br><br>
+
+            ${CONFIG_URL}
+
+        </div>
+
+    `;
+
+}
+
+/* ==========================================================
+   RENDER DEL CATÁLOGO
+========================================================== */
+
+function renderCatalog(list){
+
+    gamesContainer.textContent = "";
+
+    if(list.length === 0){
+
+        const empty = document.createElement("div");
+
+        empty.className = "empty";
+
+        empty.textContent = "No se encontraron juegos.";
+
+        gamesContainer.appendChild(empty);
+
+        return;
+
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    list.forEach(game=>{
+
+        fragment.appendChild(createCard(game));
+
+    });
+
+    gamesContainer.appendChild(fragment);
+
+    observeImages();
+
+}
+
+
+/* ==========================================================
+   CREAR TARJETA
+========================================================== */
+
+function createCard(game){
+
+    const card =
+        template.content.firstElementChild.cloneNode(true);
+
+    card.dataset.title =
+        game.title.toLowerCase();
+
+    card.dataset.rom =
+        romUrl(game);
+
+    if(game.genre){
+
+        card.dataset.genre =
+            game.genre.toLowerCase();
+
+    }
+
+    if(game.publisher){
+
+        card.dataset.publisher =
+            game.publisher.toLowerCase();
+
+    }
+
+    const img =
+        card.querySelector("img");
+
+    img.dataset.src =
+        coverUrl(game);
+
+    img.alt =
+        game.title;
+
+    const video =
+        card.querySelector("video");
+
+    if(game.video){
+
+        video.dataset.src =
+            videoUrl(game);
+
+    }else{
+
+        video.remove();
+
+    }
+
+    card.querySelector("h3").textContent =
+        game.title;
+
+    card.querySelector("p").textContent =
+        CONFIG.title;
+
+    return card;
+
+}
+
+
+/* ==========================================================
+   ABRIR JUEGO
+========================================================== */
+
+gamesContainer.addEventListener("click",e=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    const url =
+        `emulator/play.html?core=${CONFIG.core}&rom=${encodeURIComponent(card.dataset.rom)}`;
+
+    window.location.href = url;
+
+});
+
+/* ==========================================================
+   LAZY LOADING DE PORTADAS
+========================================================== */
+
+const imageObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(!entry.isIntersecting) return;
+
+        const img = entry.target;
+
+        img.src = img.dataset.src;
+
+        img.removeAttribute("data-src");
+
+        imageObserver.unobserve(img);
+
+    });
+
+},{
+    rootMargin:"300px"
+});
+
+
+function observeImages(){
+
+    gamesContainer
+        .querySelectorAll("img[data-src]")
+        .forEach(img=>imageObserver.observe(img));
+
+}
+
+
+/* ==========================================================
+   PREVIEW DE VÍDEOS
+========================================================== */
+
+let hoverTimer = null;
+
+let activeVideo = null;
+
+
+gamesContainer.addEventListener(
+    "pointerenter",
+    handlePointerEnter,
+    true
+);
+
+gamesContainer.addEventListener(
+    "pointerleave",
+    handlePointerLeave,
+    true
+);
+
+
+function handlePointerEnter(e){
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    const video = card.querySelector("video");
+
+    if(!video) return;
+
+    clearTimeout(hoverTimer);
+
+    hoverTimer = setTimeout(()=>{
+
+        if(activeVideo && activeVideo!==video){
+
+            stopVideo(activeVideo);
+
+        }
+
+        if(!video.src){
+
+            video.src = video.dataset.src;
+
+        }
+
+        activeVideo = video;
+
+        video.play().catch(()=>{});
+
+        const img = card.querySelector("img");
+
+        img.style.opacity = "0";
+
+        video.style.opacity = "1";
+
+    },150);
+
+}
+
+
+function handlePointerLeave(e){
+
+    clearTimeout(hoverTimer);
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    const video = card.querySelector("video");
+
+    if(!video) return;
+
+    stopVideo(video);
+
+}
+
+
+/* ==========================================================
+   DETENER VÍDEO
+========================================================== */
+
+function stopVideo(video){
+
+    video.pause();
+
+    video.currentTime = 0;
+
+    video.style.opacity = "0";
+
+    const img = video.parentElement.querySelector("img");
+
+    if(img){
+
+        img.style.opacity = "1";
+
+    }
+
+}
+
+
+/* ==========================================================
+   LIBERAR MEMORIA
+========================================================== */
+
+const videoObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting) return;
+
+        const video = entry.target;
+
+        stopVideo(video);
+
+        video.removeAttribute("src");
+
+        video.load();
+
+    });
+
+},{
+    rootMargin:"100px"
+});
+
+
+function observeVideos(){
+
+    gamesContainer
+        .querySelectorAll("video")
+        .forEach(video=>videoObserver.observe(video));
+
+}
+
+/* ==========================================================
+   BUSCADOR V3
+========================================================== */
+
+searchInput.addEventListener("input", searchGames);
+
+function searchGames(){
+
+    const text = searchInput.value
+        .trim()
+        .toLowerCase();
+
+    let visible = 0;
+
+    gamesContainer
+        .querySelectorAll(".card")
+        .forEach(card=>{
+
+            const title = card.dataset.title;
+
+            const genre = card.dataset.genre || "";
+
+            const publisher = card.dataset.publisher || "";
+
+            const match =
+
+                title.includes(text) ||
+
+                genre.includes(text) ||
+
+                publisher.includes(text);
+
+            card.hidden = !match;
+
+            if(match) visible++;
+
+        });
+
+    updateEmptyState(visible);
+
+}
+
+
+/* ==========================================================
+   MENSAJE VACÍO
+========================================================== */
+
+function updateEmptyState(total){
+
+    let empty =
+        document.getElementById("emptyState");
+
+    if(total>0){
+
+        if(empty){
+
+            empty.remove();
+
+        }
+
+        return;
+
+    }
+
+    if(empty) return;
+
+    empty = document.createElement("div");
+
+    empty.id = "emptyState";
+
+    empty.className = "empty";
+
+    empty.textContent = "No se encontraron juegos.";
+
+    gamesContainer.appendChild(empty);
+
+}
+
+
+/* ==========================================================
+   ORDENAR
+========================================================== */
+
+function sortGames(mode="az"){
+
+    const cards =
+        [...gamesContainer.querySelectorAll(".card")];
+
+    cards.sort((a,b)=>{
+
+        switch(mode){
+
+            case "za":
+
+                return b.dataset.title.localeCompare(a.dataset.title);
+
+            default:
+
+                return a.dataset.title.localeCompare(b.dataset.title);
+
+        }
+
+    });
+
+    cards.forEach(card=>{
+
+        gamesContainer.appendChild(card);
+
+    });
+
+}
+
+
+/* ==========================================================
+   ATAJOS
+========================================================== */
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="/"){
+
+        e.preventDefault();
+
+        searchInput.focus();
+
+    }
+
+    if(e.key==="Escape"){
+
+        searchInput.value="";
+
+        searchGames();
+
+        searchInput.blur();
+
+    }
+
+});
+
+
+/* ==========================================================
+   IMAGEN POR DEFECTO
+========================================================== */
+
+gamesContainer.addEventListener("error",e=>{
+
+    if(e.target.tagName==="IMG"){
+
+        e.target.src="media/default-cover.jpg";
+
+    }
+
+},true);
+
+
+/* ==========================================================
+   INICIO
+========================================================== */
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    loadCatalog();
+
+});
+
+/* ==========================================================
+   VISTA PREVIA INTELIGENTE (SMART PREVIEW)
+========================================================== */
+
+let previewTimer = null;
+let currentCard = null;
+
+function startPreview(card){
+
+    if(card===currentCard) return;
+
+    stopPreview();
+
+    currentCard = card;
+
+    const video = card.querySelector("video");
+
+    if(!video) return;
+
+    previewTimer = setTimeout(()=>{
+
+        if(!video.src){
+
+            video.src = video.dataset.src;
+
+            video.load();
+
+        }
+
+        video.play().catch(()=>{});
+
+        const img = card.querySelector("img");
+
+        if(img){
+
+            img.style.opacity="0";
+
+        }
+
+        video.style.opacity="1";
+
+    },150);
+
+}
+
+function stopPreview(){
+
+    clearTimeout(previewTimer);
+
+    if(!currentCard) return;
+
+    const video = currentCard.querySelector("video");
+
+    if(video){
+
+        video.pause();
+
+        video.currentTime = 0;
+
+        video.style.opacity = "0";
+
+    }
+
+    const img = currentCard.querySelector("img");
+
+    if(img){
+
+        img.style.opacity = "1";
+
+    }
+
+    currentCard = null;
+
+}
+
+
+/* ==========================================================
+   EVENTOS DEL RATÓN
+========================================================== */
+
+gamesContainer.addEventListener("pointerover",(e)=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    startPreview(card);
+
+});
+
+gamesContainer.addEventListener("pointerout",(e)=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    stopPreview();
+
+});
+
+
+/* ==========================================================
+   DOBLE TOQUE EN MÓVIL
+========================================================== */
+
+let lastTouchCard = null;
+
+gamesContainer.addEventListener("touchend",(e)=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    if(lastTouchCard===card){
+
+        window.location.href =
+            `emulator/play.html?core=${CONFIG.core}&rom=${encodeURIComponent(card.dataset.rom)}`;
+
+        lastTouchCard = null;
+
+        return;
+
+    }
+
+    lastTouchCard = card;
+
+    startPreview(card);
+
+    setTimeout(()=>{
+
+        lastTouchCard = null;
+
+    },1000);
+
+},{passive:true});
+
+
+/* ==========================================================
+   LIBERAR MEMORIA DE LOS VÍDEOS
+========================================================== */
+
+const previewObserver = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting) return;
+
+        const video = entry.target;
+
+        video.pause();
+
+        video.removeAttribute("src");
+
+        video.load();
+
+    });
+
+},{
+    rootMargin:"200px"
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    gamesContainer.querySelectorAll("video").forEach(video=>{
+
+        previewObserver.observe(video);
+
+    });
+
+});
+
+/* ==========================================================
+   RETRO CATALOG V3
+   PARTE 8
+   EMULATORJS + UTILIDADES
+========================================================== */
+
+/* ---------- Abrir juego ---------- */
+
+function openGame(rom){
+
+    stopPreview();
+
+    const url =
+        `emulator/play.html?core=${CONFIG.core}&rom=${encodeURIComponent(rom)}`;
+
+    window.location.assign(url);
+
+}
+
+
+/* ---------- Click ---------- */
+
+gamesContainer.addEventListener("click",(e)=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    openGame(card.dataset.rom);
+
+});
+
+
+/* ---------- Precargar EmulatorJS ---------- */
+
+const emulatorPreload = document.createElement("link");
+
+emulatorPreload.rel = "prefetch";
+
+emulatorPreload.href = "emulator/play.html";
+
+document.head.appendChild(emulatorPreload);
+
+
+/* ---------- Detener vídeos al cambiar de pestaña ---------- */
+
+document.addEventListener("visibilitychange",()=>{
+
+    if(document.hidden){
+
+        stopPreview();
+
+    }
+
+});
+
+
+/* ---------- Detener vídeos al salir ---------- */
+
+window.addEventListener("pagehide",()=>{
+
+    stopPreview();
+
+});
+
+
+/* ---------- Evitar arrastrar imágenes ---------- */
+
+document.addEventListener("dragstart",(e)=>{
+
+    if(e.target.matches("img,video")){
+
+        e.preventDefault();
+
+    }
+
+});
+
+
+/* ---------- Información ---------- */
+
+console.log(`
+===================================
+
+ Retro Catalog V3
+
+ Sistema : ${SYSTEM}
+
+ Core : ${CONFIG.core}
+
+ Juegos : ${GAMES.length}
+
+===================================
+`);
+
+/* ==========================================================
+   RETRO CATALOG V3
+   PARTE 9
+   EFECTOS Y RENDIMIENTO
+========================================================== */
+
+/* ---------- Efecto Spotlight ---------- */
+
+gamesContainer.addEventListener("pointermove",(e)=>{
+
+    const card = e.target.closest(".card");
+
+    if(!card) return;
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty("--mx",x+"px");
+
+    card.style.setProperty("--my",y+"px");
+
+});
+
+
+/* ---------- Precargar imágenes cercanas ---------- */
+
+const preloadObserver = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(!entry.isIntersecting) return;
+
+        const card = entry.target;
+
+        const img = card.querySelector("img");
+
+        if(img && img.dataset.src){
+
+            const preload = new Image();
+
+            preload.src = img.dataset.src;
+
+        }
+
+        preloadObserver.unobserve(card);
+
+    });
+
+},{
+    rootMargin:"600px"
+});
+
+
+function preloadCards(){
+
+    document
+        .querySelectorAll(".card")
+        .forEach(card=>preloadObserver.observe(card));
+
+}
+
+
+/* ---------- FPS Friendly ---------- */
+
+document.querySelectorAll(".card").forEach(card=>{
+
+    card.style.willChange="transform";
+
+});
+
+
+/* ---------- Ocultar vídeos si la conexión es lenta ---------- */
+
+const connection =
+    navigator.connection ||
+    navigator.mozConnection ||
+    navigator.webkitConnection;
+
+if(connection){
+
+    if(
+
+        connection.saveData ||
+
+        connection.effectiveType==="2g"
+
+    ){
+
+        document.documentElement.classList.add("low-bandwidth");
+
+    }
+
+}
+
+
+/* ---------- Mensaje de consola ---------- */
+
+console.log("Visual Engine Ready");
+
+/* ==========================================================
+   RETRO CATALOG V3
+   PARTE 10
+   FINAL
+========================================================== */
+
+/* ---------- Precargar imágenes próximas ---------- */
+
+if ("requestIdleCallback" in window) {
+
+    requestIdleCallback(() => {
+
+        document.querySelectorAll("img[data-src]").forEach(img => {
+
+            imageObserver.observe(img);
+
+        });
+
+    });
+
+}
+
+/* ---------- Limpiar memoria ---------- */
+
+window.addEventListener("beforeunload", () => {
+
+    stopPreview();
+
+});
+
+/* ---------- Restaurar scroll ---------- */
+
+if ("scrollRestoration" in history) {
+
+    history.scrollRestoration = "manual";
+
+}
+
+/* ---------- Información ---------- */
+
+console.log(`
+==========================================
+        RETRO CATALOG V3
+==========================================
+
+Sistema : ${SYSTEM}
+
+Título  : ${CONFIG.title}
+
+Core    : ${CONFIG.core}
+
+Juegos  : ${GAMES.length}
+
+Estado  : OK
+
+==========================================
+`);
+
+/* ---------- Inicio ---------- */
+
+loadCatalog();
+
+</script>
 
 </body>
-</html>
 
+</html>
