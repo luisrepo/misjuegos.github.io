@@ -1,0 +1,567 @@
+﻿{
+    "color":  "#7c3aed",
+    "title":  "Mega Drive",
+    "core":  "segaMD",
+    "archive":  "MEGADRIVECollection",
+    "games":  [
+ [
+    {
+        "title": "Aaahh!!! Real Monsters (Europe)",
+        "cover": "Aaahh!!! Real Monsters (Europe).jpg",
+        "video": "Aaahh!!! Real Monsters (Europe).mp4",
+        "rom": "Aaahh!!! Real Monsters (Europe).zip"
+    },
+    {
+        "title": "Aladdin (Europe)",
+        "cover": "Aladdin (Europe).jpg",
+        "video": "Aladdin (Europe).mp4",
+        "rom": "Aladdin (Europe).zip"
+    },
+    {
+        "title": "Alien Soldier (Europe)",
+        "cover": "Alien Soldier (Europe).jpg",
+        "video": "Alien Soldier (Europe).mp4",
+        "rom": "Alien Soldier (Europe).zip"
+    },
+    {
+        "title": "Alisia Dragoon (Europe)",
+        "cover": "Alisia Dragoon (Europe).jpg",
+        "video": "Alisia Dragoon (Europe).mp4",
+        "rom": "Alisia Dragoon (Europe).zip"
+    },
+    {
+        "title": "Arcus Odyssey (Europe)",
+        "cover": "Arcus Odyssey (Europe).jpg",
+        "video": "Arcus Odyssey (Europe).mp4",
+        "rom": "Arcus Odyssey (Europe).zip"
+    },
+    {
+        "title": "Beyond Oasis (Europe)",
+        "cover": "Beyond Oasis (Europe).jpg",
+        "video": "Beyond Oasis (Europe).mp4",
+        "rom": "Beyond Oasis (Europe).zip"
+    },
+    {
+        "title": "Bio-Hazard Battle (Europe)",
+        "cover": "Bio-Hazard Battle (Europe).jpg",
+        "video": "Bio-Hazard Battle (Europe).mp4",
+        "rom": "Bio-Hazard Battle (Europe).zip"
+    },
+    {
+        "title": "Bonanza Bros. (Europe)",
+        "cover": "Bonanza Bros. (Europe).jpg",
+        "video": "Bonanza Bros. (Europe).mp4",
+        "rom": "Bonanza Bros. (Europe).zip"
+    },
+    {
+        "title": "Castle of Illusion Starring Mickey Mouse (Europe)",
+        "cover": "Castle of Illusion Starring Mickey Mouse (Europe).jpg",
+        "video": "Castle of Illusion Starring Mickey Mouse (Europe).mp4",
+        "rom": "Castle of Illusion Starring Mickey Mouse (Europe).zip"
+    },
+    {
+        "title": "Castlevania - Bloodlines (Europe)",
+        "cover": "Castlevania - Bloodlines (Europe).jpg",
+        "video": "Castlevania - Bloodlines (Europe).mp4",
+        "rom": "Castlevania - Bloodlines (Europe).zip"
+    },
+    {
+        "title": "Columns (World)",
+        "cover": "Columns (World).jpg",
+        "video": "Columns (World).mp4",
+        "rom": "Columns (World).zip"
+    },
+    {
+        "title": "Comix Zone (Europe)",
+        "cover": "Comix Zone (Europe).jpg",
+        "video": "Comix Zone (Europe).mp4",
+        "rom": "Comix Zone (Europe).zip"
+    },
+    {
+        "title": "Contra - Hard Corps (Europe)",
+        "cover": "Contra - Hard Corps (Europe).jpg",
+        "video": "Contra - Hard Corps (Europe).mp4",
+        "rom": "Contra - Hard Corps (Europe).zip"
+    },
+    {
+        "title": "Desert Strike - Return to the Gulf (Europe)",
+        "cover": "Desert Strike - Return to the Gulf (Europe).jpg",
+        "video": "Desert Strike - Return to the Gulf (Europe).mp4",
+        "rom": "Desert Strike - Return to the Gulf (Europe).zip"
+    },
+    {
+        "title": "Dynamite Headdy (Europe)",
+        "cover": "Dynamite Headdy (Europe).jpg",
+        "video": "Dynamite Headdy (Europe).mp4",
+        "rom": "Dynamite Headdy (Europe).zip"
+    },
+    {
+        "title": "Earthworm Jim (Europe)",
+        "cover": "Earthworm Jim (Europe).jpg",
+        "video": "Earthworm Jim (Europe).mp4",
+        "rom": "Earthworm Jim (Europe).zip"
+    },
+    {
+        "title": "Earthworm Jim 2 (Europe)",
+        "cover": "Earthworm Jim 2 (Europe).jpg",
+        "video": "Earthworm Jim 2 (Europe).mp4",
+        "rom": "Earthworm Jim 2 (Europe).zip"
+    },
+    {
+        "title": "Ecco - The Tides of Time (Europe)",
+        "cover": "Ecco - The Tides of Time (Europe).jpg",
+        "video": "Ecco - The Tides of Time (Europe).mp4",
+        "rom": "Ecco - The Tides of Time (Europe).zip"
+    },
+    {
+        "title": "Ecco the Dolphin (Europe)",
+        "cover": "Ecco the Dolphin (Europe).jpg",
+        "video": "Ecco the Dolphin (Europe).mp4",
+        "rom": "Ecco the Dolphin (Europe).zip"
+    },
+    {
+        "title": "El Viento (Europe)",
+        "cover": "El Viento (Europe).jpg",
+        "video": "El Viento (Europe).mp4",
+        "rom": "El Viento (Europe).zip"
+    },
+    {
+        "title": "ESWAT - City Under Siege (Europe)",
+        "cover": "ESWAT - City Under Siege (Europe).jpg",
+        "video": "ESWAT - City Under Siege (Europe).mp4",
+        "rom": "ESWAT - City Under Siege (Europe).zip"
+    },
+    {
+        "title": "Flashback (Europe)",
+        "cover": "Flashback (Europe).jpg",
+        "video": "Flashback (Europe).mp4",
+        "rom": "Flashback (Europe).zip"
+    },
+    {
+        "title": "Gaiares (Japan)",
+        "cover": "Gaiares (Japan).jpg",
+        "video": "Gaiares (Japan).mp4",
+        "rom": "Gaiares (Japan).zip"
+    },
+    {
+        "title": "Gargoyles (Europe)",
+        "cover": "Gargoyles (Europe).jpg",
+        "video": "Gargoyles (Europe).mp4",
+        "rom": "Gargoyles (Europe).zip"
+    },
+    {
+        "title": "Golden Axe (World)",
+        "cover": "Golden Axe (World).jpg",
+        "video": "Golden Axe (World).mp4",
+        "rom": "Golden Axe (World).zip"
+    },
+    {
+        "title": "Golden Axe II (World)",
+        "cover": "Golden Axe II (World).jpg",
+        "video": "Golden Axe II (World).mp4",
+        "rom": "Golden Axe II (World).zip"
+    },
+    {
+        "title": "Golden Axe III (Japan)",
+        "cover": "Golden Axe III (Japan).jpg",
+        "video": "Golden Axe III (Japan).mp4",
+        "rom": "Golden Axe III (Japan).zip"
+    },
+    {
+        "title": "Gunstar Heroes (Europe)",
+        "cover": "Gunstar Heroes (Europe).jpg",
+        "video": "Gunstar Heroes (Europe).mp4",
+        "rom": "Gunstar Heroes (Europe).zip"
+    },
+    {
+        "title": "Herzog Zwei (Europe)",
+        "cover": "Herzog Zwei (Europe).jpg",
+        "video": "Herzog Zwei (Europe).mp4",
+        "rom": "Herzog Zwei (Europe).zip"
+    },
+    {
+        "title": "James Pond 2 - Codename RoboCod (Europe)",
+        "cover": "James Pond 2 - Codename RoboCod (Europe).jpg",
+        "video": "James Pond 2 - Codename RoboCod (Europe).mp4",
+        "rom": "James Pond 2 - Codename RoboCod (Europe).zip"
+    },
+    {
+        "title": "Jungle Strike (Europe)",
+        "cover": "Jungle Strike (Europe).jpg",
+        "video": "Jungle Strike (Europe).mp4",
+        "rom": "Jungle Strike (Europe).zip"
+    },
+    {
+        "title": "Landstalker (Europe)",
+        "cover": "Landstalker (Europe).jpg",
+        "video": "Landstalker (Europe).mp4",
+        "rom": "Landstalker (Europe).zip"
+    },
+    {
+        "title": "Light Crusader (Europe)",
+        "cover": "Light Crusader (Europe).jpg",
+        "video": "Light Crusader (Europe).mp4",
+        "rom": "Light Crusader (Europe).zip"
+    },
+    {
+        "title": "Mazin Saga - Mutant Fighter (Europe)",
+        "cover": "Mazin Saga - Mutant Fighter (Europe).jpg",
+        "video": "Mazin Saga - Mutant Fighter (Europe).mp4",
+        "rom": "Mazin Saga - Mutant Fighter (Europe).zip"
+    },
+    {
+        "title": "Mega Bomberman (Europe)",
+        "cover": "Mega Bomberman (Europe).jpg",
+        "video": "Mega Bomberman (Europe).mp4",
+        "rom": "Mega Bomberman (Europe).zip"
+    },
+    {
+        "title": "Mega Turrican (Europe)",
+        "cover": "Mega Turrican (Europe).jpg",
+        "video": "Mega Turrican (Europe).mp4",
+        "rom": "Mega Turrican (Europe).zip"
+    },
+    {
+        "title": "Mercs (World)",
+        "cover": "Mercs (World).jpg",
+        "video": "Mercs (World).mp4",
+        "rom": "Mercs (World).zip"
+    },
+    {
+        "title": "Micro Machines (Europe)",
+        "cover": "Micro Machines (Europe).jpg",
+        "video": "Micro Machines (Europe).mp4",
+        "rom": "Micro Machines (Europe).zip"
+    },
+    {
+        "title": "Micro Machines 2 - Turbo Tournament (Europe)",
+        "cover": "Micro Machines 2 - Turbo Tournament (Europe).jpg",
+        "video": "Micro Machines 2 - Turbo Tournament (Europe).mp4",
+        "rom": "Micro Machines 2 - Turbo Tournament (Europe).zip"
+    },
+    {
+        "title": "Micro Machines Military (Europe)",
+        "cover": "Micro Machines Military (Europe).jpg",
+        "video": "Micro Machines Military (Europe).mp4",
+        "rom": "Micro Machines Military (Europe).zip"
+    },
+    {
+        "title": "Mickey Mania (Europe)",
+        "cover": "Mickey Mania (Europe).jpg",
+        "video": "Mickey Mania (Europe).mp4",
+        "rom": "Mickey Mania (Europe).zip"
+    },
+    {
+        "title": "MUSHA (Japan)",
+        "cover": "MUSHA (Japan).jpg",
+        "video": "MUSHA (Japan).mp4",
+        "rom": "MUSHA (Japan).zip"
+    },
+    {
+        "title": "Mystic Defender (World)",
+        "cover": "Mystic Defender (World).jpg",
+        "video": "Mystic Defender (World).mp4",
+        "rom": "Mystic Defender (World).zip"
+    },
+    {
+        "title": "OutRun (World)",
+        "cover": "OutRun (World).jpg",
+        "video": "OutRun (World).mp4",
+        "rom": "OutRun (World).zip"
+    },
+    {
+        "title": "OutRun 2019 (Japan)",
+        "cover": "OutRun 2019 (Japan).jpg",
+        "video": "OutRun 2019 (Japan).mp4",
+        "rom": "OutRun 2019 (Japan).zip"
+    },
+    {
+        "title": "Phantasy Star II (Europe)",
+        "cover": "Phantasy Star II (Europe).jpg",
+        "video": "Phantasy Star II (Europe).mp4",
+        "rom": "Phantasy Star II (Europe).zip"
+    },
+    {
+        "title": "Phantasy Star III - Generations of Doom (Europe)",
+        "cover": "Phantasy Star III - Generations of Doom (Europe).jpg",
+        "video": "Phantasy Star III - Generations of Doom (Europe).mp4",
+        "rom": "Phantasy Star III - Generations of Doom (Europe).zip"
+    },
+    {
+        "title": "Phantasy Star IV (Europe)",
+        "cover": "Phantasy Star IV (Europe).jpg",
+        "video": "Phantasy Star IV (Europe).mp4",
+        "rom": "Phantasy Star IV (Europe).zip"
+    },
+    {
+        "title": "Pulseman (Japan)",
+        "cover": "Pulseman (Japan).jpg",
+        "video": "Pulseman (Japan).mp4",
+        "rom": "Pulseman (Japan).zip"
+    },
+    {
+        "title": "QuackShot Starring Donald Duck (World)",
+        "cover": "QuackShot Starring Donald Duck (World).jpg",
+        "video": "QuackShot Starring Donald Duck (World).mp4",
+        "rom": "QuackShot Starring Donald Duck (World).zip"
+    },
+    {
+        "title": "Ranger X (Europe)",
+        "cover": "Ranger X (Europe).jpg",
+        "video": "Ranger X (Europe).mp4",
+        "rom": "Ranger X (Europe).zip"
+    },
+    {
+        "title": "Ristar (Europe)",
+        "cover": "Ristar (Europe).jpg",
+        "video": "Ristar (Europe).mp4",
+        "rom": "Ristar (Europe).zip"
+    },
+    {
+        "title": "Road Rash II (Europe)",
+        "cover": "Road Rash II (Europe).jpg",
+        "video": "Road Rash II (Europe).mp4",
+        "rom": "Road Rash II (Europe).zip"
+    },
+    {
+        "title": "Shadow Dancer - The Secret of Shinobi (Europe)",
+        "cover": "Shadow Dancer - The Secret of Shinobi (Europe).jpg",
+        "video": "Shadow Dancer - The Secret of Shinobi (Europe).mp4",
+        "rom": "Shadow Dancer - The Secret of Shinobi (Europe).zip"
+    },
+    {
+        "title": "Shining Force (Europe)",
+        "cover": "Shining Force (Europe).jpg",
+        "video": "Shining Force (Europe).mp4",
+        "rom": "Shining Force (Europe).zip"
+    },
+    {
+        "title": "Shining Force II (Europe)",
+        "cover": "Shining Force II (Europe).jpg",
+        "video": "Shining Force II (Europe).mp4",
+        "rom": "Shining Force II (Europe).zip"
+    },
+    {
+        "title": "Shining in the Darkness (Europe)",
+        "cover": "Shining in the Darkness (Europe).jpg",
+        "video": "Shining in the Darkness (Europe).mp4",
+        "rom": "Shining in the Darkness (Europe).zip"
+    },
+    {
+        "title": "Shinobi III - Return of the Ninja Master (Europe)",
+        "cover": "Shinobi III - Return of the Ninja Master (Europe).jpg",
+        "video": "Shinobi III - Return of the Ninja Master (Europe).mp4",
+        "rom": "Shinobi III - Return of the Ninja Master (Europe).zip"
+    },
+    {
+        "title": "Soleil (Europe)",
+        "cover": "Soleil (Europe).jpg",
+        "video": "Soleil (Europe).mp4",
+        "rom": "Soleil (Europe).zip"
+    },
+    {
+        "title": "Sonic & Knuckles (World)",
+        "cover": "Sonic & Knuckles (World).jpg",
+        "video": "Sonic & Knuckles (World).mp4",
+        "rom": "Sonic & Knuckles (World).zip"
+    },
+    {
+        "title": "Sonic 3D Blast (Europe)",
+        "cover": "Sonic 3D Blast (Europe).jpg",
+        "video": "Sonic 3D Blast (Europe).mp4",
+        "rom": "Sonic 3D Blast (Europe).zip"
+    },
+    {
+        "title": "Sonic Spinball (Europe)",
+        "cover": "Sonic Spinball (Europe).jpg",
+        "video": "Sonic Spinball (Europe).mp4",
+        "rom": "Sonic Spinball (Europe).zip"
+    },
+    {
+        "title": "Sonic the Hedgehog (USA, Europe)",
+        "cover": "Sonic the Hedgehog (USA, Europe).jpg",
+        "video": "Sonic the Hedgehog (USA, Europe).mp4",
+        "rom": "Sonic the Hedgehog (USA, Europe).zip"
+    },
+    {
+        "title": "Sonic the Hedgehog 2 (World)",
+        "cover": "Sonic the Hedgehog 2 (World).jpg",
+        "video": "Sonic the Hedgehog 2 (World).mp4",
+        "rom": "Sonic the Hedgehog 2 (World).zip"
+    },
+    {
+        "title": "Sonic the Hedgehog 3 (USA)",
+        "cover": "Sonic the Hedgehog 3 (USA).jpg",
+        "video": "Sonic the Hedgehog 3 (USA).mp4",
+        "rom": "Sonic the Hedgehog 3 (USA).zip"
+    },
+    {
+        "title": "Sparkster (Europe)",
+        "cover": "Sparkster (Europe).jpg",
+        "video": "Sparkster (Europe).mp4",
+        "rom": "Sparkster (Europe).zip"
+    },
+    {
+        "title": "Street Fighter II' - Special Champion Edition (Europe)",
+        "cover": "Street Fighter II' - Special Champion Edition (Europe).jpg",
+        "video": "Street Fighter II' - Special Champion Edition (Europe).mp4",
+        "rom": "Street Fighter II' - Special Champion Edition (Europe).zip"
+    },
+    {
+        "title": "Streets of Rage (World)",
+        "cover": "Streets of Rage (World).jpg",
+        "video": "Streets of Rage (World).mp4",
+        "rom": "Streets of Rage (World).zip"
+    },
+    {
+        "title": "Streets of Rage 2 (USA)",
+        "cover": "Streets of Rage 2 (USA).jpg",
+        "video": "Streets of Rage 2 (USA).mp4",
+        "rom": "Streets of Rage 2 (USA).zip"
+    },
+    {
+        "title": "Streets of Rage 3 (USA)",
+        "cover": "Streets of Rage 3 (USA).jpg",
+        "video": "Streets of Rage 3 (USA).mp4",
+        "rom": "Streets of Rage 3 (USA).zip"
+    },
+    {
+        "title": "Sub-Terrania (Europe)",
+        "cover": "Sub-Terrania (Europe).jpg",
+        "video": "Sub-Terrania (Europe).mp4",
+        "rom": "Sub-Terrania (Europe).zip"
+    },
+    {
+        "title": "Super Fantasy Zone (Japan)",
+        "cover": "Super Fantasy Zone (Japan).jpg",
+        "video": "Super Fantasy Zone (Japan).mp4",
+        "rom": "Super Fantasy Zone (Japan).zip"
+    },
+    {
+        "title": "Super Hang-On (World)",
+        "cover": "Super Hang-On (World).jpg",
+        "video": "Super Hang-On (World).mp4",
+        "rom": "Super Hang-On (World).zip"
+    },
+    {
+        "title": "Target Earth (USA)",
+        "cover": "Target Earth (USA).jpg",
+        "video": "Target Earth (USA).mp4",
+        "rom": "Target Earth (USA).zip"
+    },
+    {
+        "title": "The Adventures of Batman & Robin (Europe)",
+        "cover": "The Adventures of Batman & Robin (Europe).jpg",
+        "video": "The Adventures of Batman & Robin (Europe).mp4",
+        "rom": "The Adventures of Batman & Robin (Europe).zip"
+    },
+    {
+        "title": "The Lion King (Europe)",
+        "cover": "The Lion King (Europe).jpg",
+        "video": "The Lion King (Europe).mp4",
+        "rom": "The Lion King (Europe).zip"
+    },
+    {
+        "title": "The Revenge of Shinobi (Europe)",
+        "cover": "The Revenge of Shinobi (Europe).jpg",
+        "video": "The Revenge of Shinobi (Europe).mp4",
+        "rom": "The Revenge of Shinobi (Europe).zip"
+    },
+    {
+        "title": "The Story of Thor (Europe)",
+        "cover": "The Story of Thor (Europe).jpg",
+        "video": "The Story of Thor (Europe).mp4",
+        "rom": "The Story of Thor (Europe).zip"
+    },
+    {
+        "title": "Thunder Force II (Europe)",
+        "cover": "Thunder Force II (Europe).jpg",
+        "video": "Thunder Force II (Europe).mp4",
+        "rom": "Thunder Force II (Europe).zip"
+    },
+    {
+        "title": "Thunder Force III (Europe)",
+        "cover": "Thunder Force III (Europe).jpg",
+        "video": "Thunder Force III (Europe).mp4",
+        "rom": "Thunder Force III (Europe).zip"
+    },
+    {
+        "title": "Thunder Force IV (Europe)",
+        "cover": "Thunder Force IV (Europe).jpg",
+        "video": "Thunder Force IV (Europe).mp4",
+        "rom": "Thunder Force IV (Europe).zip"
+    },
+    {
+        "title": "Tiny Toon Adventures - Buster's Hidden Treasure (Europe)",
+        "cover": "Tiny Toon Adventures - Buster's Hidden Treasure (Europe).jpg",
+        "video": "Tiny Toon Adventures - Buster's Hidden Treasure (Europe).mp4",
+        "rom": "Tiny Toon Adventures - Buster's Hidden Treasure (Europe).zip"
+    },
+    {
+        "title": "ToeJam & Earl (USA)",
+        "cover": "ToeJam & Earl (USA).jpg",
+        "video": "ToeJam & Earl (USA).mp4",
+        "rom": "ToeJam & Earl (USA).zip"
+    },
+    {
+        "title": "ToeJam & Earl in Panic on Funkotron (USA)",
+        "cover": "ToeJam & Earl in Panic on Funkotron (USA).jpg",
+        "video": "ToeJam & Earl in Panic on Funkotron (USA).mp4",
+        "rom": "ToeJam & Earl in Panic on Funkotron (USA).zip"
+    },
+    {
+        "title": "Truxton (World)",
+        "cover": "Truxton (World).jpg",
+        "video": "Truxton (World).mp4",
+        "rom": "Truxton (World).zip"
+    },
+    {
+        "title": "Ultimate Mortal Kombat 3 (Europe)",
+        "cover": "Ultimate Mortal Kombat 3 (Europe).jpg",
+        "video": "Ultimate Mortal Kombat 3 (Europe).mp4",
+        "rom": "Ultimate Mortal Kombat 3 (Europe).zip"
+    },
+    {
+        "title": "Vectorman (Europe)",
+        "cover": "Vectorman (Europe).jpg",
+        "video": "Vectorman (Europe).mp4",
+        "rom": "Vectorman (Europe).zip"
+    },
+    {
+        "title": "Vectorman 2 (Europe)",
+        "cover": "Vectorman 2 (Europe).jpg",
+        "video": "Vectorman 2 (Europe).mp4",
+        "rom": "Vectorman 2 (Europe).zip"
+    },
+    {
+        "title": "Virtua Racing (Europe)",
+        "cover": "Virtua Racing (Europe).jpg",
+        "video": "Virtua Racing (Europe).mp4",
+        "rom": "Virtua Racing (Europe).zip"
+    },
+    {
+        "title": "Warsong (USA)",
+        "cover": "Warsong (USA).jpg",
+        "video": "Warsong (USA).mp4",
+        "rom": "Warsong (USA).zip"
+    },
+    {
+        "title": "World of Illusion Starring Mickey Mouse and Donald Duck (Europe)",
+        "cover": "World of Illusion Starring Mickey Mouse and Donald Duck (Europe).jpg",
+        "video": "World of Illusion Starring Mickey Mouse and Donald Duck (Europe).mp4",
+        "rom": "World of Illusion Starring Mickey Mouse and Donald Duck (Europe).zip"
+    },
+    {
+        "title": "Zero Wing (Europe)",
+        "cover": "Zero Wing (Europe).jpg",
+        "video": "Zero Wing (Europe).mp4",
+        "rom": "Zero Wing (Europe).zip"
+    },
+    {
+        "title": "Zombies Ate My Neighbors (Europe)",
+        "cover": "Zombies Ate My Neighbors (Europe).jpg",
+        "video": "Zombies Ate My Neighbors (Europe).mp4",
+        "rom": "Zombies Ate My Neighbors (Europe).zip"
+    }
+  ]
+}
