@@ -233,6 +233,9 @@ main{
 
     position:relative;
 
+    width: var(--card-width);
+    min-height: var(--card-height);
+
     background:var(--surface);
 
     border:1px solid var(--border);
@@ -244,11 +247,8 @@ main{
     cursor:pointer;
 
     transition:
-
         transform .22s,
-
         border-color .22s,
-
         box-shadow .22s;
 
 }
@@ -266,13 +266,9 @@ main{
 }
 
 .cover{
+    position: relative;
     aspect-ratio: var(--cover-ratio);
-}
-
-.cover img{
-    width:100%;
-    height:100%;
-    object-fit: var(--cover-fit);
+    overflow: hidden;
 }
 
 .cover img{
@@ -681,8 +677,11 @@ async function loadCatalog(){
 
         }
 
-       CONFIG = await response.json();
-	   document.documentElement.style.setProperty(
+CONFIG = await response.json();
+
+ARCHIVE_URL = `https://archive.org/download/${CONFIG.archive}/`;
+
+document.documentElement.style.setProperty(
     "--cover-fit",
     CONFIG.coverFit || "cover"
 );
@@ -690,6 +689,16 @@ async function loadCatalog(){
 document.documentElement.style.setProperty(
     "--cover-ratio",
     CONFIG.coverRatio || "16/9"
+);
+
+document.documentElement.style.setProperty(
+    "--card-width",
+    CONFIG.cardWidth || "240px"
+);
+
+document.documentElement.style.setProperty(
+    "--card-height",
+    CONFIG.cardHeight || "380px"
 );
 
 ARCHIVE_URL = `https://archive.org/download/${CONFIG.archive}/`;

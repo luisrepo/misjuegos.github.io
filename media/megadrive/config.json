@@ -7,6 +7,8 @@
     "archive":  "megadrive_202608",
 	"coverFit": "contain",
 	"coverRatio": "3/4",
+	"cardWidth": "250px",
+    "cardHeight": "520px",
     "games":  [
                   {
                       "title":  "16t (Japan)",
