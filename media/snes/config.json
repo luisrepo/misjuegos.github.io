@@ -5,6 +5,8 @@
     "generation":  "16 bits",
     "core":  "snes",
     "archive":  "snes_20260823_202608",
+	"coverFit": "contain",
+	"coverRatio": "16/9",
     "games":  [
                   {
                       "title":  "\u002796 Zenkoku Koukou Soccer Senshuken (Japan)",
