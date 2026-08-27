@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Juego — Mi Biblioteca Retro</title>
+    <style>
+        /* Estética Github Dark */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d1117;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Barra superior para volver y controles */
+        .bar-nav {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-cerrar {
+            color: #ff7b72;
+        }
+
+        .btn-cerrar:hover {
+            background-color: #30363d;
+            border-color: #ff7b72;
+        }
+
+        .btn-fullscreen {
+            color: #58a6ff;
+        }
+
+        .btn-fullscreen:hover {
+            background-color: #30363d;
+            border-color: #58a6ff;
+        }
+
+        /* Contenedor del Emulador */
+        .emulator-container {
+            flex-grow: 1;
+            width: 100%;
+            height: calc(100vh - 50px);
+            position: relative;
+        }
+
+        #emulator {
+            width: 100%;
+            height: 100%;
+        }
+
+        .loading-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #8b949e;
+            font-size: 18px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bar-nav">
+        <a id="btn-back" href="index.html" class="btn-action btn-cerrar">✕ Cerrar Juego</a>
+        <button id="btn-fs" class="btn-action btn-fullscreen" onclick="toggleFullScreen()">⛶ Pantalla Completa</button>
+    </div>
+
+    <div class="emulator-container" id="game-container">
+        <div id="emulator"></div>
+    </div>
+
+    <script>
+        // Función para alternar Pantalla Completa
+        function toggleFullScreen() {
+            const container = document.getElementById('game-container');
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) { /* Safari / iOS */
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // 1. Leer parámetros URL enviados por catalogo.html
+        const params = new URLSearchParams(window.location.search);
+        const systemCore = params.get('core') || 'snes';
+        let romUrl = params.get('rom');
+
+        if (romUrl) {
+            try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
+        }
+
+        document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
+
+        if (!romUrl) {
+            document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
+        } else {
+            // 2. Configurar EmulatorJS
+            EJS_player = "#emulator";
+            EJS_core = systemCore;
+            EJS_gameUrl = romUrl;
+            
+            EJS_pathtodata = "emulator/data/"; 
+            EJS_startOnLoaded = true;
+            EJS_language = "es";
+
+            // 3. Cargar el motor
+            const script = document.createElement('script');
+            script.src = "emulator/data/loader.js";
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
+
+
