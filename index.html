@@ -1,128 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Biblioteca Retro — Menú Principal</title>
-    <style>
-        /* Estética Github Dark */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        h1 {
-            font-size: 28px;
-            color: #f0f6fc;
-            margin-bottom: 8px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .subtitle {
-            color: #8b949e;
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
+<title>My Arcade Spain</title>
 
-        /* Contenedor del Menú */
-        .menu-container {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            width: 100%;
-        }
+<style>
 
-        /* Tarjeta de Consola Interactiva */
-        .console-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 30px;
-            width: 220px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+body{
+    margin:0;
+    font-family:Inter,Arial,sans-serif;
+    background:#0b0b0f;
+    color:white;
+}
 
-        /* Efectos dinámicos en Hover */
-        .console-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
+header{
+    text-align:center;
+    padding:40px 20px;
+}
 
-        /* Colores personalizados por consola al pasar el ratón */
-        .console-card.snes:hover { border-color: #7c3aed; }
-        .console-card.megadrive:hover { border-color: #007eed; }
-        .console-card.mastersystem:hover { border-color: #ef4444; }
-        .console-card.gba:hover { border-color: #10b981; }
+h1{
+    margin:0;
+    font-size:3rem;
+}
 
-        .console-logo {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
+p{
+    color:#aaa;
+}
 
-        .console-card h3 {
-            margin: 10px 0 4px 0;
-            font-size: 18px;
-            color: #f0f6fc;
-        }
+#systems{
 
-        .console-card p {
-            margin: 0;
-            font-size: 13px;
-            color: #8b949e;
-        }
-    </style>
+    width:min(1400px,95%);
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.card{
+
+    width:340px;
+    height:430px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    background:#1b1b22;
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.92) 0%,
+        rgba(0,0,0,.55) 45%,
+        rgba(0,0,0,.15) 100%
+    );
+
+}
+
+.card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.03);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.60);
+
+}
+
+.card>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.logo{
+
+    width:220px;
+
+    height:110px;
+
+    object-fit:contain;
+
+    margin-bottom:35px;
+
+}
+
+.card h2{
+
+    margin:0;
+
+    font-size:32px;
+
+    text-align:center;
+
+}
+
+.fabricante{
+
+    margin-top:10px;
+
+    color:#d8d8d8;
+
+    font-size:20px;
+
+}
+
+.info{
+
+    margin-top:10px;
+
+    color:#b8b8b8;
+
+    font-size:16px;
+
+}
+
+.games{
+
+    margin:22px 0 35px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <h1>Mi Biblioteca Retro</h1>
-    <p class="subtitle">Selecciona una plataforma o busca un juego globalmente</p>
-    
-    <div class="menu-container">
-        
-        <!-- Tarjeta Super Nintendo -->
-        <div class="console-card snes" onclick="location.href='catalogo.html?console=snes'">
-            <div class="console-logo">📺</div>
-            <h3>Super Nintendo</h3>
-            <p>16 Bits — Nintendo</p>
-        </div>
+<header>
 
-        <!-- Tarjeta Sega Mega Drive -->
-        <div class="console-card megadrive" onclick="location.href='catalogo.html?console=megadrive'">
-            <div class="console-logo">🎮</div>
-            <h3>Sega Mega Drive</h3>
-            <p>16 Bits — SEGA</p>
-        </div>
+<h1>MY ARCADE SPAIN</h1>
 
-        <!-- Tarjeta Sega Master System -->
-        <div class="console-card mastersystem" onclick="location.href='catalogo.html?console=mastersystem'">
-            <div class="console-logo">🎮</div>
-            <h3>Sega Master System</h3>
-            <p>8 Bits — SEGA</p>
-        </div>
+<p>Selecciona una consola</p>
 
-        <!-- Tarjeta Game Boy Advance -->
-        <div class="console-card gba" onclick="location.href='catalogo.html?console=gba'">
-            <div class="console-logo">🕹</div>
-            <h3>Game Boy Advance</h3>
-            <p>32 Bits — Portátil</p>
-        </div>
+</header>
 
+<div id="systems"></div>
+
+<script>
+
+async function cargarConsolas(){
+
+    const respuesta = await fetch("systems.json");
+    const sistemas = await respuesta.json();
+
+    const contenedor = document.getElementById("systems");
+
+    for (const sistema of sistemas) {
+
+    let totalJuegos = 0;
+    let config = {};
+
+    try {
+
+        const cfg = await fetch(`media/${sistema.system}/config.json`);
+        config = await cfg.json();
+
+        totalJuegos = config.games ? config.games.length : 0;
+
+    } catch(e) {
+        console.error(e);
+    }
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "card";
+		tarjeta.style.backgroundImage =
+        `linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.75)),
+        url(media/${sistema.system}/background.jpg)`;
+
+tarjeta.style.backgroundSize = "cover";
+tarjeta.style.backgroundPosition = "center";
+
+        tarjeta.innerHTML = `
+    <img class="logo"
+     src="media/${sistema.system}/logos/logo.png"
+     onerror="this.style.display='none'">
+
+<h2>${sistema.title}</h2>
+
+<div class="fabricante">${sistema.manufacturer}</div>
+
+<div class="info">
+    ${sistema.generation} · ${sistema.year}
+</div>
+
+    <div class="games">
+        🎮 ${totalJuegos} juegos
     </div>
+`;
+
+
+        tarjeta.onclick = () => {
+            location.href = `catalogo.html?system=${sistema.system}`;
+        };
+
+        contenedor.appendChild(tarjeta);
+
+    }
+
+}
+
+cargarConsolas();
+
+</script>
 
 </body>
 </html>
-
-

@@ -1,8 +1,9 @@
 ﻿{
-    "color":  "#7c3aed",
-    "title":  "Super Nintendo",
-    "core":  "snes",
-    "archive":  "SNESCollection",
+    "title":"Super Nintendo",
+    "manufacturer":"Nintendo",
+    "year":1990,
+    "generation":"16 bits",
+    "core":"snes",
     "games":  [
                   {
                       "title":  "3 Ninjas Kick Back (USA)",

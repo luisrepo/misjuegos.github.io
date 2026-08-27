@@ -1,0 +1,32 @@
+[
+    {
+        "system": "snes",
+        "title": "Super Nintendo",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "generation": "16 bits",
+        "color": "#7c3aed",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+    {
+        "system": "megadrive",
+        "title": "Mega Drive",
+        "manufacturer": "Sega",
+        "year": 1990,
+        "generation": "16 bits",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+    {
+        "system": "psx",
+        "title": "PlayStation",
+        "manufacturer": "Sony",
+        "year": 1994,
+        "generation": "32 bits",
+        "color": "#0066cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    }
+]

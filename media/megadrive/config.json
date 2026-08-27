@@ -1,10 +1,14 @@
 ﻿{
-    "color":  "#7c3aed",
-    "title":  "Mega Drive",
-    "core":  "segaMD",
-    "archive":  "MEGADRIVECollection",
-    "games":  [
- [
+  "system": "megadrive",
+  "title": "Mega Drive",
+  "manufacturer": "Sega",
+  "year": 1990,
+  "generation": "16 bits",
+  "core": "segaMD",
+  "color": "#0055cc",
+  "logo": "logo.png",
+  "background": "background.jpg",
+  "games": [
     {
         "title": "Aaahh!!! Real Monsters (Europe)",
         "cover": "Aaahh!!! Real Monsters (Europe).jpg",
@@ -15,7 +19,7 @@
         "title": "Aladdin (Europe)",
         "cover": "Aladdin (Europe).jpg",
         "video": "Aladdin (Europe).mp4",
-        "rom": "Aladdin (Europe).zip"
+        "rom": "Aladdin (USA).zip"
     },
     {
         "title": "Alien Soldier (Europe)",

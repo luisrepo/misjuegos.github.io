@@ -144,17 +144,23 @@ button,input{
 }
 
 .logo{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     font-size:28px;
-
     font-weight:800;
+}
 
+#systemLogo{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+#systemTitle{
+    display:flex;
+    align-items:center;
 }
 
 #systemIcon{
@@ -487,6 +493,36 @@ main{
 
 }
 
+#btnInicio{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#7c3aed;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#btnInicio:hover{
+
+    background:#6d28d9;
+
+    transform:scale(1.05);
+
+}
+
 </style>
 
 </head>
@@ -495,19 +531,17 @@ main{
 
 <header id="topbar">
 
-    <a href="index.html" class="btn-home">
-        🏠 Volver al índice
-    </a>
-
     <div class="logo">
 
-        <span id="systemIcon">🎮</span>
+    <img id="systemLogo" alt="Logo">
 
         <span id="systemTitle">
             Catálogo Retro
         </span>
 
     </div>
+
+    <button id="btnInicio">🏠 Inicio</button>
 
     <div class="searchBox">
 
@@ -580,33 +614,29 @@ main{
 
 "use strict";
 
+const params = new URLSearchParams(window.location.search);
+const system = params.get("system") || "snes";
+const BASE = `media/${system}`;
+
+
 /* ==========================================================
    RETRO CATALOG V3
    MOTOR PRINCIPAL
 ========================================================== */
 
-//----------------------------------------------------------
-// PARÁMETROS
-//----------------------------------------------------------
-
-const params = new URLSearchParams(location.search);
-
-const SYSTEM = (params.get("system") || "snes").toLowerCase();
 
 
 //----------------------------------------------------------
 // RUTAS
 //----------------------------------------------------------
 
-const BASE = `media/${SYSTEM}/`;
+const CONFIG_URL = `${BASE}/config.json`;
 
-const CONFIG_URL = BASE + "config.json";
+const COVER_PATH = `${BASE}/covers/`;
 
-const COVER_PATH = BASE + "covers/";
+const VIDEO_PATH = `${BASE}/videos/`;
 
-const VIDEO_PATH = BASE + "videos/";
-
-const ROM_PATH = BASE + "juegos/";
+const ROM_PATH = `${BASE}/juegos/`;
 
 
 //----------------------------------------------------------
@@ -643,9 +673,13 @@ async function loadCatalog(){
 
     try{
 
+        console.log("SYSTEM:", system);
+        console.log("BASE:", BASE);
+        console.log("CONFIG_URL:", CONFIG_URL);
+
         const response = await fetch(CONFIG_URL,{
-            cache:"no-cache"
-        });
+           cache:"no-cache"
+});
 
         if(!response.ok){
 
@@ -653,13 +687,24 @@ async function loadCatalog(){
 
         }
 
-        CONFIG = await response.json();
+       CONFIG = await response.json();
 
-        GAMES = CONFIG.games || [];
+document.title = CONFIG.title;
 
-        FILTERED = [...GAMES];
+document.getElementById("systemTitle").textContent = CONFIG.title;
 
-        initializeCatalog();
+const logo = document.getElementById("systemLogo");
+
+if (logo) {
+    logo.src = BASE + "/logos/logo.png";
+    logo.onerror = () => logo.style.display = "none";
+}
+
+GAMES = CONFIG.games || [];
+
+FILTERED = [...GAMES];
+
+initializeCatalog();
 
     }
 
@@ -1642,6 +1687,9 @@ Estado  : OK
 
 loadCatalog();
 
+document.getElementById("btnInicio").onclick = () => {
+    alert("Botón pulsado");
+};
 </script>
 
 </body>
