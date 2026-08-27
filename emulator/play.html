@@ -1,60 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mi Biblioteca Retro</title>
-<style>
-html, body { margin:0; width:100%; height:100%; background:#000; overflow:hidden; }
-#game { width:100%; height:100%; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Juego — Mi Biblioteca Retro</title>
+    <style>
+        /* Estética Github Dark */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d1117;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Barra superior para volver y controles */
+        .bar-nav {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-cerrar {
+            color: #ff7b72;
+        }
+
+        .btn-cerrar:hover {
+            background-color: #30363d;
+            border-color: #ff7b72;
+        }
+
+        .btn-fullscreen {
+            color: #58a6ff;
+        }
+
+        .btn-fullscreen:hover {
+            background-color: #30363d;
+            border-color: #58a6ff;
+        }
+
+        /* Contenedor del Emulador */
+        .emulator-container {
+            flex-grow: 1;
+            width: 100%;
+            height: calc(100vh - 50px);
+            position: relative;
+        }
+
+        #emulator {
+            width: 100%;
+            height: 100%;
+        }
+
+        .loading-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #8b949e;
+            font-size: 18px;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
 
-<div id="game"></div>
+    <div class="bar-nav">
+        <a id="btn-back" href="index.html" class="btn-action btn-cerrar">✕ Cerrar Juego</a>
+        <button id="btn-fs" class="btn-action btn-fullscreen" onclick="toggleFullScreen()">⛶ Pantalla Completa</button>
+    </div>
 
-<script>
-const params = new URLSearchParams(window.location.search);
+    <div class="emulator-container" id="game-container">
+        <div id="emulator"></div>
+    </div>
 
-window.EJS_player = "#game";
+    <script>
+        // Función para alternar Pantalla Completa
+        function toggleFullScreen() {
+            const container = document.getElementById('game-container');
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) { /* Safari / iOS */
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
 
-// Sistema dinámico (snes, segaMD, gba...)
-window.EJS_core = params.get("core") || "snes";
+        // 1. Leer parámetros URL enviados por catalogo.html
+        const params = new URLSearchParams(window.location.search);
+        const systemCore = params.get('core') || 'snes';
+        let romUrl = params.get('rom');
 
-// Capturamos la ROM que viene de tu archivo index de la carpeta menus
-const rawRomUrl = params.get("rom");
+        if (romUrl) {
+            try { romUrl = decodeURIComponent(romUrl); } catch(e) {}
+        }
 
-// === SOLUCIÓN DEFINITIVA AL ERROR DE RED ===
-// Obligamos a que la ROM pase a través de AllOrigins de forma automática
-// Esto camufla la petición y elimina el bloqueo de GitHub Pages
-if (rawRomUrl && rawRomUrl.startsWith('http')) {
-    window.EJS_gameUrl = "https://allorigins.win" + encodeURIComponent(rawRomUrl);
-} else {
-    window.EJS_gameUrl = rawRomUrl;
-}
+        document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
 
-// Ruta absoluta fija al directorio data de tu servidor de GitHub Pages
-window.EJS_pathtodata = "/misjuegos.github.io/emulator/data/";
+        if (!romUrl) {
+            document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
+        } else {
+            // 2. Configurar EmulatorJS
+            EJS_player = "#emulator";
+            EJS_core = systemCore;
+            EJS_gameUrl = romUrl;
+            
+            EJS_pathtodata = "emulator/data/"; 
+            EJS_startOnLoaded = true;
+            EJS_language = "es";
 
-// Forzamos al emulador a que cargue el núcleo (core) directamente desde internet
-// Así evitamos el error 404 si las carpetas de tus cores locales fallan
-window.EJS_corePath = "https://emulatorjs.org";
-
-// Configuración de arranque estable oficial
-window.EJS_startOnLoaded = true;
-window.EJS_fullscreenOnLoaded = false;
-window.EJS_color = "#7c3aed";
-window.EJS_language = "es-ES";
-window.EJS_volume = 1;
-window.EJS_disableDatabases = true;
-
-window.EJS_onGameStart = function() {
-    console.log("¡El emulador ha arrancado con éxito usando el proxy!");
-};
-</script>
-
-<!-- Carga del cargador principal de EmulatorJS -->
-<script src="/misjuegos.github.io/emulator/data/loader.js"></script>
-
+            // 3. Cargar el motor
+            const script = document.createElement('script');
+            script.src = "emulator/data/loader.js";
+            document.body.appendChild(script);
+        }
+    </script>
 </body>
 </html>
+
+

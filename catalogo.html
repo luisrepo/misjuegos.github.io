@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es">
 
 <head>
@@ -1646,3 +1647,23 @@ loadCatalog();
 </body>
 
 </html>
+=======
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catálogo SNES</title>
+<style>
+body{font-family:Arial;margin:0;background:#111;color:#fff}header{padding:16px;position:sticky;top:0;background:#222}input{width:100%;padding:10px}#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;padding:16px}.card{background:#1b1b1b;border-radius:10px;overflow:hidden;cursor:pointer}.card img,.card video{width:100%;aspect-ratio:3/4;object-fit:cover}.card h3{font-size:14px;padding:8px;margin:0}
+</style></head><body>
+<header><input id=q placeholder="Buscar..."></header><div id=grid></div>
+<script>
+let all=[];
+fetch('media/snes/config.json').then(r=>r.json()).then(d=>{all=d;render(d)});
+function render(arr){grid.innerHTML='';arr.forEach(g=>{let c=document.createElement('div');c.className='card';
+let img=document.createElement('img');img.loading='lazy';img.src='media/snes/covers/'+g.cover;
+c.appendChild(img);
+c.onmouseenter=()=>{if(!c.querySelector('video')){let v=document.createElement('video');v.src='media/snes/videos/'+g.video;v.autoplay=true;muted=true;loop=true;img.replaceWith(v)}};
+c.onmouseleave=()=>{let v=c.querySelector('video');if(v)v.replaceWith(img)};
+c.onclick=()=>location.href='emulator/play.html?core=snes&rom='+encodeURIComponent('media/snes/juegos/'+g.rom);
+let h=document.createElement('h3');h.textContent=g.title;c.appendChild(h);grid.appendChild(c);})}
+q.oninput=e=>render(all.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())));
+</script></body></html>
+>>>>>>> 11b5d66503e5a5e5026638d29f93c4c97edfa7d7
