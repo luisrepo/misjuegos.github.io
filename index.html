@@ -12,8 +12,36 @@
 body{
     margin:0;
     font-family:Inter,Arial,sans-serif;
-    background:#0b0b0f;
     color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at top,#5b2a9d 0%,#1a1d35 40%,#080910 100%);
+
+    position:relative;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(2px 2px at 8% 12%,rgba(255,255,255,.9),transparent),
+        radial-gradient(2px 2px at 22% 78%,rgba(255,255,255,.7),transparent),
+        radial-gradient(1px 1px at 38% 30%,rgba(255,255,255,.8),transparent),
+        radial-gradient(2px 2px at 52% 65%,rgba(255,255,255,.9),transparent),
+        radial-gradient(1px 1px at 74% 18%,rgba(255,255,255,.7),transparent),
+        radial-gradient(2px 2px at 90% 42%,rgba(255,255,255,.9),transparent),
+        radial-gradient(1px 1px at 60% 90%,rgba(255,255,255,.8),transparent);
+
+    opacity:.9;
+
+    z-index:-2;
 }
 
 header{
@@ -23,11 +51,22 @@ header{
 
 h1{
     margin:0;
-    font-size:3rem;
+    font-size:4rem;
+    letter-spacing:6px;
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #7ad7ff,
+        0 0 25px #6b7cff,
+        0 0 45px #a64dff;
 }
 
 p{
-    color:#aaa;
+    color:#c9d2ff;
+    font-size:1.3rem;
+    letter-spacing:1px;
 }
 
 #systems{
@@ -52,13 +91,7 @@ p{
 
     overflow:hidden;
 
-    border-radius:26px;
-
-    background:#1b1b22;
-
-    background-size:cover;
-
-    background-position:center;
+    border-radius:28px;
 
     display:flex;
 
@@ -68,11 +101,32 @@ p{
 
     align-items:center;
 
-    transition:.35s;
-
     cursor:pointer;
 
-    border:1px solid rgba(255,255,255,.08);
+    transition:
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(120,160,255,.25);
+
+    box-shadow:
+
+        0 0 25px rgba(0,140,255,.15),
+
+        inset 0 0 25px rgba(255,255,255,.04),
+
+        0 25px 50px rgba(0,0,0,.45);
+		
 
 }
 
@@ -84,23 +138,75 @@ p{
 
     inset:0;
 
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.92) 0%,
-        rgba(0,0,0,.55) 45%,
-        rgba(0,0,0,.15) 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.08),
+            transparent 35%,
+            rgba(0,0,0,.25) 70%,
+            rgba(0,0,0,.55) 100%
+        );
+
+    pointer-events:none;
+
+    opacity:.9;
 
 }
 
 .card:hover{
 
     transform:
-        translateY(-10px)
-        scale(1.03);
+        translateY(-18px)
+        scale(1.04);
+
+    border-color:#5ecbff;
 
     box-shadow:
-        0 30px 60px rgba(0,0,0,.60);
+
+        0 0 20px rgba(94,203,255,.45),
+
+        0 0 50px rgba(94,203,255,.25),
+
+        0 35px 70px rgba(0,0,0,.65);
+
+}
+
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-60%;
+
+    top:-100%;
+
+    width:45%;
+
+    height:300%;
+
+    transform:rotate(25deg);
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+
+.card:hover::after{
+
+    left:140%;
 
 }
 
@@ -114,13 +220,30 @@ p{
 
 .logo{
 
-    width:220px;
+    width: 270px;
+    max-width: 75%;
 
-    height:110px;
+    height: auto;
 
-    object-fit:contain;
+    display: block;
 
-    margin-bottom:35px;
+    margin: 20px auto 25px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 10px 18px rgba(0,0,0,.45));
+
+    transition: .35s;
+
+}
+
+.card:hover .logo{
+
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(0 15px 25px rgba(0,0,0,.55));
 
 }
 
@@ -170,17 +293,297 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 h1{text-shadow:0 0 15px #66ccff,0 0 35px #8a2be2;letter-spacing:4px;}
 .card{backdrop-filter:blur(8px);box-shadow:0 15px 40px rgba(0,0,0,.45);}
 .card:hover{box-shadow:0 0 25px rgba(120,180,255,.5),0 25px 60px rgba(0,0,0,.6);}
+
+/*=============================
+    HORIZONTE SYNTHWAVE
+==============================*/
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:45vh;
+
+    pointer-events:none;
+
+    background:
+
+    linear-gradient(to top,
+    rgba(255,0,180,.18),
+    rgba(120,0,255,.10),
+    transparent 70%);
+
+    z-index:-0;
+
+}
+
+body::after{
+
+    ...
+
+}
+
+/* PEGA AQUÍ */
+
+.grid-floor{
+
+    position:fixed;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:38vh;
+
+    transform:perspective(600px) rotateX(75deg);
+
+    background:
+
+    repeating-linear-gradient(
+        to right,
+        rgba(255,0,255,.35) 0px,
+        rgba(255,0,255,.35) 2px,
+        transparent 2px,
+        transparent 90px
+    ),
+
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,0,255,.35) 0px,
+        rgba(255,0,255,.35) 2px,
+        transparent 2px,
+        transparent 70px
+    );
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+header,
+main,
+.cards,
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*=========================
+      BARRA SUPERIOR
+=========================*/
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    padding:20px 40px;
+
+    margin-bottom:40px;
+
+}
+
+.titulo{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+#btnMusic{
+
+    width:180px;
+
+    height:55px;
+
+    border-radius:40px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #283048,
+            #4b6cb7
+        );
+
+    box-shadow:
+
+        0 0 20px rgba(0,140,255,.30);
+
+    transition:.30s;
+
+}
+
+#btnMusic:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+
+        0 0 35px rgba(0,180,255,.50);
+
+}
+
+#btnRandom{
+
+    width:180px;
+    height:55px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(135deg,#ff6b00,#ffb300);
+
+    box-shadow:0 0 20px rgba(255,180,0,.35);
+
+    transition:.30s;
+
+}
+
+#btnRandom:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 35px rgba(255,180,0,.55);
+
+}
+
+.searchBox input{
+
+    width:320px;
+
+    height:55px;
+
+    padding:0 22px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:35px;
+
+    font-size:17px;
+
+    color:white;
+
+    background:
+
+        rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    transition:.30s;
+
+}
+
+.searchBox input:focus{
+
+    box-shadow:
+
+        0 0 25px rgba(94,203,255,.45);
+
+}
+
+.topbar{
+
+    position:relative;
+
+    margin-bottom:50px;
+
+}
+
+.topbar::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-25px;
+
+    width:90%;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(94,203,255,.8),
+        transparent
+    );
+
+    box-shadow:
+        0 0 12px rgba(94,203,255,.5);
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
+<div class="grid-floor"></div>
 
-<h1>MY ARCADE SPAIN</h1>
+<header class="topbar">
 
-<p>Tu colección retro online</p>
+    <button id="btnMusic">
+        🎵 Música ON
+    </button>
+
+    <div class="titulo">
+
+        <h1>MY ARCADE SPAIN</h1>
+
+        <p>Tu colección retro online</p>
+
+    </div>
+
+   <button id="btnRandom">
+    🎲 Sorpréndeme
+</button>
+
+</div>
 
 </header>
 
@@ -188,10 +591,12 @@ h1{text-shadow:0 0 15px #66ccff,0 0 35px #8a2be2;letter-spacing:4px;}
 
 <script>
 
+let sistemas = [];
+
 async function cargarConsolas(){
 
-    const respuesta = await fetch("systems.json");
-    const sistemas = await respuesta.json();
+const respuesta = await fetch("systems.json");
+sistemas = await respuesta.json();
 
     const contenedor = document.getElementById("systems");
 
@@ -212,10 +617,32 @@ async function cargarConsolas(){
     }
 
         const tarjeta = document.createElement("div");
+		
         tarjeta.className = "card";
-		tarjeta.style.backgroundImage =
-        `linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.75)),
-        url(media/${sistema.system}/background.jpg)`;
+		const colores = {
+
+    snes:"#7c3aed",
+    megadrive:"#2196f3",
+    nes:"#e53935",
+    mastersystem:"#ff3d3d",
+    gameboy:"#4caf50",
+    gbc:"#00c853",
+    gba:"#ff9800",
+    psx:"#1565c0",
+    psp:"#fbc02d",
+    arcade:"#ff1744"
+
+};
+
+const color = colores[sistema.system] || "#6c63ff";
+
+tarjeta.style.background = `
+linear-gradient(
+180deg,
+${color}33 0%,
+#1b1b22 45%,
+#101015 100%
+)`;
 
 tarjeta.style.backgroundSize = "cover";
 tarjeta.style.backgroundPosition = "center";
@@ -250,6 +677,14 @@ tarjeta.style.backgroundPosition = "center";
 }
 
 cargarConsolas();
+
+document.getElementById("btnRandom").onclick = () => {
+
+    const indice = Math.floor(Math.random() * sistemas.length);
+
+    location.href = `catalogo.html?system=${sistemas[indice].system}`;
+
+};
 
 </script>
 
