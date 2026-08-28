@@ -1,0 +1,1682 @@
+﻿{
+    "title":  "Game Gear",
+    "manufacturer":  "Sega",
+    "year":  1990,
+    "generation":  "8 bits",
+    "core":  "gamegear",
+    "archive":  "gamegear_202608",
+	"coverFit": "contain",
+	"coverRatio": "3/4",
+	"cardWidth": "250px",
+    "cardHeight": "400px",
+    "games":  [
+                  {
+                      "title":  "Aa Harimanada (Japan)",
+                      "cover":  "Aa Harimanada (Japan).jpg",
+                      "video":  "Aa Harimanada (Japan).mp4",
+                      "rom":  "Aa Harimanada (Japan).zip"
+                  },
+                  {
+                      "title":  "Addams Family, The (World)",
+                      "cover":  "Addams Family, The (World).jpg",
+                      "video":  "Addams Family, The (World).mp4",
+                      "rom":  "Addams Family, The (World).zip"
+                  },
+                  {
+                      "title":  "Adventures of Batman \u0026 Robin, The (USA, Europe)",
+                      "cover":  "Adventures of Batman \u0026 Robin, The (USA, Europe).jpg",
+                      "video":  "Adventures of Batman \u0026 Robin, The (USA, Europe).mp4",
+                      "rom":  "Adventures of Batman \u0026 Robin, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Aerial Assault (World)",
+                      "cover":  "Aerial Assault (World).jpg",
+                      "video":  "Aerial Assault (World).mp4",
+                      "rom":  "Aerial Assault (World).zip"
+                  },
+                  {
+                      "title":  "Aladdin (USA, Europe)",
+                      "cover":  "Aladdin (USA, Europe).jpg",
+                      "video":  "Aladdin (USA, Europe).mp4",
+                      "rom":  "Aladdin (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Alien 3 (USA, Europe)",
+                      "cover":  "Alien 3 (USA, Europe).jpg",
+                      "video":  "Alien 3 (USA, Europe).mp4",
+                      "rom":  "Alien 3 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Alien Syndrome (USA, Europe)",
+                      "cover":  "Alien Syndrome (USA, Europe).jpg",
+                      "video":  "Alien Syndrome (USA, Europe).mp4",
+                      "rom":  "Alien Syndrome (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Andre Agassi Tennis (USA)",
+                      "cover":  "Andre Agassi Tennis (USA).jpg",
+                      "video":  "Andre Agassi Tennis (USA).mp4",
+                      "rom":  "Andre Agassi Tennis (USA).zip"
+                  },
+                  {
+                      "title":  "Arch Rivals (USA)",
+                      "cover":  "Arch Rivals (USA).jpg",
+                      "video":  "Arch Rivals (USA).mp4",
+                      "rom":  "Arch Rivals (USA).zip"
+                  },
+                  {
+                      "title":  "Arena (USA, Europe)",
+                      "cover":  "Arena (USA, Europe).jpg",
+                      "video":  "Arena (USA, Europe).mp4",
+                      "rom":  "Arena (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ariel the Little Mermaid (USA, Europe)",
+                      "cover":  "Ariel the Little Mermaid (USA, Europe).jpg",
+                      "video":  "Ariel the Little Mermaid (USA, Europe).mp4",
+                      "rom":  "Ariel the Little Mermaid (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Asterix and the Great Rescue (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Asterix and the Great Rescue (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Asterix and the Great Rescue (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Asterix and the Great Rescue (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Asterix and the Secret Mission (Europe) (En,Fr,De)",
+                      "cover":  "Asterix and the Secret Mission (Europe) (En,Fr,De).jpg",
+                      "video":  "Asterix and the Secret Mission (Europe) (En,Fr,De).mp4",
+                      "rom":  "Asterix and the Secret Mission (Europe) (En,Fr,De).zip"
+                  },
+                  {
+                      "title":  "Ax Battler - A Legend of Golden Axe (USA, Europe)",
+                      "cover":  "Ax Battler - A Legend of Golden Axe (USA, Europe).jpg",
+                      "video":  "Ax Battler - A Legend of Golden Axe (USA, Europe).mp4",
+                      "rom":  "Ax Battler - A Legend of Golden Axe (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ayrton Senna\u0027s Super Monaco GP II (USA, Europe)",
+                      "cover":  "Ayrton Senna\u0027s Super Monaco GP II (USA, Europe).jpg",
+                      "video":  "Ayrton Senna\u0027s Super Monaco GP II (USA, Europe).mp4",
+                      "rom":  "Ayrton Senna\u0027s Super Monaco GP II (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Baku Baku Animal (Europe)",
+                      "cover":  "Baku Baku Animal (Europe).jpg",
+                      "video":  "Baku Baku Animal (Europe).mp4",
+                      "rom":  "Baku Baku Animal (Europe).zip"
+                  },
+                  {
+                      "title":  "Bartman Meets Radioactive Man (USA)",
+                      "cover":  "Bartman Meets Radioactive Man (USA).jpg",
+                      "video":  "Bartman Meets Radioactive Man (USA).mp4",
+                      "rom":  "Bartman Meets Radioactive Man (USA).zip"
+                  },
+                  {
+                      "title":  "Batman Forever (World)",
+                      "cover":  "Batman Forever (World).jpg",
+                      "video":  "Batman Forever (World).mp4",
+                      "rom":  "Batman Forever (World).zip"
+                  },
+                  {
+                      "title":  "Batman Returns (World)",
+                      "cover":  "Batman Returns (World).jpg",
+                      "video":  "Batman Returns (World).mp4",
+                      "rom":  "Batman Returns (World).zip"
+                  },
+                  {
+                      "title":  "Batter Up (USA, Europe)",
+                      "cover":  "Batter Up (USA, Europe).jpg",
+                      "video":  "Batter Up (USA, Europe).mp4",
+                      "rom":  "Batter Up (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Battleship (USA, Europe)",
+                      "cover":  "Battleship (USA, Europe).jpg",
+                      "video":  "Battleship (USA, Europe).mp4",
+                      "rom":  "Battleship (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Battletoads (Japan, Europe)",
+                      "cover":  "Battletoads (Japan, Europe).jpg",
+                      "video":  "Battletoads (Japan, Europe).mp4",
+                      "rom":  "Battletoads (Japan, Europe).zip"
+                  },
+                  {
+                      "title":  "Beavis and Butt-Head (USA, Europe)",
+                      "cover":  "Beavis and Butt-Head (USA, Europe).jpg",
+                      "video":  "Beavis and Butt-Head (USA, Europe).mp4",
+                      "rom":  "Beavis and Butt-Head (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Berenstain Bears\u0027 Camping Adventure, The (USA)",
+                      "cover":  "Berenstain Bears\u0027 Camping Adventure, The (USA).jpg",
+                      "video":  "Berenstain Bears\u0027 Camping Adventure, The (USA).mp4",
+                      "rom":  "Berenstain Bears\u0027 Camping Adventure, The (USA).zip"
+                  },
+                  {
+                      "title":  "Berlin no Kabe (Japan)",
+                      "cover":  "Berlin no Kabe (Japan).jpg",
+                      "video":  "Berlin no Kabe (Japan).mp4",
+                      "rom":  "Berlin no Kabe (Japan).zip"
+                  },
+                  {
+                      "title":  "Bishoujo Senshi Sailor Moon S (Japan)",
+                      "cover":  "Bishoujo Senshi Sailor Moon S (Japan).jpg",
+                      "video":  "Bishoujo Senshi Sailor Moon S (Japan).mp4",
+                      "rom":  "Bishoujo Senshi Sailor Moon S (Japan).zip"
+                  },
+                  {
+                      "title":  "Bonkers Wax Up! (USA, Europe)",
+                      "cover":  "Bonkers Wax Up! (USA, Europe).jpg",
+                      "video":  "Bonkers Wax Up! (USA, Europe).mp4",
+                      "rom":  "Bonkers Wax Up! (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Bram Stoker\u0027s Dracula (Europe)",
+                      "cover":  "Bram Stoker\u0027s Dracula (Europe).jpg",
+                      "video":  "Bram Stoker\u0027s Dracula (Europe).mp4",
+                      "rom":  "Bram Stoker\u0027s Dracula (Europe).zip"
+                  },
+                  {
+                      "title":  "Bubble Bobble (USA, Europe)",
+                      "cover":  "Bubble Bobble (USA, Europe).jpg",
+                      "video":  "Bubble Bobble (USA, Europe).mp4",
+                      "rom":  "Bubble Bobble (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Bugs Bunny in Double Trouble (USA, Europe)",
+                      "cover":  "Bugs Bunny in Double Trouble (USA, Europe).jpg",
+                      "video":  "Bugs Bunny in Double Trouble (USA, Europe).mp4",
+                      "rom":  "Bugs Bunny in Double Trouble (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Bust-A-Move (USA, Europe)",
+                      "cover":  "Bust-A-Move (USA, Europe).jpg",
+                      "video":  "Bust-A-Move (USA, Europe).mp4",
+                      "rom":  "Bust-A-Move (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Buster Ball (Japan)",
+                      "cover":  "Buster Ball (Japan).jpg",
+                      "video":  "Buster Ball (Japan).mp4",
+                      "rom":  "Buster Ball (Japan).zip"
+                  },
+                  {
+                      "title":  "Buster Fight (Japan)",
+                      "cover":  "Buster Fight (Japan).jpg",
+                      "video":  "Buster Fight (Japan).mp4",
+                      "rom":  "Buster Fight (Japan).zip"
+                  },
+                  {
+                      "title":  "Captain America and the Avengers (USA, Europe)",
+                      "cover":  "Captain America and the Avengers (USA, Europe).jpg",
+                      "video":  "Captain America and the Avengers (USA, Europe).mp4",
+                      "rom":  "Captain America and the Avengers (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Chakan (USA, Europe)",
+                      "cover":  "Chakan (USA, Europe).jpg",
+                      "video":  "Chakan (USA, Europe).mp4",
+                      "rom":  "Chakan (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Championship Hockey (Europe)",
+                      "cover":  "Championship Hockey (Europe).jpg",
+                      "video":  "Championship Hockey (Europe).mp4",
+                      "rom":  "Championship Hockey (Europe).zip"
+                  },
+                  {
+                      "title":  "Cheese Cat-Astrophe Starring Speedy Gonzales (Europe) (En,Fr,De,Es)",
+                      "cover":  "Cheese Cat-Astrophe Starring Speedy Gonzales (Europe) (En,Fr,De,Es).jpg",
+                      "video":  "Cheese Cat-Astrophe Starring Speedy Gonzales (Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "Cheese Cat-Astrophe Starring Speedy Gonzales (Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Chessmaster, The (USA, Europe)",
+                      "cover":  "Chessmaster, The (USA, Europe).jpg",
+                      "video":  "Chessmaster, The (USA, Europe).mp4",
+                      "rom":  "Chessmaster, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Chicago Syndicate (USA, Europe)",
+                      "cover":  "Chicago Syndicate (USA, Europe).jpg",
+                      "video":  "Chicago Syndicate (USA, Europe).mp4",
+                      "rom":  "Chicago Syndicate (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Choplifter III (USA)",
+                      "cover":  "Choplifter III (USA).jpg",
+                      "video":  "Choplifter III (USA).mp4",
+                      "rom":  "Choplifter III (USA).zip"
+                  },
+                  {
+                      "title":  "Chuck Rock (World)",
+                      "cover":  "Chuck Rock (World).jpg",
+                      "video":  "Chuck Rock (World).mp4",
+                      "rom":  "Chuck Rock (World).zip"
+                  },
+                  {
+                      "title":  "Chuck Rock II - Son of Chuck (Europe)",
+                      "cover":  "Chuck Rock II - Son of Chuck (Europe).jpg",
+                      "video":  "Chuck Rock II - Son of Chuck (Europe).mp4",
+                      "rom":  "Chuck Rock II - Son of Chuck (Europe).zip"
+                  },
+                  {
+                      "title":  "CJ Elephant Fugitive (Europe)",
+                      "cover":  "CJ Elephant Fugitive (Europe).jpg",
+                      "video":  "CJ Elephant Fugitive (Europe).mp4",
+                      "rom":  "CJ Elephant Fugitive (Europe).zip"
+                  },
+                  {
+                      "title":  "Cliffhanger (USA)",
+                      "cover":  "Cliffhanger (USA).jpg",
+                      "video":  "Cliffhanger (USA).mp4",
+                      "rom":  "Cliffhanger (USA).zip"
+                  },
+                  {
+                      "title":  "Clutch Hitter (USA)",
+                      "cover":  "Clutch Hitter (USA).jpg",
+                      "video":  "Clutch Hitter (USA).mp4",
+                      "rom":  "Clutch Hitter (USA).zip"
+                  },
+                  {
+                      "title":  "Coca-Cola Kid (Japan)",
+                      "cover":  "Coca-Cola Kid (Japan).jpg",
+                      "video":  "Coca-Cola Kid (Japan).mp4",
+                      "rom":  "Coca-Cola Kid (Japan).zip"
+                  },
+                  {
+                      "title":  "Columns (USA, Europe)",
+                      "cover":  "Columns (USA, Europe).jpg",
+                      "video":  "Columns (USA, Europe).mp4",
+                      "rom":  "Columns (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Cool Spot (Europe)",
+                      "cover":  "Cool Spot (Europe).jpg",
+                      "video":  "Cool Spot (Europe).mp4",
+                      "rom":  "Cool Spot (Europe).zip"
+                  },
+                  {
+                      "title":  "Cosmic Spacehead (Europe)",
+                      "cover":  "Cosmic Spacehead (Europe).jpg",
+                      "video":  "Cosmic Spacehead (Europe).mp4",
+                      "rom":  "Cosmic Spacehead (Europe).zip"
+                  },
+                  {
+                      "title":  "Crayon Shin-chan - Taiketsu! Kantam Panic!! (Japan)",
+                      "cover":  "Crayon Shin-chan - Taiketsu! Kantam Panic!! (Japan).jpg",
+                      "video":  "Crayon Shin-chan - Taiketsu! Kantam Panic!! (Japan).mp4",
+                      "rom":  "Crayon Shin-chan - Taiketsu! Kantam Panic!! (Japan).zip"
+                  },
+                  {
+                      "title":  "CutThroat Island (USA, Europe)",
+                      "cover":  "CutThroat Island (USA, Europe).jpg",
+                      "video":  "CutThroat Island (USA, Europe).mp4",
+                      "rom":  "CutThroat Island (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Daffy Duck in Hollywood (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Daffy Duck in Hollywood (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Daffy Duck in Hollywood (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Daffy Duck in Hollywood (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Deep Duck Trouble Starring Donald Duck (USA, Europe)",
+                      "cover":  "Deep Duck Trouble Starring Donald Duck (USA, Europe).jpg",
+                      "video":  "Deep Duck Trouble Starring Donald Duck (USA, Europe).mp4",
+                      "rom":  "Deep Duck Trouble Starring Donald Duck (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Desert Speedtrap Starring Road Runner and Wile E. Coyote (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Desert Speedtrap Starring Road Runner and Wile E. Coyote (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Desert Speedtrap Starring Road Runner and Wile E. Coyote (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Desert Speedtrap Starring Road Runner and Wile E. Coyote (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Desert Strike (Europe) (En,Fr,De,Es)",
+                      "cover":  "Desert Strike (Europe) (En,Fr,De,Es).jpg",
+                      "video":  "Desert Strike (Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "Desert Strike (Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Devilish (Europe)",
+                      "cover":  "Devilish (Europe).jpg",
+                      "video":  "Devilish (Europe).mp4",
+                      "rom":  "Devilish (Europe).zip"
+                  },
+                  {
+                      "title":  "Donald no Magical World (Japan) (En,Ja)",
+                      "cover":  "Donald no Magical World (Japan) (En,Ja).jpg",
+                      "video":  "Donald no Magical World (Japan) (En,Ja).mp4",
+                      "rom":  "Donald no Magical World (Japan) (En,Ja).zip"
+                  },
+                  {
+                      "title":  "Doraemon - Noranosuke no Yabou (Japan)",
+                      "cover":  "Doraemon - Noranosuke no Yabou (Japan).jpg",
+                      "video":  "Doraemon - Noranosuke no Yabou (Japan).mp4",
+                      "rom":  "Doraemon - Noranosuke no Yabou (Japan).zip"
+                  },
+                  {
+                      "title":  "Doraemon - Waku Waku Pocket Paradise (Japan)",
+                      "cover":  "Doraemon - Waku Waku Pocket Paradise (Japan).jpg",
+                      "video":  "Doraemon - Waku Waku Pocket Paradise (Japan).mp4",
+                      "rom":  "Doraemon - Waku Waku Pocket Paradise (Japan).zip"
+                  },
+                  {
+                      "title":  "Double Dragon (USA, Europe)",
+                      "cover":  "Double Dragon (USA, Europe).jpg",
+                      "video":  "Double Dragon (USA, Europe).mp4",
+                      "rom":  "Double Dragon (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Dr. Robotnik\u0027s Mean Bean Machine (USA, Europe)",
+                      "cover":  "Dr. Robotnik\u0027s Mean Bean Machine (USA, Europe).jpg",
+                      "video":  "Dr. Robotnik\u0027s Mean Bean Machine (USA, Europe).mp4",
+                      "rom":  "Dr. Robotnik\u0027s Mean Bean Machine (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Dragon - The Bruce Lee Story (Europe)",
+                      "cover":  "Dragon - The Bruce Lee Story (Europe).jpg",
+                      "video":  "Dragon - The Bruce Lee Story (Europe).mp4",
+                      "rom":  "Dragon - The Bruce Lee Story (Europe).zip"
+                  },
+                  {
+                      "title":  "Dragon Crystal (USA, Europe)",
+                      "cover":  "Dragon Crystal (USA, Europe).jpg",
+                      "video":  "Dragon Crystal (USA, Europe).mp4",
+                      "rom":  "Dragon Crystal (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Dropzone (Europe)",
+                      "cover":  "Dropzone (Europe).jpg",
+                      "video":  "Dropzone (Europe).mp4",
+                      "rom":  "Dropzone (Europe).zip"
+                  },
+                  {
+                      "title":  "Dunk Kids (Japan)",
+                      "cover":  "Dunk Kids (Japan).jpg",
+                      "video":  "Dunk Kids (Japan).mp4",
+                      "rom":  "Dunk Kids (Japan).zip"
+                  },
+                  {
+                      "title":  "Dynamite Headdy (USA, Europe)",
+                      "cover":  "Dynamite Headdy (USA, Europe).jpg",
+                      "video":  "Dynamite Headdy (USA, Europe).mp4",
+                      "rom":  "Dynamite Headdy (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Earthworm Jim (Europe)",
+                      "cover":  "Earthworm Jim (Europe).jpg",
+                      "video":  "Earthworm Jim (Europe).mp4",
+                      "rom":  "Earthworm Jim (Europe).zip"
+                  },
+                  {
+                      "title":  "Ecco - The Tides of Time (USA, Europe)",
+                      "cover":  "Ecco - The Tides of Time (USA, Europe).jpg",
+                      "video":  "Ecco - The Tides of Time (USA, Europe).mp4",
+                      "rom":  "Ecco - The Tides of Time (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ecco the Dolphin (USA, Europe)",
+                      "cover":  "Ecco the Dolphin (USA, Europe).jpg",
+                      "video":  "Ecco the Dolphin (USA, Europe).mp4",
+                      "rom":  "Ecco the Dolphin (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ernie Els Golf (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Ernie Els Golf (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Ernie Els Golf (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Ernie Els Golf (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Evander Holyfield\u0027s \u0027Real Deal\u0027 Boxing (USA, Europe)",
+                      "cover":  "Evander Holyfield\u0027s \u0027Real Deal\u0027 Boxing (USA, Europe).jpg",
+                      "video":  "Evander Holyfield\u0027s \u0027Real Deal\u0027 Boxing (USA, Europe).mp4",
+                      "rom":  "Evander Holyfield\u0027s \u0027Real Deal\u0027 Boxing (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "F-15 Strike Eagle (USA, Europe)",
+                      "cover":  "F-15 Strike Eagle (USA, Europe).jpg",
+                      "video":  "F-15 Strike Eagle (USA, Europe).mp4",
+                      "rom":  "F-15 Strike Eagle (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "F1 (USA, Europe)",
+                      "cover":  "F1 (USA, Europe).jpg",
+                      "video":  "F1 (USA, Europe).mp4",
+                      "rom":  "F1 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "F1 - World Championship Edition (Europe)",
+                      "cover":  "F1 - World Championship Edition (Europe).jpg",
+                      "video":  "F1 - World Championship Edition (Europe).mp4",
+                      "rom":  "F1 - World Championship Edition (Europe).zip"
+                  },
+                  {
+                      "title":  "Faceball 2000 (Japan)",
+                      "cover":  "Faceball 2000 (Japan).jpg",
+                      "video":  "Faceball 2000 (Japan).mp4",
+                      "rom":  "Faceball 2000 (Japan).zip"
+                  },
+                  {
+                      "title":  "Factory Panic (Europe)",
+                      "cover":  "Factory Panic (Europe).jpg",
+                      "video":  "Factory Panic (Europe).mp4",
+                      "rom":  "Factory Panic (Europe).zip"
+                  },
+                  {
+                      "title":  "Fantasy Zone (Japan, Europe)",
+                      "cover":  "Fantasy Zone (Japan, Europe).jpg",
+                      "video":  "Fantasy Zone (Japan, Europe).mp4",
+                      "rom":  "Fantasy Zone (Japan, Europe).zip"
+                  },
+                  {
+                      "title":  "Fatal Fury Special (Europe)",
+                      "cover":  "Fatal Fury Special (Europe).jpg",
+                      "video":  "Fatal Fury Special (Europe).mp4",
+                      "rom":  "Fatal Fury Special (Europe).zip"
+                  },
+                  {
+                      "title":  "FIFA International Soccer (USA, Europe)",
+                      "cover":  "FIFA International Soccer (USA, Europe).jpg",
+                      "video":  "FIFA International Soccer (USA, Europe).mp4",
+                      "rom":  "FIFA International Soccer (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "FIFA Soccer 96 (USA, Europe) (En,Fr,De,Es)",
+                      "cover":  "FIFA Soccer 96 (USA, Europe) (En,Fr,De,Es).jpg",
+                      "video":  "FIFA Soccer 96 (USA, Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "FIFA Soccer 96 (USA, Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Foreman for Real (World)",
+                      "cover":  "Foreman for Real (World).jpg",
+                      "video":  "Foreman for Real (World).mp4",
+                      "rom":  "Foreman for Real (World).zip"
+                  },
+                  {
+                      "title":  "Frank Thomas Big Hurt Baseball (USA)",
+                      "cover":  "Frank Thomas Big Hurt Baseball (USA).jpg",
+                      "video":  "Frank Thomas Big Hurt Baseball (USA).mp4",
+                      "rom":  "Frank Thomas Big Hurt Baseball (USA).zip"
+                  },
+                  {
+                      "title":  "Fray - Shugyou Hen (Japan)",
+                      "cover":  "Fray - Shugyou Hen (Japan).jpg",
+                      "video":  "Fray - Shugyou Hen (Japan).mp4",
+                      "rom":  "Fray - Shugyou Hen (Japan).zip"
+                  },
+                  {
+                      "title":  "G-Sonic ~ Sonic Blast (World)",
+                      "cover":  "G-Sonic ~ Sonic Blast (World).jpg",
+                      "video":  "G-Sonic ~ Sonic Blast (World).mp4",
+                      "rom":  "G-Sonic ~ Sonic Blast (World).zip"
+                  },
+                  {
+                      "title":  "Galaga 2 (Europe)",
+                      "cover":  "Galaga 2 (Europe).jpg",
+                      "video":  "Galaga 2 (Europe).mp4",
+                      "rom":  "Galaga 2 (Europe).zip"
+                  },
+                  {
+                      "title":  "Garfield - Caught in the Act (USA, Europe)",
+                      "cover":  "Garfield - Caught in the Act (USA, Europe).jpg",
+                      "video":  "Garfield - Caught in the Act (USA, Europe).mp4",
+                      "rom":  "Garfield - Caught in the Act (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Gear Stadium Heiseiban (Japan)",
+                      "cover":  "Gear Stadium Heiseiban (Japan).jpg",
+                      "video":  "Gear Stadium Heiseiban (Japan).mp4",
+                      "rom":  "Gear Stadium Heiseiban (Japan).zip"
+                  },
+                  {
+                      "title":  "George Foreman\u0027s KO Boxing (USA, Europe)",
+                      "cover":  "George Foreman\u0027s KO Boxing (USA, Europe).jpg",
+                      "video":  "George Foreman\u0027s KO Boxing (USA, Europe).mp4",
+                      "rom":  "George Foreman\u0027s KO Boxing (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "GG Aleste (Japan)",
+                      "cover":  "GG Aleste (Japan).jpg",
+                      "video":  "GG Aleste (Japan).mp4",
+                      "rom":  "GG Aleste (Japan).zip"
+                  },
+                  {
+                      "title":  "GP Rider (USA, Europe)",
+                      "cover":  "GP Rider (USA, Europe).jpg",
+                      "video":  "GP Rider (USA, Europe).mp4",
+                      "rom":  "GP Rider (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Greendog - The Beached Surfer Dude! (USA, Europe)",
+                      "cover":  "Greendog - The Beached Surfer Dude! (USA, Europe).jpg",
+                      "video":  "Greendog - The Beached Surfer Dude! (USA, Europe).mp4",
+                      "rom":  "Greendog - The Beached Surfer Dude! (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Griffin (Japan)",
+                      "cover":  "Griffin (Japan).jpg",
+                      "video":  "Griffin (Japan).mp4",
+                      "rom":  "Griffin (Japan).zip"
+                  },
+                  {
+                      "title":  "Gunstar Heroes (Japan)",
+                      "cover":  "Gunstar Heroes (Japan).jpg",
+                      "video":  "Gunstar Heroes (Japan).mp4",
+                      "rom":  "Gunstar Heroes (Japan).zip"
+                  },
+                  {
+                      "title":  "Halley Wars (USA, Europe)",
+                      "cover":  "Halley Wars (USA, Europe).jpg",
+                      "video":  "Halley Wars (USA, Europe).mp4",
+                      "rom":  "Halley Wars (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Home Alone (USA, Europe)",
+                      "cover":  "Home Alone (USA, Europe).jpg",
+                      "video":  "Home Alone (USA, Europe).mp4",
+                      "rom":  "Home Alone (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Honoo no Toukyuuji - Dodge Danpei (Japan)",
+                      "cover":  "Honoo no Toukyuuji - Dodge Danpei (Japan).jpg",
+                      "video":  "Honoo no Toukyuuji - Dodge Danpei (Japan).mp4",
+                      "rom":  "Honoo no Toukyuuji - Dodge Danpei (Japan).zip"
+                  },
+                  {
+                      "title":  "Hook (Europe)",
+                      "cover":  "Hook (Europe).jpg",
+                      "video":  "Hook (Europe).mp4",
+                      "rom":  "Hook (Europe).zip"
+                  },
+                  {
+                      "title":  "Hurricanes (Europe)",
+                      "cover":  "Hurricanes (Europe).jpg",
+                      "video":  "Hurricanes (Europe).mp4",
+                      "rom":  "Hurricanes (Europe).zip"
+                  },
+                  {
+                      "title":  "Hyokkori Hyoutan-jima - Hyoutan-jima no Daikoukai (Japan)",
+                      "cover":  "Hyokkori Hyoutan-jima - Hyoutan-jima no Daikoukai (Japan).jpg",
+                      "video":  "Hyokkori Hyoutan-jima - Hyoutan-jima no Daikoukai (Japan).mp4",
+                      "rom":  "Hyokkori Hyoutan-jima - Hyoutan-jima no Daikoukai (Japan).zip"
+                  },
+                  {
+                      "title":  "Hyper Pro Yakyuu \u002792 (Japan)",
+                      "cover":  "Hyper Pro Yakyuu \u002792 (Japan).jpg",
+                      "video":  "Hyper Pro Yakyuu \u002792 (Japan).mp4",
+                      "rom":  "Hyper Pro Yakyuu \u002792 (Japan).zip"
+                  },
+                  {
+                      "title":  "Ichidant~R GG (Japan)",
+                      "cover":  "Ichidant~R GG (Japan).jpg",
+                      "video":  "Ichidant~R GG (Japan).mp4",
+                      "rom":  "Ichidant~R GG (Japan).zip"
+                  },
+                  {
+                      "title":  "Incredible Crash Dummies, The (World)",
+                      "cover":  "Incredible Crash Dummies, The (World).jpg",
+                      "video":  "Incredible Crash Dummies, The (World).mp4",
+                      "rom":  "Incredible Crash Dummies, The (World).zip"
+                  },
+                  {
+                      "title":  "Incredible Hulk, The (USA, Europe)",
+                      "cover":  "Incredible Hulk, The (USA, Europe).jpg",
+                      "video":  "Incredible Hulk, The (USA, Europe).mp4",
+                      "rom":  "Incredible Hulk, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Indiana Jones and the Last Crusade (USA, Europe)",
+                      "cover":  "Indiana Jones and the Last Crusade (USA, Europe).jpg",
+                      "video":  "Indiana Jones and the Last Crusade (USA, Europe).mp4",
+                      "rom":  "Indiana Jones and the Last Crusade (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Iron Man X-O Manowar in Heavy Metal (USA, Europe)",
+                      "cover":  "Iron Man X-O Manowar in Heavy Metal (USA, Europe).jpg",
+                      "video":  "Iron Man X-O Manowar in Heavy Metal (USA, Europe).mp4",
+                      "rom":  "Iron Man X-O Manowar in Heavy Metal (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Itchy \u0026 Scratchy Game, The (USA, Europe)",
+                      "cover":  "Itchy \u0026 Scratchy Game, The (USA, Europe).jpg",
+                      "video":  "Itchy \u0026 Scratchy Game, The (USA, Europe).mp4",
+                      "rom":  "Itchy \u0026 Scratchy Game, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "J.League GG Pro Striker \u002794 (Japan)",
+                      "cover":  "J.League GG Pro Striker \u002794 (Japan).jpg",
+                      "video":  "J.League GG Pro Striker \u002794 (Japan).mp4",
+                      "rom":  "J.League GG Pro Striker \u002794 (Japan).zip"
+                  },
+                  {
+                      "title":  "J.League Soccer - Dream Eleven (Japan)",
+                      "cover":  "J.League Soccer - Dream Eleven (Japan).jpg",
+                      "video":  "J.League Soccer - Dream Eleven (Japan).mp4",
+                      "rom":  "J.League Soccer - Dream Eleven (Japan).zip"
+                  },
+                  {
+                      "title":  "James Bond 007 - The Duel (Europe)",
+                      "cover":  "James Bond 007 - The Duel (Europe).jpg",
+                      "video":  "James Bond 007 - The Duel (Europe).mp4",
+                      "rom":  "James Bond 007 - The Duel (Europe).zip"
+                  },
+                  {
+                      "title":  "James Pond 3 - Operation Starfi5h (Europe)",
+                      "cover":  "James Pond 3 - Operation Starfi5h (Europe).jpg",
+                      "video":  "James Pond 3 - Operation Starfi5h (Europe).mp4",
+                      "rom":  "James Pond 3 - Operation Starfi5h (Europe).zip"
+                  },
+                  {
+                      "title":  "James Pond II - Codename RoboCod (Europe)",
+                      "cover":  "James Pond II - Codename RoboCod (Europe).jpg",
+                      "video":  "James Pond II - Codename RoboCod (Europe).mp4",
+                      "rom":  "James Pond II - Codename RoboCod (Europe).zip"
+                  },
+                  {
+                      "title":  "Joe Montana Football (USA, Europe)",
+                      "cover":  "Joe Montana Football (USA, Europe).jpg",
+                      "video":  "Joe Montana Football (USA, Europe).mp4",
+                      "rom":  "Joe Montana Football (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Journey from Darkness - Strider Returns (USA, Europe)",
+                      "cover":  "Journey from Darkness - Strider Returns (USA, Europe).jpg",
+                      "video":  "Journey from Darkness - Strider Returns (USA, Europe).mp4",
+                      "rom":  "Journey from Darkness - Strider Returns (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Judge Dredd (USA, Europe)",
+                      "cover":  "Judge Dredd (USA, Europe).jpg",
+                      "video":  "Judge Dredd (USA, Europe).mp4",
+                      "rom":  "Judge Dredd (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Junction (USA)",
+                      "cover":  "Junction (USA).jpg",
+                      "video":  "Junction (USA).mp4",
+                      "rom":  "Junction (USA).zip"
+                  },
+                  {
+                      "title":  "Jungle Book, The (Europe)",
+                      "cover":  "Jungle Book, The (Europe).jpg",
+                      "video":  "Jungle Book, The (Europe).mp4",
+                      "rom":  "Jungle Book, The (Europe).zip"
+                  },
+                  {
+                      "title":  "Jungle Strike (USA)",
+                      "cover":  "Jungle Strike (USA).jpg",
+                      "video":  "Jungle Strike (USA).mp4",
+                      "rom":  "Jungle Strike (USA).zip"
+                  },
+                  {
+                      "title":  "Jurassic Park (USA, Europe)",
+                      "cover":  "Jurassic Park (USA, Europe).jpg",
+                      "video":  "Jurassic Park (USA, Europe).mp4",
+                      "rom":  "Jurassic Park (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Kaitou Saint Tail (Japan)",
+                      "cover":  "Kaitou Saint Tail (Japan).jpg",
+                      "video":  "Kaitou Saint Tail (Japan).mp4",
+                      "rom":  "Kaitou Saint Tail (Japan).zip"
+                  },
+                  {
+                      "title":  "Kawasaki Superbike Challenge (USA, Europe)",
+                      "cover":  "Kawasaki Superbike Challenge (USA, Europe).jpg",
+                      "video":  "Kawasaki Superbike Challenge (USA, Europe).mp4",
+                      "rom":  "Kawasaki Superbike Challenge (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Kenyuu Densetsu Yaiba (Japan)",
+                      "cover":  "Kenyuu Densetsu Yaiba (Japan).jpg",
+                      "video":  "Kenyuu Densetsu Yaiba (Japan).mp4",
+                      "rom":  "Kenyuu Densetsu Yaiba (Japan).zip"
+                  },
+                  {
+                      "title":  "Kishin Douji Zenki (Japan)",
+                      "cover":  "Kishin Douji Zenki (Japan).jpg",
+                      "video":  "Kishin Douji Zenki (Japan).mp4",
+                      "rom":  "Kishin Douji Zenki (Japan).zip"
+                  },
+                  {
+                      "title":  "Klax (USA, Europe)",
+                      "cover":  "Klax (USA, Europe).jpg",
+                      "video":  "Klax (USA, Europe).mp4",
+                      "rom":  "Klax (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Krusty\u0027s Fun House (USA, Europe)",
+                      "cover":  "Krusty\u0027s Fun House (USA, Europe).jpg",
+                      "video":  "Krusty\u0027s Fun House (USA, Europe).mp4",
+                      "rom":  "Krusty\u0027s Fun House (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Land of Illusion Starring Mickey Mouse (USA, Europe)",
+                      "cover":  "Land of Illusion Starring Mickey Mouse (USA, Europe).jpg",
+                      "video":  "Land of Illusion Starring Mickey Mouse (USA, Europe).mp4",
+                      "rom":  "Land of Illusion Starring Mickey Mouse (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Last Action Hero (USA)",
+                      "cover":  "Last Action Hero (USA).jpg",
+                      "video":  "Last Action Hero (USA).mp4",
+                      "rom":  "Last Action Hero (USA).zip"
+                  },
+                  {
+                      "title":  "Legend of Illusion Starring Mickey Mouse (USA, Europe)",
+                      "cover":  "Legend of Illusion Starring Mickey Mouse (USA, Europe).jpg",
+                      "video":  "Legend of Illusion Starring Mickey Mouse (USA, Europe).mp4",
+                      "rom":  "Legend of Illusion Starring Mickey Mouse (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Lemmings (World)",
+                      "cover":  "Lemmings (World).jpg",
+                      "video":  "Lemmings (World).mp4",
+                      "rom":  "Lemmings (World).zip"
+                  },
+                  {
+                      "title":  "Lion King, The (Europe)",
+                      "cover":  "Lion King, The (Europe).jpg",
+                      "video":  "Lion King, The (Europe).mp4",
+                      "rom":  "Lion King, The (Europe).zip"
+                  },
+                  {
+                      "title":  "Lost World, The - Jurassic Park (USA)",
+                      "cover":  "Lost World, The - Jurassic Park (USA).jpg",
+                      "video":  "Lost World, The - Jurassic Park (USA).mp4",
+                      "rom":  "Lost World, The - Jurassic Park (USA).zip"
+                  },
+                  {
+                      "title":  "Lucky Dime Caper Starring Donald Duck, The (USA, Europe)",
+                      "cover":  "Lucky Dime Caper Starring Donald Duck, The (USA, Europe).jpg",
+                      "video":  "Lucky Dime Caper Starring Donald Duck, The (USA, Europe).mp4",
+                      "rom":  "Lucky Dime Caper Starring Donald Duck, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Madden 96 (USA, Europe)",
+                      "cover":  "Madden 96 (USA, Europe).jpg",
+                      "video":  "Madden 96 (USA, Europe).mp4",
+                      "rom":  "Madden 96 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Madden NFL 95 (USA)",
+                      "cover":  "Madden NFL 95 (USA).jpg",
+                      "video":  "Madden NFL 95 (USA).mp4",
+                      "rom":  "Madden NFL 95 (USA).zip"
+                  },
+                  {
+                      "title":  "Magical Puzzle Popils (World) (En,Ja)",
+                      "cover":  "Magical Puzzle Popils (World) (En,Ja).jpg",
+                      "video":  "Magical Puzzle Popils (World) (En,Ja).mp4",
+                      "rom":  "Magical Puzzle Popils (World) (En,Ja).zip"
+                  },
+                  {
+                      "title":  "Magical Taruruuto-kun (Japan)",
+                      "cover":  "Magical Taruruuto-kun (Japan).jpg",
+                      "video":  "Magical Taruruuto-kun (Japan).mp4",
+                      "rom":  "Magical Taruruuto-kun (Japan).zip"
+                  },
+                  {
+                      "title":  "Majors Pro Baseball, The (USA)",
+                      "cover":  "Majors Pro Baseball, The (USA).jpg",
+                      "video":  "Majors Pro Baseball, The (USA).mp4",
+                      "rom":  "Majors Pro Baseball, The (USA).zip"
+                  },
+                  {
+                      "title":  "Mappy (Japan)",
+                      "cover":  "Mappy (Japan).jpg",
+                      "video":  "Mappy (Japan).mp4",
+                      "rom":  "Mappy (Japan).zip"
+                  },
+                  {
+                      "title":  "Marble Madness (USA, Europe)",
+                      "cover":  "Marble Madness (USA, Europe).jpg",
+                      "video":  "Marble Madness (USA, Europe).mp4",
+                      "rom":  "Marble Madness (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Marko\u0027s Magic Football (Europe) (En,Fr,De,Es)",
+                      "cover":  "Marko\u0027s Magic Football (Europe) (En,Fr,De,Es).jpg",
+                      "video":  "Marko\u0027s Magic Football (Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "Marko\u0027s Magic Football (Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Master of Darkness (Europe)",
+                      "cover":  "Master of Darkness (Europe).jpg",
+                      "video":  "Master of Darkness (Europe).mp4",
+                      "rom":  "Master of Darkness (Europe).zip"
+                  },
+                  {
+                      "title":  "Mega Man (USA)",
+                      "cover":  "Mega Man (USA).jpg",
+                      "video":  "Mega Man (USA).mp4",
+                      "rom":  "Mega Man (USA).zip"
+                  },
+                  {
+                      "title":  "Mick \u0026 Mack as the Global Gladiators (USA, Europe)",
+                      "cover":  "Mick \u0026 Mack as the Global Gladiators (USA, Europe).jpg",
+                      "video":  "Mick \u0026 Mack as the Global Gladiators (USA, Europe).mp4",
+                      "rom":  "Mick \u0026 Mack as the Global Gladiators (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Mickey\u0027s Ultimate Challenge (USA)",
+                      "cover":  "Mickey\u0027s Ultimate Challenge (USA).jpg",
+                      "video":  "Mickey\u0027s Ultimate Challenge (USA).mp4",
+                      "rom":  "Mickey\u0027s Ultimate Challenge (USA).zip"
+                  },
+                  {
+                      "title":  "Micro Machines (Europe)",
+                      "cover":  "Micro Machines (Europe).jpg",
+                      "video":  "Micro Machines (Europe).mp4",
+                      "rom":  "Micro Machines (Europe).zip"
+                  },
+                  {
+                      "title":  "Micro Machines 2 - Turbo Tournament (Europe)",
+                      "cover":  "Micro Machines 2 - Turbo Tournament (Europe).jpg",
+                      "video":  "Micro Machines 2 - Turbo Tournament (Europe).mp4",
+                      "rom":  "Micro Machines 2 - Turbo Tournament (Europe).zip"
+                  },
+                  {
+                      "title":  "Mighty Morphin Power Rangers (USA, Europe)",
+                      "cover":  "Mighty Morphin Power Rangers (USA, Europe).jpg",
+                      "video":  "Mighty Morphin Power Rangers (USA, Europe).mp4",
+                      "rom":  "Mighty Morphin Power Rangers (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Mighty Morphin Power Rangers - The Movie (USA, Europe)",
+                      "cover":  "Mighty Morphin Power Rangers - The Movie (USA, Europe).jpg",
+                      "video":  "Mighty Morphin Power Rangers - The Movie (USA, Europe).mp4",
+                      "rom":  "Mighty Morphin Power Rangers - The Movie (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "MLBPA Baseball (USA)",
+                      "cover":  "MLBPA Baseball (USA).jpg",
+                      "video":  "MLBPA Baseball (USA).mp4",
+                      "rom":  "MLBPA Baseball (USA).zip"
+                  },
+                  {
+                      "title":  "Monster Truck Wars (USA, Europe)",
+                      "cover":  "Monster Truck Wars (USA, Europe).jpg",
+                      "video":  "Monster Truck Wars (USA, Europe).mp4",
+                      "rom":  "Monster Truck Wars (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Mortal Kombat (USA, Europe)",
+                      "cover":  "Mortal Kombat (USA, Europe).jpg",
+                      "video":  "Mortal Kombat (USA, Europe).mp4",
+                      "rom":  "Mortal Kombat (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Mortal Kombat 3 (Europe)",
+                      "cover":  "Mortal Kombat 3 (Europe).jpg",
+                      "video":  "Mortal Kombat 3 (Europe).mp4",
+                      "rom":  "Mortal Kombat 3 (Europe).zip"
+                  },
+                  {
+                      "title":  "Mortal Kombat II (World)",
+                      "cover":  "Mortal Kombat II (World).jpg",
+                      "video":  "Mortal Kombat II (World).mp4",
+                      "rom":  "Mortal Kombat II (World).zip"
+                  },
+                  {
+                      "title":  "Ms. Pac-Man (USA)",
+                      "cover":  "Ms. Pac-Man (USA).jpg",
+                      "video":  "Ms. Pac-Man (USA).mp4",
+                      "rom":  "Ms. Pac-Man (USA).zip"
+                  },
+                  {
+                      "title":  "NBA Action Starring David Robinson (USA)",
+                      "cover":  "NBA Action Starring David Robinson (USA).jpg",
+                      "video":  "NBA Action Starring David Robinson (USA).mp4",
+                      "rom":  "NBA Action Starring David Robinson (USA).zip"
+                  },
+                  {
+                      "title":  "NBA Jam (USA, Europe)",
+                      "cover":  "NBA Jam (USA, Europe).jpg",
+                      "video":  "NBA Jam (USA, Europe).mp4",
+                      "rom":  "NBA Jam (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "NBA Jam - Tournament Edition (World)",
+                      "cover":  "NBA Jam - Tournament Edition (World).jpg",
+                      "video":  "NBA Jam - Tournament Edition (World).mp4",
+                      "rom":  "NBA Jam - Tournament Edition (World).zip"
+                  },
+                  {
+                      "title":  "NFL \u002795 (USA)",
+                      "cover":  "NFL \u002795 (USA).jpg",
+                      "video":  "NFL \u002795 (USA).mp4",
+                      "rom":  "NFL \u002795 (USA).zip"
+                  },
+                  {
+                      "title":  "NFL Quarterback Club \u002796 (USA, Europe)",
+                      "cover":  "NFL Quarterback Club \u002796 (USA, Europe).jpg",
+                      "video":  "NFL Quarterback Club \u002796 (USA, Europe).mp4",
+                      "rom":  "NFL Quarterback Club \u002796 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "NFL Quarterback Club (World)",
+                      "cover":  "NFL Quarterback Club (World).jpg",
+                      "video":  "NFL Quarterback Club (World).mp4",
+                      "rom":  "NFL Quarterback Club (World).zip"
+                  },
+                  {
+                      "title":  "NHL All-Star Hockey (USA)",
+                      "cover":  "NHL All-Star Hockey (USA).jpg",
+                      "video":  "NHL All-Star Hockey (USA).mp4",
+                      "rom":  "NHL All-Star Hockey (USA).zip"
+                  },
+                  {
+                      "title":  "NHL Hockey (USA, Europe)",
+                      "cover":  "NHL Hockey (USA, Europe).jpg",
+                      "video":  "NHL Hockey (USA, Europe).mp4",
+                      "rom":  "NHL Hockey (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ninja Gaiden (USA, Europe)",
+                      "cover":  "Ninja Gaiden (USA, Europe).jpg",
+                      "video":  "Ninja Gaiden (USA, Europe).mp4",
+                      "rom":  "Ninja Gaiden (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ninku (Japan)",
+                      "cover":  "Ninku (Japan).jpg",
+                      "video":  "Ninku (Japan).mp4",
+                      "rom":  "Ninku (Japan).zip"
+                  },
+                  {
+                      "title":  "Ninku 2 - Tenkuuryuu e no Michi (Japan)",
+                      "cover":  "Ninku 2 - Tenkuuryuu e no Michi (Japan).jpg",
+                      "video":  "Ninku 2 - Tenkuuryuu e no Michi (Japan).mp4",
+                      "rom":  "Ninku 2 - Tenkuuryuu e no Michi (Japan).zip"
+                  },
+                  {
+                      "title":  "Ninku Gaiden - Hiroyuki Daikatsugeki (Japan)",
+                      "cover":  "Ninku Gaiden - Hiroyuki Daikatsugeki (Japan).jpg",
+                      "video":  "Ninku Gaiden - Hiroyuki Daikatsugeki (Japan).mp4",
+                      "rom":  "Ninku Gaiden - Hiroyuki Daikatsugeki (Japan).zip"
+                  },
+                  {
+                      "title":  "Ottifants, The (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Ottifants, The (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Ottifants, The (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Ottifants, The (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Out Run (Europe)",
+                      "cover":  "Out Run (Europe).jpg",
+                      "video":  "Out Run (Europe).mp4",
+                      "rom":  "Out Run (Europe).zip"
+                  },
+                  {
+                      "title":  "Out Run Europa (Europe)",
+                      "cover":  "Out Run Europa (Europe).jpg",
+                      "video":  "Out Run Europa (Europe).mp4",
+                      "rom":  "Out Run Europa (Europe).zip"
+                  },
+                  {
+                      "title":  "Pac-Man (USA)",
+                      "cover":  "Pac-Man (USA).jpg",
+                      "video":  "Pac-Man (USA).mp4",
+                      "rom":  "Pac-Man (USA).zip"
+                  },
+                  {
+                      "title":  "Panzer Dragoon Mini (Japan)",
+                      "cover":  "Panzer Dragoon Mini (Japan).jpg",
+                      "video":  "Panzer Dragoon Mini (Japan).mp4",
+                      "rom":  "Panzer Dragoon Mini (Japan).zip"
+                  },
+                  {
+                      "title":  "Paperboy (USA, Europe)",
+                      "cover":  "Paperboy (USA, Europe).jpg",
+                      "video":  "Paperboy (USA, Europe).mp4",
+                      "rom":  "Paperboy (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Paperboy 2 (USA, Europe)",
+                      "cover":  "Paperboy 2 (USA, Europe).jpg",
+                      "video":  "Paperboy 2 (USA, Europe).mp4",
+                      "rom":  "Paperboy 2 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Pengo (USA, Europe)",
+                      "cover":  "Pengo (USA, Europe).jpg",
+                      "video":  "Pengo (USA, Europe).mp4",
+                      "rom":  "Pengo (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Pete Sampras Tennis (Europe)",
+                      "cover":  "Pete Sampras Tennis (Europe).jpg",
+                      "video":  "Pete Sampras Tennis (Europe).mp4",
+                      "rom":  "Pete Sampras Tennis (Europe).zip"
+                  },
+                  {
+                      "title":  "PGA Tour 96 (USA, Europe)",
+                      "cover":  "PGA Tour 96 (USA, Europe).jpg",
+                      "video":  "PGA Tour 96 (USA, Europe).mp4",
+                      "rom":  "PGA Tour 96 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "PGA Tour Golf (USA, Europe)",
+                      "cover":  "PGA Tour Golf (USA, Europe).jpg",
+                      "video":  "PGA Tour Golf (USA, Europe).mp4",
+                      "rom":  "PGA Tour Golf (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "PGA Tour Golf II (USA, Europe)",
+                      "cover":  "PGA Tour Golf II (USA, Europe).jpg",
+                      "video":  "PGA Tour Golf II (USA, Europe).mp4",
+                      "rom":  "PGA Tour Golf II (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Phantom 2040 (USA, Europe)",
+                      "cover":  "Phantom 2040 (USA, Europe).jpg",
+                      "video":  "Phantom 2040 (USA, Europe).mp4",
+                      "rom":  "Phantom 2040 (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Pinball Dreams (USA)",
+                      "cover":  "Pinball Dreams (USA).jpg",
+                      "video":  "Pinball Dreams (USA).mp4",
+                      "rom":  "Pinball Dreams (USA).zip"
+                  },
+                  {
+                      "title":  "Pop Breaker (Japan)",
+                      "cover":  "Pop Breaker (Japan).jpg",
+                      "video":  "Pop Breaker (Japan).mp4",
+                      "rom":  "Pop Breaker (Japan).zip"
+                  },
+                  {
+                      "title":  "Popeye no Beach Volleyball (Japan)",
+                      "cover":  "Popeye no Beach Volleyball (Japan).jpg",
+                      "video":  "Popeye no Beach Volleyball (Japan).mp4",
+                      "rom":  "Popeye no Beach Volleyball (Japan).zip"
+                  },
+                  {
+                      "title":  "Power Drive (Europe)",
+                      "cover":  "Power Drive (Europe).jpg",
+                      "video":  "Power Drive (Europe).mp4",
+                      "rom":  "Power Drive (Europe).zip"
+                  },
+                  {
+                      "title":  "Power Strike II (Japan, Europe)",
+                      "cover":  "Power Strike II (Japan, Europe).jpg",
+                      "video":  "Power Strike II (Japan, Europe).mp4",
+                      "rom":  "Power Strike II (Japan, Europe).zip"
+                  },
+                  {
+                      "title":  "Primal Rage (USA, Europe)",
+                      "cover":  "Primal Rage (USA, Europe).jpg",
+                      "video":  "Primal Rage (USA, Europe).mp4",
+                      "rom":  "Primal Rage (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Pro Yakyuu \u002791, The (Japan)",
+                      "cover":  "Pro Yakyuu \u002791, The (Japan).jpg",
+                      "video":  "Pro Yakyuu \u002791, The (Japan).mp4",
+                      "rom":  "Pro Yakyuu \u002791, The (Japan).zip"
+                  },
+                  {
+                      "title":  "Pro Yakyuu GG League \u002794 (Japan)",
+                      "cover":  "Pro Yakyuu GG League \u002794 (Japan).jpg",
+                      "video":  "Pro Yakyuu GG League \u002794 (Japan).mp4",
+                      "rom":  "Pro Yakyuu GG League \u002794 (Japan).zip"
+                  },
+                  {
+                      "title":  "Pro Yakyuu GG League (Japan)",
+                      "cover":  "Pro Yakyuu GG League (Japan).jpg",
+                      "video":  "Pro Yakyuu GG League (Japan).mp4",
+                      "rom":  "Pro Yakyuu GG League (Japan).zip"
+                  },
+                  {
+                      "title":  "Psychic World (USA, Europe) (Rev 1)",
+                      "cover":  "Psychic World (USA, Europe) (Rev 1).jpg",
+                      "video":  "Psychic World (USA, Europe) (Rev 1).mp4",
+                      "rom":  "Psychic World (USA, Europe) (Rev 1).zip"
+                  },
+                  {
+                      "title":  "Putt \u0026 Putter (USA, Europe)",
+                      "cover":  "Putt \u0026 Putter (USA, Europe).jpg",
+                      "video":  "Putt \u0026 Putter (USA, Europe).mp4",
+                      "rom":  "Putt \u0026 Putter (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Puyo Puyo (Japan)",
+                      "cover":  "Puyo Puyo (Japan).jpg",
+                      "video":  "Puyo Puyo (Japan).mp4",
+                      "rom":  "Puyo Puyo (Japan).zip"
+                  },
+                  {
+                      "title":  "Puyo Puyo 2 (Japan)",
+                      "cover":  "Puyo Puyo 2 (Japan).jpg",
+                      "video":  "Puyo Puyo 2 (Japan).mp4",
+                      "rom":  "Puyo Puyo 2 (Japan).zip"
+                  },
+                  {
+                      "title":  "Puzzle and Action Tanto-R (Japan)",
+                      "cover":  "Puzzle and Action Tanto-R (Japan).jpg",
+                      "video":  "Puzzle and Action Tanto-R (Japan).mp4",
+                      "rom":  "Puzzle and Action Tanto-R (Japan).zip"
+                  },
+                  {
+                      "title":  "Quest for the Shaven Yak Starring Ren Hoek \u0026 Stimpy (USA, Europe)",
+                      "cover":  "Quest for the Shaven Yak Starring Ren Hoek \u0026 Stimpy (USA, Europe).jpg",
+                      "video":  "Quest for the Shaven Yak Starring Ren Hoek \u0026 Stimpy (USA, Europe).mp4",
+                      "rom":  "Quest for the Shaven Yak Starring Ren Hoek \u0026 Stimpy (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "R.B.I. Baseball \u002794 (USA)",
+                      "cover":  "R.B.I. Baseball \u002794 (USA).jpg",
+                      "video":  "R.B.I. Baseball \u002794 (USA).mp4",
+                      "rom":  "R.B.I. Baseball \u002794 (USA).zip"
+                  },
+                  {
+                      "title":  "Riddick Bowe Boxing (USA)",
+                      "cover":  "Riddick Bowe Boxing (USA).jpg",
+                      "video":  "Riddick Bowe Boxing (USA).mp4",
+                      "rom":  "Riddick Bowe Boxing (USA).zip"
+                  },
+                  {
+                      "title":  "Rise of the Robots (USA, Europe)",
+                      "cover":  "Rise of the Robots (USA, Europe).jpg",
+                      "video":  "Rise of the Robots (USA, Europe).mp4",
+                      "rom":  "Rise of the Robots (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Ristar - The Shooting Star (World)",
+                      "cover":  "Ristar - The Shooting Star (World).jpg",
+                      "video":  "Ristar - The Shooting Star (World).mp4",
+                      "rom":  "Ristar - The Shooting Star (World).zip"
+                  },
+                  {
+                      "title":  "Road Rash (Europe)",
+                      "cover":  "Road Rash (Europe).jpg",
+                      "video":  "Road Rash (Europe).mp4",
+                      "rom":  "Road Rash (Europe).zip"
+                  },
+                  {
+                      "title":  "RoboCop 3 (World)",
+                      "cover":  "RoboCop 3 (World).jpg",
+                      "video":  "RoboCop 3 (World).mp4",
+                      "rom":  "RoboCop 3 (World).zip"
+                  },
+                  {
+                      "title":  "RoboCop versus The Terminator (USA, Europe)",
+                      "cover":  "RoboCop versus The Terminator (USA, Europe).jpg",
+                      "video":  "RoboCop versus The Terminator (USA, Europe).mp4",
+                      "rom":  "RoboCop versus The Terminator (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "S.S. Lucifer - Man Overboard! (Europe)",
+                      "cover":  "S.S. Lucifer - Man Overboard! (Europe).jpg",
+                      "video":  "S.S. Lucifer - Man Overboard! (Europe).mp4",
+                      "rom":  "S.S. Lucifer - Man Overboard! (Europe).zip"
+                  },
+                  {
+                      "title":  "Samurai Shodown (USA)",
+                      "cover":  "Samurai Shodown (USA).jpg",
+                      "video":  "Samurai Shodown (USA).mp4",
+                      "rom":  "Samurai Shodown (USA).zip"
+                  },
+                  {
+                      "title":  "Sensible Soccer (Europe)",
+                      "cover":  "Sensible Soccer (Europe).jpg",
+                      "video":  "Sensible Soccer (Europe).mp4",
+                      "rom":  "Sensible Soccer (Europe).zip"
+                  },
+                  {
+                      "title":  "Shaq Fu (USA, Europe)",
+                      "cover":  "Shaq Fu (USA, Europe).jpg",
+                      "video":  "Shaq Fu (USA, Europe).mp4",
+                      "rom":  "Shaq Fu (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Shinobi (USA, Europe)",
+                      "cover":  "Shinobi (USA, Europe).jpg",
+                      "video":  "Shinobi (USA, Europe).mp4",
+                      "rom":  "Shinobi (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Shinobi II - The Silent Fury (World) (Ja)",
+                      "cover":  "Shinobi II - The Silent Fury (World) (Ja).jpg",
+                      "video":  "Shinobi II - The Silent Fury (World) (Ja).mp4",
+                      "rom":  "Shinobi II - The Silent Fury (World) (Ja).zip"
+                  },
+                  {
+                      "title":  "Side Pocket (USA)",
+                      "cover":  "Side Pocket (USA).jpg",
+                      "video":  "Side Pocket (USA).mp4",
+                      "rom":  "Side Pocket (USA).zip"
+                  },
+                  {
+                      "title":  "Simpsons, The - Bart vs. the Space Mutants (USA, Europe)",
+                      "cover":  "Simpsons, The - Bart vs. the Space Mutants (USA, Europe).jpg",
+                      "video":  "Simpsons, The - Bart vs. the Space Mutants (USA, Europe).mp4",
+                      "rom":  "Simpsons, The - Bart vs. the Space Mutants (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Simpsons, The - Bart vs. the World (World)",
+                      "cover":  "Simpsons, The - Bart vs. the World (World).jpg",
+                      "video":  "Simpsons, The - Bart vs. the World (World).mp4",
+                      "rom":  "Simpsons, The - Bart vs. the World (World).zip"
+                  },
+                  {
+                      "title":  "Slider (USA, Europe)",
+                      "cover":  "Slider (USA, Europe).jpg",
+                      "video":  "Slider (USA, Europe).mp4",
+                      "rom":  "Slider (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Smurfs Travel the World, The (Europe) (En,Fr,De,Es)",
+                      "cover":  "Smurfs Travel the World, The (Europe) (En,Fr,De,Es).jpg",
+                      "video":  "Smurfs Travel the World, The (Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "Smurfs Travel the World, The (Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Smurfs, The (Europe) (En,Fr,De,Es)",
+                      "cover":  "Smurfs, The (Europe) (En,Fr,De,Es).jpg",
+                      "video":  "Smurfs, The (Europe) (En,Fr,De,Es).mp4",
+                      "rom":  "Smurfs, The (Europe) (En,Fr,De,Es).zip"
+                  },
+                  {
+                      "title":  "Sonic Chaos (USA, Europe)",
+                      "cover":  "Sonic Chaos (USA, Europe).jpg",
+                      "video":  "Sonic Chaos (USA, Europe).mp4",
+                      "rom":  "Sonic Chaos (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Sonic Drift (Japan) (En)",
+                      "cover":  "Sonic Drift (Japan) (En).jpg",
+                      "video":  "Sonic Drift (Japan) (En).mp4",
+                      "rom":  "Sonic Drift (Japan) (En).zip"
+                  },
+                  {
+                      "title":  "Sonic Drift 2 (Japan, USA)",
+                      "cover":  "Sonic Drift 2 (Japan, USA).jpg",
+                      "video":  "Sonic Drift 2 (Japan, USA).mp4",
+                      "rom":  "Sonic Drift 2 (Japan, USA).zip"
+                  },
+                  {
+                      "title":  "Sonic Labyrinth (World)",
+                      "cover":  "Sonic Labyrinth (World).jpg",
+                      "video":  "Sonic Labyrinth (World).mp4",
+                      "rom":  "Sonic Labyrinth (World).zip"
+                  },
+                  {
+                      "title":  "Sonic Spinball (USA, Europe)",
+                      "cover":  "Sonic Spinball (USA, Europe).jpg",
+                      "video":  "Sonic Spinball (USA, Europe).mp4",
+                      "rom":  "Sonic Spinball (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Sonic The Hedgehog (World) (Rev 1)",
+                      "cover":  "Sonic The Hedgehog (World) (Rev 1).jpg",
+                      "video":  "Sonic The Hedgehog (World) (Rev 1).mp4",
+                      "rom":  "Sonic The Hedgehog (World) (Rev 1).zip"
+                  },
+                  {
+                      "title":  "Sonic The Hedgehog - Triple Trouble (USA, Europe)",
+                      "cover":  "Sonic The Hedgehog - Triple Trouble (USA, Europe).jpg",
+                      "video":  "Sonic The Hedgehog - Triple Trouble (USA, Europe).mp4",
+                      "rom":  "Sonic The Hedgehog - Triple Trouble (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Sonic The Hedgehog 2 (World)",
+                      "cover":  "Sonic The Hedgehog 2 (World).jpg",
+                      "video":  "Sonic The Hedgehog 2 (World).mp4",
+                      "rom":  "Sonic The Hedgehog 2 (World).zip"
+                  },
+                  {
+                      "title":  "Soukoban (Japan)",
+                      "cover":  "Soukoban (Japan).jpg",
+                      "video":  "Soukoban (Japan).mp4",
+                      "rom":  "Soukoban (Japan).zip"
+                  },
+                  {
+                      "title":  "Space Harrier (World)",
+                      "cover":  "Space Harrier (World).jpg",
+                      "video":  "Space Harrier (World).mp4",
+                      "rom":  "Space Harrier (World).zip"
+                  },
+                  {
+                      "title":  "Spider-Man - Return of the Sinister Six (USA, Europe)",
+                      "cover":  "Spider-Man - Return of the Sinister Six (USA, Europe).jpg",
+                      "video":  "Spider-Man - Return of the Sinister Six (USA, Europe).mp4",
+                      "rom":  "Spider-Man - Return of the Sinister Six (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Spider-Man - X-Men - Arcade\u0027s Revenge (USA)",
+                      "cover":  "Spider-Man - X-Men - Arcade\u0027s Revenge (USA).jpg",
+                      "video":  "Spider-Man - X-Men - Arcade\u0027s Revenge (USA).mp4",
+                      "rom":  "Spider-Man - X-Men - Arcade\u0027s Revenge (USA).zip"
+                  },
+                  {
+                      "title":  "Spider-Man vs. The Kingpin (USA, Europe)",
+                      "cover":  "Spider-Man vs. The Kingpin (USA, Europe).jpg",
+                      "video":  "Spider-Man vs. The Kingpin (USA, Europe).mp4",
+                      "rom":  "Spider-Man vs. The Kingpin (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Sports Illustrated Championship Football \u0026 Baseball (USA, Europe)",
+                      "cover":  "Sports Illustrated Championship Football \u0026 Baseball (USA, Europe).jpg",
+                      "video":  "Sports Illustrated Championship Football \u0026 Baseball (USA, Europe).mp4",
+                      "rom":  "Sports Illustrated Championship Football \u0026 Baseball (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Sports Trivia (USA)",
+                      "cover":  "Sports Trivia (USA).jpg",
+                      "video":  "Sports Trivia (USA).mp4",
+                      "rom":  "Sports Trivia (USA).zip"
+                  },
+                  {
+                      "title":  "Star Wars (Europe)",
+                      "cover":  "Star Wars (Europe).jpg",
+                      "video":  "Star Wars (Europe).mp4",
+                      "rom":  "Star Wars (Europe).zip"
+                  },
+                  {
+                      "title":  "Streets of Rage (World)",
+                      "cover":  "Streets of Rage (World).jpg",
+                      "video":  "Streets of Rage (World).mp4",
+                      "rom":  "Streets of Rage (World).zip"
+                  },
+                  {
+                      "title":  "Striker (Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Striker (Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Striker (Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Striker (Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Super Columns (USA, Europe)",
+                      "cover":  "Super Columns (USA, Europe).jpg",
+                      "video":  "Super Columns (USA, Europe).mp4",
+                      "rom":  "Super Columns (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Super Monaco GP (USA, Europe)",
+                      "cover":  "Super Monaco GP (USA, Europe).jpg",
+                      "video":  "Super Monaco GP (USA, Europe).mp4",
+                      "rom":  "Super Monaco GP (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Super Off Road (USA, Europe)",
+                      "cover":  "Super Off Road (USA, Europe).jpg",
+                      "video":  "Super Off Road (USA, Europe).mp4",
+                      "rom":  "Super Off Road (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Super Return of the Jedi (USA, Europe)",
+                      "cover":  "Super Return of the Jedi (USA, Europe).jpg",
+                      "video":  "Super Return of the Jedi (USA, Europe).mp4",
+                      "rom":  "Super Return of the Jedi (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Super Smash T.V. (World)",
+                      "cover":  "Super Smash T.V. (World).jpg",
+                      "video":  "Super Smash T.V. (World).mp4",
+                      "rom":  "Super Smash T.V. (World).zip"
+                  },
+                  {
+                      "title":  "Super Space Invaders (USA, Europe)",
+                      "cover":  "Super Space Invaders (USA, Europe).jpg",
+                      "video":  "Super Space Invaders (USA, Europe).mp4",
+                      "rom":  "Super Space Invaders (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Superman - The Man of Steel (Europe)",
+                      "cover":  "Superman - The Man of Steel (Europe).jpg",
+                      "video":  "Superman - The Man of Steel (Europe).mp4",
+                      "rom":  "Superman - The Man of Steel (Europe).zip"
+                  },
+                  {
+                      "title":  "Surf Ninjas (USA)",
+                      "cover":  "Surf Ninjas (USA).jpg",
+                      "video":  "Surf Ninjas (USA).mp4",
+                      "rom":  "Surf Ninjas (USA).zip"
+                  },
+                  {
+                      "title":  "Sylvan Tale (Japan)",
+                      "cover":  "Sylvan Tale (Japan).jpg",
+                      "video":  "Sylvan Tale (Japan).mp4",
+                      "rom":  "Sylvan Tale (Japan).zip"
+                  },
+                  {
+                      "title":  "T2 - The Arcade Game (USA, Europe)",
+                      "cover":  "T2 - The Arcade Game (USA, Europe).jpg",
+                      "video":  "T2 - The Arcade Game (USA, Europe).mp4",
+                      "rom":  "T2 - The Arcade Game (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Tails Adventures (World) (En,Ja)",
+                      "cover":  "Tails Adventures (World) (En,Ja).jpg",
+                      "video":  "Tails Adventures (World) (En,Ja).mp4",
+                      "rom":  "Tails Adventures (World) (En,Ja).zip"
+                  },
+                  {
+                      "title":  "Tails no Skypatrol (Japan)",
+                      "cover":  "Tails no Skypatrol (Japan).jpg",
+                      "video":  "Tails no Skypatrol (Japan).mp4",
+                      "rom":  "Tails no Skypatrol (Japan).zip"
+                  },
+                  {
+                      "title":  "Taito Chase H.Q. (USA)",
+                      "cover":  "Taito Chase H.Q. (USA).jpg",
+                      "video":  "Taito Chase H.Q. (USA).mp4",
+                      "rom":  "Taito Chase H.Q. (USA).zip"
+                  },
+                  {
+                      "title":  "TaleSpin (USA, Europe)",
+                      "cover":  "TaleSpin (USA, Europe).jpg",
+                      "video":  "TaleSpin (USA, Europe).mp4",
+                      "rom":  "TaleSpin (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Tama \u0026 Friends 3 Choume Kouen - Tamalympic (Japan)",
+                      "cover":  "Tama \u0026 Friends 3 Choume Kouen - Tamalympic (Japan).jpg",
+                      "video":  "Tama \u0026 Friends 3 Choume Kouen - Tamalympic (Japan).mp4",
+                      "rom":  "Tama \u0026 Friends 3 Choume Kouen - Tamalympic (Japan).zip"
+                  },
+                  {
+                      "title":  "Tarzan - Lord of the Jungle (Europe)",
+                      "cover":  "Tarzan - Lord of the Jungle (Europe).jpg",
+                      "video":  "Tarzan - Lord of the Jungle (Europe).mp4",
+                      "rom":  "Tarzan - Lord of the Jungle (Europe).zip"
+                  },
+                  {
+                      "title":  "Tatakae! Pro Yakyuu Twin League (Japan)",
+                      "cover":  "Tatakae! Pro Yakyuu Twin League (Japan).jpg",
+                      "video":  "Tatakae! Pro Yakyuu Twin League (Japan).mp4",
+                      "rom":  "Tatakae! Pro Yakyuu Twin League (Japan).zip"
+                  },
+                  {
+                      "title":  "Taz in Escape from Mars (USA, Europe)",
+                      "cover":  "Taz in Escape from Mars (USA, Europe).jpg",
+                      "video":  "Taz in Escape from Mars (USA, Europe).mp4",
+                      "rom":  "Taz in Escape from Mars (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Taz-Mania - The Search for the Lost Seabirds (USA, Europe)",
+                      "cover":  "Taz-Mania - The Search for the Lost Seabirds (USA, Europe).jpg",
+                      "video":  "Taz-Mania - The Search for the Lost Seabirds (USA, Europe).mp4",
+                      "rom":  "Taz-Mania - The Search for the Lost Seabirds (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Tempo Jr. (World)",
+                      "cover":  "Tempo Jr. (World).jpg",
+                      "video":  "Tempo Jr. (World).mp4",
+                      "rom":  "Tempo Jr. (World).zip"
+                  },
+                  {
+                      "title":  "Tengen World Cup Soccer (USA, Europe)",
+                      "cover":  "Tengen World Cup Soccer (USA, Europe).jpg",
+                      "video":  "Tengen World Cup Soccer (USA, Europe).mp4",
+                      "rom":  "Tengen World Cup Soccer (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Terminator 2 - Judgment Day (World)",
+                      "cover":  "Terminator 2 - Judgment Day (World).jpg",
+                      "video":  "Terminator 2 - Judgment Day (World).mp4",
+                      "rom":  "Terminator 2 - Judgment Day (World).zip"
+                  },
+                  {
+                      "title":  "Terminator, The (USA, Europe)",
+                      "cover":  "Terminator, The (USA, Europe).jpg",
+                      "video":  "Terminator, The (USA, Europe).mp4",
+                      "rom":  "Terminator, The (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Tintin in Tibet (Europe) (En,Fr,De,Es,Nl,Sv)",
+                      "cover":  "Tintin in Tibet (Europe) (En,Fr,De,Es,Nl,Sv).jpg",
+                      "video":  "Tintin in Tibet (Europe) (En,Fr,De,Es,Nl,Sv).mp4",
+                      "rom":  "Tintin in Tibet (Europe) (En,Fr,De,Es,Nl,Sv).zip"
+                  },
+                  {
+                      "title":  "Tom and Jerry - The Movie (USA, Europe)",
+                      "cover":  "Tom and Jerry - The Movie (USA, Europe).jpg",
+                      "video":  "Tom and Jerry - The Movie (USA, Europe).mp4",
+                      "rom":  "Tom and Jerry - The Movie (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "True Lies (World)",
+                      "cover":  "True Lies (World).jpg",
+                      "video":  "True Lies (World).mp4",
+                      "rom":  "True Lies (World).zip"
+                  },
+                  {
+                      "title":  "Ultimate Soccer (Japan, Europe) (En,Fr,De,Es,It)",
+                      "cover":  "Ultimate Soccer (Japan, Europe) (En,Fr,De,Es,It).jpg",
+                      "video":  "Ultimate Soccer (Japan, Europe) (En,Fr,De,Es,It).mp4",
+                      "rom":  "Ultimate Soccer (Japan, Europe) (En,Fr,De,Es,It).zip"
+                  },
+                  {
+                      "title":  "Urban Strike (USA, Europe)",
+                      "cover":  "Urban Strike (USA, Europe).jpg",
+                      "video":  "Urban Strike (USA, Europe).mp4",
+                      "rom":  "Urban Strike (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Virtua Fighter Animation (USA, Europe)",
+                      "cover":  "Virtua Fighter Animation (USA, Europe).jpg",
+                      "video":  "Virtua Fighter Animation (USA, Europe).mp4",
+                      "rom":  "Virtua Fighter Animation (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "VR Troopers (USA, Europe)",
+                      "cover":  "VR Troopers (USA, Europe).jpg",
+                      "video":  "VR Troopers (USA, Europe).mp4",
+                      "rom":  "VR Troopers (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Wagyan Land (Japan)",
+                      "cover":  "Wagyan Land (Japan).jpg",
+                      "video":  "Wagyan Land (Japan).mp4",
+                      "rom":  "Wagyan Land (Japan).zip"
+                  },
+                  {
+                      "title":  "Wimbledon (World)",
+                      "cover":  "Wimbledon (World).jpg",
+                      "video":  "Wimbledon (World).mp4",
+                      "rom":  "Wimbledon (World).zip"
+                  },
+                  {
+                      "title":  "Winter Olympics - Lillehammer \u002794 (USA, Europe) (En,Fr,De,Es,It,Pt,Sv,No)",
+                      "cover":  "Winter Olympics - Lillehammer \u002794 (USA, Europe) (En,Fr,De,Es,It,Pt,Sv,No).jpg",
+                      "video":  "Winter Olympics - Lillehammer \u002794 (USA, Europe) (En,Fr,De,Es,It,Pt,Sv,No).mp4",
+                      "rom":  "Winter Olympics - Lillehammer \u002794 (USA, Europe) (En,Fr,De,Es,It,Pt,Sv,No).zip"
+                  },
+                  {
+                      "title":  "Wizard Pinball (Europe)",
+                      "cover":  "Wizard Pinball (Europe).jpg",
+                      "video":  "Wizard Pinball (Europe).mp4",
+                      "rom":  "Wizard Pinball (Europe).zip"
+                  },
+                  {
+                      "title":  "Wolfchild (Europe)",
+                      "cover":  "Wolfchild (Europe).jpg",
+                      "video":  "Wolfchild (Europe).mp4",
+                      "rom":  "Wolfchild (Europe).zip"
+                  },
+                  {
+                      "title":  "Wonder Boy (Europe)",
+                      "cover":  "Wonder Boy (Europe).jpg",
+                      "video":  "Wonder Boy (Europe).mp4",
+                      "rom":  "Wonder Boy (Europe).zip"
+                  },
+                  {
+                      "title":  "Wonder Boy - The Dragon\u0027s Trap (Europe)",
+                      "cover":  "Wonder Boy - The Dragon\u0027s Trap (Europe).jpg",
+                      "video":  "Wonder Boy - The Dragon\u0027s Trap (Europe).mp4",
+                      "rom":  "Wonder Boy - The Dragon\u0027s Trap (Europe).zip"
+                  },
+                  {
+                      "title":  "Woody Pop (World) (Rev 1)",
+                      "cover":  "Woody Pop (World) (Rev 1).jpg",
+                      "video":  "Woody Pop (World) (Rev 1).mp4",
+                      "rom":  "Woody Pop (World) (Rev 1).zip"
+                  },
+                  {
+                      "title":  "World Class Leader Board (USA, Europe)",
+                      "cover":  "World Class Leader Board (USA, Europe).jpg",
+                      "video":  "World Class Leader Board (USA, Europe).mp4",
+                      "rom":  "World Class Leader Board (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "World Cup USA 94 (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv)",
+                      "cover":  "World Cup USA 94 (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv).jpg",
+                      "video":  "World Cup USA 94 (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv).mp4",
+                      "rom":  "World Cup USA 94 (USA, Europe) (En,Fr,De,Es,It,Nl,Pt,Sv).zip"
+                  },
+                  {
+                      "title":  "World Series Baseball \u002795 (USA)",
+                      "cover":  "World Series Baseball \u002795 (USA).jpg",
+                      "video":  "World Series Baseball \u002795 (USA).mp4",
+                      "rom":  "World Series Baseball \u002795 (USA).zip"
+                  },
+                  {
+                      "title":  "World Series Baseball (USA) (Rev 1)",
+                      "cover":  "World Series Baseball (USA) (Rev 1).jpg",
+                      "video":  "World Series Baseball (USA) (Rev 1).mp4",
+                      "rom":  "World Series Baseball (USA) (Rev 1).zip"
+                  },
+                  {
+                      "title":  "WWF Raw (USA, Europe)",
+                      "cover":  "WWF Raw (USA, Europe).jpg",
+                      "video":  "WWF Raw (USA, Europe).mp4",
+                      "rom":  "WWF Raw (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "X-Men (USA)",
+                      "cover":  "X-Men (USA).jpg",
+                      "video":  "X-Men (USA).mp4",
+                      "rom":  "X-Men (USA).zip"
+                  },
+                  {
+                      "title":  "X-Men - Gamemaster\u0027s Legacy (USA, Europe)",
+                      "cover":  "X-Men - Gamemaster\u0027s Legacy (USA, Europe).jpg",
+                      "video":  "X-Men - Gamemaster\u0027s Legacy (USA, Europe).mp4",
+                      "rom":  "X-Men - Gamemaster\u0027s Legacy (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "X-Men - Mojo World (USA, Europe)",
+                      "cover":  "X-Men - Mojo World (USA, Europe).jpg",
+                      "video":  "X-Men - Mojo World (USA, Europe).mp4",
+                      "rom":  "X-Men - Mojo World (USA, Europe).zip"
+                  },
+                  {
+                      "title":  "Yu Yu Hakusho - Horobishimono no Gyakushuu (Japan)",
+                      "cover":  "Yu Yu Hakusho - Horobishimono no Gyakushuu (Japan).jpg",
+                      "video":  "Yu Yu Hakusho - Horobishimono no Gyakushuu (Japan).mp4",
+                      "rom":  "Yu Yu Hakusho - Horobishimono no Gyakushuu (Japan).zip"
+                  },
+                  {
+                      "title":  "Zool - Ninja of the \u0027Nth\u0027 Dimension (Europe)",
+                      "cover":  "Zool - Ninja of the \u0027Nth\u0027 Dimension (Europe).jpg",
+                      "video":  "Zool - Ninja of the \u0027Nth\u0027 Dimension (Europe).mp4",
+                      "rom":  "Zool - Ninja of the \u0027Nth\u0027 Dimension (Europe).zip"
+                  }
+              ]
+}

@@ -20,6 +20,56 @@
         "background": "background.jpg"
     },
 	{
+        "system": "fbneo",
+        "title": "Arcade",
+        "manufacturer": "Arcade",
+        "year": 1990,
+        "generation": "Arcade",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "mastersystem",
+        "title": "Master System",
+        "manufacturer": "Sega",
+        "year": 1990,
+        "generation": "8 bits",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "nes",
+        "title": "Nintendo",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "generation": "8 bits",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "gb",
+        "title": "Game Boy",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "generation": "portatil",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "gbc",
+        "title": "Game Boy Color",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "generation": "portatil",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
         "system": "gba",
         "title": "Game Boy Adbance",
         "manufacturer": "Nintendo",
@@ -30,11 +80,11 @@
         "background": "background.jpg"
     },
     {
-        "system": "psx",
-        "title": "PlayStation",
-        "manufacturer": "Sony",
+        "system": "gamegear",
+        "title": "Game Gear",
+        "manufacturer": "Sega",
         "year": 1994,
-        "generation": "32 bits",
+        "generation": "Portatil",
         "color": "#0066cc",
         "logo": "logo.png",
         "background": "background.jpg"
