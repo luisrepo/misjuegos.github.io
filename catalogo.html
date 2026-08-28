@@ -535,7 +535,9 @@ main{
 
     </div>
 
-    <button id="btnInicio">🏠 Inicio</button>
+    <button id="btnInicio" onclick="window.location.href='index.html'">
+    🏠 Inicio
+</button>
 
     <div class="searchBox">
 
@@ -1388,8 +1390,7 @@ gamesContainer.addEventListener("touchend",(e)=>{
     if(lastTouchCard===card){
 
         window.location.href =
-            `play.html?core=${CONFIG.core}&rom=${encodeURIComponent(card.dataset.rom)}`;
-
+          `play.html?system=${system}&core=${CONFIG.core}&rom=${encodeURIComponent(card.dataset.rom)}`;
         lastTouchCard = null;
 
         return;
@@ -1454,14 +1455,14 @@ document.addEventListener("DOMContentLoaded",()=>{
 function openGame(rom){
 
     stopPreview();
+	console.log("SYSTEM EN CATALOGO =", system);
 
     const url =
-        `play.html?core=${CONFIG.core}&rom=${encodeURIComponent(rom)}`;
+        `play.html?system=${system}&core=${CONFIG.core}&rom=${encodeURIComponent(rom)}`;
 
     window.location.assign(url);
 
 }
-
 
 /* ---------- Click ---------- */
 
@@ -1702,7 +1703,7 @@ Estado  : OK
 loadCatalog();
 
 document.getElementById("btnInicio").onclick = () => {
-    alert("Botón pulsado");
+    window.location.href = "index.html";
 };
 </script>
 

@@ -85,7 +85,11 @@
 <body>
 
     <div class="bar-nav">
-        <a id="btn-back" href="index.html" class="btn-action btn-cerrar">✕ Cerrar Juego</a>
+       <a id="btn-back"
+   href="#"
+   class="btn-action btn-cerrar">
+   ✕ Cerrar Juego
+</a>
         <button id="btn-fs" class="btn-action btn-fullscreen" onclick="toggleFullScreen()">⛶ Pantalla Completa</button>
     </div>
 
@@ -114,6 +118,11 @@
 
         // 1. Leer parámetros URL enviados por catalogo.html
         const params = new URLSearchParams(window.location.search);
+        const system = params.get("system") || "snes";
+		console.log("SYSTEM =", system);
+
+        document.getElementById("btn-back").href =
+    `catalogo.html?system=${system}`;
         const systemCore = params.get('core') || 'snes';
         let rawRomUrl = params.get('rom');
 
@@ -127,7 +136,6 @@ const romUrl =
     "https://late-fire-364e.lvalriv.workers.dev/?url=" +
     encodeURIComponent(rawRomUrl);
 
-        document.getElementById('btn-back').href = `catalogo.html?console=${systemCore}`;
 
         if (!romUrl) {
             document.getElementById('emulator').innerHTML = '<div class="loading-text" style="color: #ff7b72;">Error: No se ha detectado ninguna ROM para cargar.</div>';
