@@ -447,43 +447,9 @@ main{
 
 #topbar{
 
-    position:sticky;
-    top:0;
-    z-index:1000;
+    flex-direction:column;
 
-    display:grid;
-    grid-template-columns:170px 1fr 300px;
-
-    align-items:center;
-
-    padding:18px 30px;
-
-    background:rgba(12,12,18,.92);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-#topbar::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:2px;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        var(--neon,#6c63ff),
-        transparent
-    );
+    align-items:stretch;
 
 }
 
@@ -559,21 +525,28 @@ main{
 
 <header id="topbar">
 
-    <button id="btnInicio">
-        🏠 Inicio
-    </button>
-
     <div class="logo">
-        <img id="systemLogo" alt="Logo">
-        <span id="systemTitle"></span>
+
+    <img id="systemLogo" alt="Logo">
+
+        <span id="systemTitle">
+            Catálogo Retro
+        </span>
+
     </div>
 
+    <button id="btnInicio" onclick="window.location.href='index.html'">
+    🏠 Inicio
+</button>
+
     <div class="searchBox">
+
         <input
             id="search"
             type="search"
-            placeholder="🔍 Buscar juego..."
-        >
+            placeholder="Buscar juego..."
+            autocomplete="off">
+
     </div>
 
 </header>
