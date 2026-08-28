@@ -19,6 +19,16 @@
         "logo": "logo.png",
         "background": "background.jpg"
     },
+	{
+        "system": "gba",
+        "title": "Game Boy Adbance",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "generation": "Portatil",
+        "color": "#0055cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
     {
         "system": "psx",
         "title": "PlayStation",
