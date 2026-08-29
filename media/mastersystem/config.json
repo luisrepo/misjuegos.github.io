@@ -3,7 +3,7 @@
     "manufacturer":  "Sega",
     "year":  1985,
     "generation":  "8 bits",
-    "core":  "sms",
+    "core":  "segaMS",
     "archive":  "mastersystem_20260823_1054",
 	"coverFit": "contain",
 	"coverRatio": "3/4",

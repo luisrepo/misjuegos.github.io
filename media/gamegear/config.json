@@ -3,7 +3,7 @@
     "manufacturer":  "Sega",
     "year":  1990,
     "generation":  "8 bits",
-    "core":  "gamegear",
+    "core":  "segaGG",
     "archive":  "gamegear_202608",
 	"coverFit": "contain",
 	"coverRatio": "3/4",
