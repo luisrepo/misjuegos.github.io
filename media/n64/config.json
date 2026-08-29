@@ -4,11 +4,12 @@
     "year":  1996,
     "generation":  "64 bits",
     "core":  "n64",
-    "archive":  "n64_20260823_202608",
+    "archive":  "n64_20260829",
 	"coverFit": "contain",
-	"coverRatio": "16/9",
-	"cardWidth": "250px",
-    "cardHeight": "220px",
+	"coverRatio": "4/3",
+	"cardWidth": "400px",
+    "cardHeight": "200px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "007 - GoldenEye (USA)",
