@@ -7,8 +7,9 @@
     "archive":  "mastersystem_20260823_1054",
 	"coverFit": "contain",
 	"coverRatio": "3/4",
-	"cardWidth": "250px",
-    "cardHeight": "400px",
+	"cardWidth": "400px",
+    "cardHeight": "320px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "Action Fighter (USA, Europe) (Rev 2)",

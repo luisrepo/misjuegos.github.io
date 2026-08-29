@@ -6,9 +6,10 @@
     "core":  "snes",
     "archive":  "snes_20260823_202608",
 	"coverFit": "contain",
-	"coverRatio": "16/9",
-	"cardWidth": "250px",
-    "cardHeight": "220px",
+	"coverRatio": "4/3",
+	"cardWidth": "400px",
+    "cardHeight": "200px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "\u002796 Zenkoku Koukou Soccer Senshuken (Japan)",

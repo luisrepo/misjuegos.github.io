@@ -7,8 +7,9 @@
     "archive":  "nes_20260823",
 	"coverFit": "contain",
 	"coverRatio": "3/4",
-	"cardWidth": "250px",
-    "cardHeight": "400px",
+	"cardWidth": "400px",
+    "cardHeight": "320px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "10-Yard Fight (USA, Europe)",

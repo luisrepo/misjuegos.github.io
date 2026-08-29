@@ -7,8 +7,9 @@
     "archive":  "gba_20260824",
 	"coverFit": "contain",
 	"coverRatio": "4/4",
-	"cardWidth": "250px",
-    "cardHeight": "320px",
+	"cardWidth": "400px",
+    "cardHeight": "200px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "007 - Everything or Nothing (USA, Europe) (En,Fr,De)",

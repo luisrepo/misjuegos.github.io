@@ -7,8 +7,9 @@
     "archive":  "gamegear_202608",
 	"coverFit": "contain",
 	"coverRatio": "3/4",
-	"cardWidth": "250px",
+	"cardWidth": "400px",
     "cardHeight": "400px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "Aa Harimanada (Japan)",

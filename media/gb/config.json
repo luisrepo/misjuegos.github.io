@@ -7,8 +7,9 @@
     "archive":  "gb_20260824",
     "coverFit": "contain",
 	"coverRatio": "4/4",
-	"cardWidth": "250px",
+	"cardWidth": "400px",
     "cardHeight": "320px",
+	"columns": 4,
     "games":  [
                   {
                       "title":  "A-mazing Tater (USA)",

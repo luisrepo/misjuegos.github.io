@@ -1,0 +1,369 @@
+﻿{
+    "title":  "Atari 7800",
+    "manufacturer":  "Atari",
+    "year":  1986,
+    "generation":  "8 bits",
+    "core":  "prosystem",
+    "archive":  "atari7800_202608",
+	"coverFit": "contain",
+	"coverRatio": "3/4",
+	"cardWidth": "400px",
+    "cardHeight": "320px",
+	"columns": 4,
+    "games":  [
+                  {
+                      "title":  "Ace of Aces (USA)",
+                      "cover":  "Ace of Aces (USA).jpg",
+                      "video":  "Ace of Aces (USA).mp4",
+                      "rom":  "Ace of Aces (USA).zip"
+                  },
+                  {
+                      "title":  "Alien Brigade (USA)",
+                      "cover":  "Alien Brigade (USA).jpg",
+                      "video":  "Alien Brigade (USA).mp4",
+                      "rom":  "Alien Brigade (USA).zip"
+                  },
+                  {
+                      "title":  "Asteroids (USA)",
+                      "cover":  "Asteroids (USA).jpg",
+                      "video":  "Asteroids (USA).mp4",
+                      "rom":  "Asteroids (USA).zip"
+                  },
+                  {
+                      "title":  "Ballblazer (USA)",
+                      "cover":  "Ballblazer (USA).jpg",
+                      "video":  "Ballblazer (USA).mp4",
+                      "rom":  "Ballblazer (USA).zip"
+                  },
+                  {
+                      "title":  "Barnyard Blaster (USA)",
+                      "cover":  "Barnyard Blaster (USA).jpg",
+                      "video":  "Barnyard Blaster (USA).mp4",
+                      "rom":  "Barnyard Blaster (USA).zip"
+                  },
+                  {
+                      "title":  "Basketbrawl (USA)",
+                      "cover":  "Basketbrawl (USA).jpg",
+                      "video":  "Basketbrawl (USA).mp4",
+                      "rom":  "Basketbrawl (USA).zip"
+                  },
+                  {
+                      "title":  "Centipede (USA)",
+                      "cover":  "Centipede (USA).jpg",
+                      "video":  "Centipede (USA).mp4",
+                      "rom":  "Centipede (USA).zip"
+                  },
+                  {
+                      "title":  "Choplifter! (USA)",
+                      "cover":  "Choplifter! (USA).jpg",
+                      "video":  "Choplifter! (USA).mp4",
+                      "rom":  "Choplifter! (USA).zip"
+                  },
+                  {
+                      "title":  "Commando (USA)",
+                      "cover":  "Commando (USA).jpg",
+                      "video":  "Commando (USA).mp4",
+                      "rom":  "Commando (USA).zip"
+                  },
+                  {
+                      "title":  "Crack\u0027ed (USA)",
+                      "cover":  "Crack\u0027ed (USA).jpg",
+                      "video":  "Crack\u0027ed (USA).mp4",
+                      "rom":  "Crack\u0027ed (USA).zip"
+                  },
+                  {
+                      "title":  "Crossbow (USA)",
+                      "cover":  "Crossbow (USA).jpg",
+                      "video":  "Crossbow (USA).mp4",
+                      "rom":  "Crossbow (USA).zip"
+                  },
+                  {
+                      "title":  "Dark Chambers (USA)",
+                      "cover":  "Dark Chambers (USA).jpg",
+                      "video":  "Dark Chambers (USA).mp4",
+                      "rom":  "Dark Chambers (USA).zip"
+                  },
+                  {
+                      "title":  "Desert Falcon (USA)",
+                      "cover":  "Desert Falcon (USA).jpg",
+                      "video":  "Desert Falcon (USA).mp4",
+                      "rom":  "Desert Falcon (USA).zip"
+                  },
+                  {
+                      "title":  "Dig Dug (USA)",
+                      "cover":  "Dig Dug (USA).jpg",
+                      "video":  "Dig Dug (USA).mp4",
+                      "rom":  "Dig Dug (USA).zip"
+                  },
+                  {
+                      "title":  "Donkey Kong (USA)",
+                      "cover":  "Donkey Kong (USA).jpg",
+                      "video":  "Donkey Kong (USA).mp4",
+                      "rom":  "Donkey Kong (USA).zip"
+                  },
+                  {
+                      "title":  "Donkey Kong Junior (USA)",
+                      "cover":  "Donkey Kong Junior (USA).jpg",
+                      "video":  "Donkey Kong Junior (USA).mp4",
+                      "rom":  "Donkey Kong Junior (USA).zip"
+                  },
+                  {
+                      "title":  "Double Dragon (USA)",
+                      "cover":  "Double Dragon (USA).jpg",
+                      "video":  "Double Dragon (USA).mp4",
+                      "rom":  "Double Dragon (USA).zip"
+                  },
+                  {
+                      "title":  "F-18 Hornet (USA)",
+                      "cover":  "F-18 Hornet (USA).jpg",
+                      "video":  "F-18 Hornet (USA).mp4",
+                      "rom":  "F-18 Hornet (USA).zip"
+                  },
+                  {
+                      "title":  "Fatal Run (USA)",
+                      "cover":  "Fatal Run (USA).jpg",
+                      "video":  "Fatal Run (USA).mp4",
+                      "rom":  "Fatal Run (USA).zip"
+                  },
+                  {
+                      "title":  "Fight Night (USA)",
+                      "cover":  "Fight Night (USA).jpg",
+                      "video":  "Fight Night (USA).mp4",
+                      "rom":  "Fight Night (USA).zip"
+                  },
+                  {
+                      "title":  "Food Fight (USA)",
+                      "cover":  "Food Fight (USA).jpg",
+                      "video":  "Food Fight (USA).mp4",
+                      "rom":  "Food Fight (USA).zip"
+                  },
+                  {
+                      "title":  "Galaga (USA)",
+                      "cover":  "Galaga (USA).jpg",
+                      "video":  "Galaga (USA).mp4",
+                      "rom":  "Galaga (USA).zip"
+                  },
+                  {
+                      "title":  "Hat Trick (USA)",
+                      "cover":  "Hat Trick (USA).jpg",
+                      "video":  "Hat Trick (USA).mp4",
+                      "rom":  "Hat Trick (USA).zip"
+                  },
+                  {
+                      "title":  "Ikari Warriors (USA)",
+                      "cover":  "Ikari Warriors (USA).jpg",
+                      "video":  "Ikari Warriors (USA).mp4",
+                      "rom":  "Ikari Warriors (USA).zip"
+                  },
+                  {
+                      "title":  "Impossible Mission (USA)",
+                      "cover":  "Impossible Mission (USA).jpg",
+                      "video":  "Impossible Mission (USA).mp4",
+                      "rom":  "Impossible Mission (USA).zip"
+                  },
+                  {
+                      "title":  "Jinks (USA)",
+                      "cover":  "Jinks (USA).jpg",
+                      "video":  "Jinks (USA).mp4",
+                      "rom":  "Jinks (USA).zip"
+                  },
+                  {
+                      "title":  "Joust (USA)",
+                      "cover":  "Joust (USA).jpg",
+                      "video":  "Joust (USA).mp4",
+                      "rom":  "Joust (USA).zip"
+                  },
+                  {
+                      "title":  "Karateka (USA)",
+                      "cover":  "Karateka (USA).jpg",
+                      "video":  "Karateka (USA).mp4",
+                      "rom":  "Karateka (USA).zip"
+                  },
+                  {
+                      "title":  "Klax (USA) (Proto)",
+                      "cover":  "Klax (USA) (Proto).jpg",
+                      "video":  "Klax (USA) (Proto).mp4",
+                      "rom":  "Klax (USA) (Proto).zip"
+                  },
+                  {
+                      "title":  "Kung-Fu Master (USA)",
+                      "cover":  "Kung-Fu Master (USA).jpg",
+                      "video":  "Kung-Fu Master (USA).mp4",
+                      "rom":  "Kung-Fu Master (USA).zip"
+                  },
+                  {
+                      "title":  "Mario Bros. (USA)",
+                      "cover":  "Mario Bros. (USA).jpg",
+                      "video":  "Mario Bros. (USA).mp4",
+                      "rom":  "Mario Bros. (USA).zip"
+                  },
+                  {
+                      "title":  "Mat Mania Challenge (USA)",
+                      "cover":  "Mat Mania Challenge (USA).jpg",
+                      "video":  "Mat Mania Challenge (USA).mp4",
+                      "rom":  "Mat Mania Challenge (USA).zip"
+                  },
+                  {
+                      "title":  "Mean 18 Ultimate Golf (USA)",
+                      "cover":  "Mean 18 Ultimate Golf (USA).jpg",
+                      "video":  "Mean 18 Ultimate Golf (USA).mp4",
+                      "rom":  "Mean 18 Ultimate Golf (USA).zip"
+                  },
+                  {
+                      "title":  "Meltdown (USA)",
+                      "cover":  "Meltdown (USA).jpg",
+                      "video":  "Meltdown (USA).mp4",
+                      "rom":  "Meltdown (USA).zip"
+                  },
+                  {
+                      "title":  "Midnight Mutants (USA)",
+                      "cover":  "Midnight Mutants (USA).jpg",
+                      "video":  "Midnight Mutants (USA).mp4",
+                      "rom":  "Midnight Mutants (USA).zip"
+                  },
+                  {
+                      "title":  "Motor Psycho (USA)",
+                      "cover":  "Motor Psycho (USA).jpg",
+                      "video":  "Motor Psycho (USA).mp4",
+                      "rom":  "Motor Psycho (USA).zip"
+                  },
+                  {
+                      "title":  "Ms. Pac-Man (USA)",
+                      "cover":  "Ms. Pac-Man (USA).jpg",
+                      "video":  "Ms. Pac-Man (USA).mp4",
+                      "rom":  "Ms. Pac-Man (USA).zip"
+                  },
+                  {
+                      "title":  "Ninja Golf (USA)",
+                      "cover":  "Ninja Golf (USA).jpg",
+                      "video":  "Ninja Golf (USA).mp4",
+                      "rom":  "Ninja Golf (USA).zip"
+                  },
+                  {
+                      "title":  "One-on-One Basketball (USA)",
+                      "cover":  "One-on-One Basketball (USA).jpg",
+                      "video":  "One-on-One Basketball (USA).mp4",
+                      "rom":  "One-on-One Basketball (USA).zip"
+                  },
+                  {
+                      "title":  "Pete Rose Baseball (USA)",
+                      "cover":  "Pete Rose Baseball (USA).jpg",
+                      "video":  "Pete Rose Baseball (USA).mp4",
+                      "rom":  "Pete Rose Baseball (USA).zip"
+                  },
+                  {
+                      "title":  "Planet Smashers (USA)",
+                      "cover":  "Planet Smashers (USA).jpg",
+                      "video":  "Planet Smashers (USA).mp4",
+                      "rom":  "Planet Smashers (USA).zip"
+                  },
+                  {
+                      "title":  "Pole Position II (USA)",
+                      "cover":  "Pole Position II (USA).jpg",
+                      "video":  "Pole Position II (USA).mp4",
+                      "rom":  "Pole Position II (USA).zip"
+                  },
+                  {
+                      "title":  "Rampage (USA)",
+                      "cover":  "Rampage (USA).jpg",
+                      "video":  "Rampage (USA).mp4",
+                      "rom":  "Rampage (USA).zip"
+                  },
+                  {
+                      "title":  "RealSports Baseball (USA)",
+                      "cover":  "RealSports Baseball (USA).jpg",
+                      "video":  "RealSports Baseball (USA).mp4",
+                      "rom":  "RealSports Baseball (USA).zip"
+                  },
+                  {
+                      "title":  "Robotron - 2084 (USA)",
+                      "cover":  "Robotron - 2084 (USA).jpg",
+                      "video":  "Robotron - 2084 (USA).mp4",
+                      "rom":  "Robotron - 2084 (USA).zip"
+                  },
+                  {
+                      "title":  "Scrapyard Dog (USA)",
+                      "cover":  "Scrapyard Dog (USA).jpg",
+                      "video":  "Scrapyard Dog (USA).mp4",
+                      "rom":  "Scrapyard Dog (USA).zip"
+                  },
+                  {
+                      "title":  "Sentinel (Europe)",
+                      "cover":  "Sentinel (Europe).jpg",
+                      "video":  "Sentinel (Europe).mp4",
+                      "rom":  "Sentinel (Europe).zip"
+                  },
+                  {
+                      "title":  "Summer Games (USA)",
+                      "cover":  "Summer Games (USA).jpg",
+                      "video":  "Summer Games (USA).mp4",
+                      "rom":  "Summer Games (USA).zip"
+                  },
+                  {
+                      "title":  "Super Huey UH-1X (USA)",
+                      "cover":  "Super Huey UH-1X (USA).jpg",
+                      "video":  "Super Huey UH-1X (USA).mp4",
+                      "rom":  "Super Huey UH-1X (USA).zip"
+                  },
+                  {
+                      "title":  "Super Skateboardin\u0027 (USA)",
+                      "cover":  "Super Skateboardin\u0027 (USA).jpg",
+                      "video":  "Super Skateboardin\u0027 (USA).mp4",
+                      "rom":  "Super Skateboardin\u0027 (USA).zip"
+                  },
+                  {
+                      "title":  "Tank Command (USA)",
+                      "cover":  "Tank Command (USA).jpg",
+                      "video":  "Tank Command (USA).mp4",
+                      "rom":  "Tank Command (USA).zip"
+                  },
+                  {
+                      "title":  "Title Match Pro Wrestling (USA)",
+                      "cover":  "Title Match Pro Wrestling (USA).jpg",
+                      "video":  "Title Match Pro Wrestling (USA).mp4",
+                      "rom":  "Title Match Pro Wrestling (USA).zip"
+                  },
+                  {
+                      "title":  "Tomcat - The F-14 Fighter Simulator (USA)",
+                      "cover":  "Tomcat - The F-14 Fighter Simulator (USA).jpg",
+                      "video":  "Tomcat - The F-14 Fighter Simulator (USA).mp4",
+                      "rom":  "Tomcat - The F-14 Fighter Simulator (USA).zip"
+                  },
+                  {
+                      "title":  "Touchdown Football (USA)",
+                      "cover":  "Touchdown Football (USA).jpg",
+                      "video":  "Touchdown Football (USA).mp4",
+                      "rom":  "Touchdown Football (USA).zip"
+                  },
+                  {
+                      "title":  "Tower Toppler (USA)",
+                      "cover":  "Tower Toppler (USA).jpg",
+                      "video":  "Tower Toppler (USA).mp4",
+                      "rom":  "Tower Toppler (USA).zip"
+                  },
+                  {
+                      "title":  "Water Ski (USA)",
+                      "cover":  "Water Ski (USA).jpg",
+                      "video":  "Water Ski (USA).mp4",
+                      "rom":  "Water Ski (USA).zip"
+                  },
+                  {
+                      "title":  "Winter Games (USA)",
+                      "cover":  "Winter Games (USA).jpg",
+                      "video":  "Winter Games (USA).mp4",
+                      "rom":  "Winter Games (USA).zip"
+                  },
+                  {
+                      "title":  "Xenophobe (USA)",
+                      "cover":  "Xenophobe (USA).jpg",
+                      "video":  "Xenophobe (USA).mp4",
+                      "rom":  "Xenophobe (USA).zip"
+                  },
+                  {
+                      "title":  "Xevious (USA)",
+                      "cover":  "Xevious (USA).jpg",
+                      "video":  "Xevious (USA).mp4",
+                      "rom":  "Xevious (USA).zip"
+                  }
+              ]
+}

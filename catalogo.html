@@ -221,7 +221,7 @@ main{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns:repeat(var(--columns,4),1fr);
 
     gap:24px;
 
@@ -701,6 +701,11 @@ document.documentElement.style.setProperty(
 document.documentElement.style.setProperty(
     "--card-height",
     CONFIG.cardHeight || "380px"
+);
+
+document.documentElement.style.setProperty(
+    "--columns",
+    CONFIG.columns || 6
 );
 
 ARCHIVE_URL = `https://archive.org/download/${CONFIG.archive}/`;

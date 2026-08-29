@@ -30,6 +30,16 @@
         "background": "background.jpg"
     },
 	{
+        "system": "n64",
+        "title": "Nintendo 64",
+        "manufacturer": "Nintendo",
+        "year": 1996,
+        "generation": "5ª Generación",
+        "color": "#00bcd4",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
         "system": "mastersystem",
         "title": "Master System",
         "manufacturer": "Sega",
@@ -86,6 +96,26 @@
         "year": 1994,
         "generation": "Portatil",
         "color": "#0066cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "atari7800",
+        "title": "Atari 7800",
+        "manufacturer": "Atari",
+        "year": 1986,
+        "generation": "3ª Generación",
+        "color": "#0066cc",
+        "logo": "logo.png",
+        "background": "background.jpg"
+    },
+	{
+        "system": "atari2600",
+        "title": "Atari 2600",
+        "manufacturer": "Atari",
+        "year": 1977,
+        "generation": "2ª Generación",
+        "color": "#d32f2f",
         "logo": "logo.png",
         "background": "background.jpg"
     }
